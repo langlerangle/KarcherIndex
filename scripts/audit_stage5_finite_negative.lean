@@ -1,0 +1,14 @@
+module
+
+public import KsIndexLean.DiskFiniteNegativeIndex
+public import KsIndexLean.FiniteCopyFiniteNegativeIndex
+
+@[expose] public section
+
+#print axioms KsIndex.Spectral.finite_negative_trial_dimension_le_count
+#print axioms KsIndex.Spectral.exists_finite_negative_trial_of_count
+#print axioms KsIndex.Spectral.negativeIndex_eq_finite_strict_count
+#print axioms KsIndex.Spectral.diskJacobi_finite_spectral_tail
+#print axioms KsIndex.Spectral.disk_negativeIndex_eq_finite_count
+#print axioms KsIndex.Spectral.finiteCopyJacobi_finite_spectral_tail
+#print axioms KsIndex.Spectral.finiteCopy_negativeIndex_eq_finite_count

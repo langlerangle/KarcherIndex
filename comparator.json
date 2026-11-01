@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Palomar.CombinedChallenge",
+  "solution_module": "Palomar.Solution",
+  "theorem_names": [
+    "KSPalomar.Intrinsic.Full.exists_intrinsic_index_nullity_m2",
+    "KSPalomar.Intrinsic.Full.exists_intrinsic_staircase_k3",
+    "KSPalomar.Intrinsic.Full.unique_threshold",
+    "KSPalomar.Intrinsic.Full.decimal_bounds",
+    "KSPalomar.Intrinsic.Full.period_arithmetic"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

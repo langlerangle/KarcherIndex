@@ -1,0 +1,13 @@
+module
+
+public import KsIndexLean
+
+@[expose] public section
+
+#print axioms KsIndex.NegativeDensity.negativeIndex_pos_mul
+#print axioms KsIndex.Spectral.mixedSignedChart_negativeIndex_eq_form
+#print axioms KsIndex.Spectral.mixedSignedChart_negativeIndex_eq_infinite_count
+#print axioms KsIndex.Spectral.mixedSignedChart_negativeIndex_eq_finite_count
+#print axioms KsIndex.Spectral.mixedSectorChart_negativeIndex_eq_form
+#print axioms KsIndex.Spectral.mixedSectorChart_negativeIndex_eq_infinite_count
+#print axioms KsIndex.Spectral.mixedSectorChart_negativeIndex_eq_finite_count

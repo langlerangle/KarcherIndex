@@ -1,0 +1,28 @@
+module
+
+public import KsIndexLean
+
+@[expose] public section
+
+#print axioms KsIndex.Spectral.mem_diskWeakEigenspace
+#print axioms KsIndex.Spectral.diskWeakEigenspace_finrank
+#print axioms KsIndex.Spectral.diskWeakEigenspace_infinite_count
+#print axioms KsIndex.Spectral.diskWeakEigenspace_finite_count
+#print axioms KsIndex.Spectral.mem_finiteCopyWeakEigenspace
+#print axioms KsIndex.Spectral.finiteCopyWeakEigenspace_finrank
+#print axioms KsIndex.Spectral.finiteCopyWeakEigenspace_infinite_count
+#print axioms KsIndex.Spectral.finiteCopyWeakEigenspace_finite_count
+#print axioms KsIndex.Spectral.diskWeakEigenspace_exceptional
+#print axioms KsIndex.Spectral.diskWeakEquation_exceptional
+#print axioms KsIndex.Spectral.mem_diskWeakEigenspace_all
+#print axioms KsIndex.Spectral.finiteCopyWeakEigenspace_exceptional
+#print axioms KsIndex.Spectral.finiteCopyWeakEquation_exceptional
+#print axioms KsIndex.Spectral.mem_finiteCopyWeakEigenspace_all
+#print axioms KsIndex.Spectral.diskWeakEigenspace_finrank_all
+#print axioms KsIndex.Spectral.diskWeakEigenspace_finiteDimensional
+#print axioms KsIndex.Spectral.diskWeakEigenspace_infinite_count_all
+#print axioms KsIndex.Spectral.diskWeakEigenspace_finite_count_all
+#print axioms KsIndex.Spectral.finiteCopyWeakEigenspace_finrank_all
+#print axioms KsIndex.Spectral.finiteCopyWeakEigenspace_finiteDimensional
+#print axioms KsIndex.Spectral.finiteCopyWeakEigenspace_infinite_count_all
+#print axioms KsIndex.Spectral.finiteCopyWeakEigenspace_finite_count_all

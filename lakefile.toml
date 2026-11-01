@@ -1,0 +1,31 @@
+name = "KsIndexCombinedSubmission"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["PalomarCombined"]
+moreLeanArgs = ["-j", "1", "-M", "6000"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+weak.linter.style.header = false
+maxSynthPendingDepth = 3
+Elab.async = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "5e0c4e5239cb0a2d86d68a884bf52cfd963fce22"
+
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti.git"
+rev = "a780c7ad6beb23f60a17351a492d177878020ad5"
+
+[[lean_lib]]
+name = "KsIndexLean"
+globs = ["KsIndexLean.*"]
+
+[[lean_lib]]
+name = "PalomarCombined"
+roots = ["Palomar.CombinedChallenge", "Palomar.CombinedSolution", "Palomar.Solution"]

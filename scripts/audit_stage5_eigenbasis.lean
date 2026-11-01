@@ -1,0 +1,16 @@
+module
+
+public import KsIndexLean.JacobiSolutionEigenvalue
+public import KsIndexLean.SolutionEigenbasis
+public import KsIndexLean.SolutionEigenspaceTransport
+
+@[expose] public section
+
+#print axioms KsIndex.Spectral.diskSolutionOperator_eigen_iff
+#print axioms KsIndex.Spectral.finiteSolutionOperator_eigen_iff
+#print axioms KsIndex.Spectral.PositiveCompactSolution.exists_positive_hilbertEigenbasis
+#print axioms KsIndex.Spectral.PositiveCompactSolution.eigenbasis_expansion
+#print axioms KsIndex.Spectral.mem_solutionFormEigenspace_iff
+#print axioms KsIndex.Spectral.solutionEigenspaceEquiv
+#print axioms KsIndex.Spectral.solutionFormEigenspace_finrank
+#print axioms KsIndex.Spectral.solutionFormEigenspace_finiteDimensional

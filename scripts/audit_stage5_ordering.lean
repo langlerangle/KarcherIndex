@@ -1,0 +1,13 @@
+module
+
+public import KsIndexLean.InfiniteSolutionOrdering
+
+@[expose] public section
+
+#print axioms KsIndex.Spectral.PositiveCompactSolution.orderedIndex_injective
+#print axioms KsIndex.Spectral.PositiveCompactSolution.orderedIndex_surjective
+#print axioms KsIndex.Spectral.PositiveCompactSolution.infiniteEigenvalues_antitone
+#print axioms KsIndex.Spectral.PositiveCompactSolution.infiniteEigenvalues_tendsto_zero
+#print axioms KsIndex.Spectral.PositiveCompactSolution.infiniteReciprocalShift_tendsto_atTop
+#print axioms KsIndex.Spectral.PositiveCompactSolution.infiniteEigenbasis_equation
+#print axioms KsIndex.Spectral.PositiveCompactSolution.eigenbasisIndex_infinite

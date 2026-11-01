@@ -1,0 +1,254 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "KarcherIndex"
+  description: >-
+    A Lean 4 formalization of the Morse index and nullity of Karcher saddle towers,
+    formalizing results from arXiv:2608.13451v2.
+    For the Enneper-Weierstrass realizations, the two-period quotient Xi_{k,2}
+    has index 4k-3 and bounded Jacobi-field nullity 3 for every k >= 3. For the six-ended
+    family Xi_{3,m}, every positive integer m has index 6m-4 floor(m alpha*)-3 and nullity
+    7 when m alpha* is an integer, and 3 otherwise. The same threshold alpha* lies in
+    (1/3,1/2), with certified strict bounds 0.4323617 < alpha* < 0.4323619.
+    As in the paper, index and nullity are defined using complex-valued functions,
+    with dimensions taken over the complex numbers. The development constructs realizations from
+    the explicit data and supplies the geometric-to-analytic identifications, rather
+    than assuming the existence of a realization. Supporting results include proper
+    embeddedness and the equivalence of boundedness and finite Dirichlet energy for
+    smooth geometric Jacobi fields on the finite period quotients.
+  authors:
+    - "David Wiygul"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "David Wiygul"
+
+classification:
+  arxiv: ["math.DG", "math.SP"]
+  msc2020: ["53A10", "58E12", "47B93", "35P15"]
+
+sources:
+  - title: "Morse index of Karcher saddle towers in R^2 x S^1(m)"
+    authors:
+      - "David Wiygul"
+    id: "arXiv:2608.13451"
+    type: "paper"
+    location: "https://arxiv.org/abs/2608.13451v2"
+    relationship: "formalizes"
+    note: >-
+      The audited source is arXiv version 2. The proposed submission covers the main
+      two-period and six-ended geometric index/nullity formulas, the supporting EW
+      realizations and identifications, and the remarked decimal bounds on alpha*.
+      The single-arc circle theorem is a supporting result, not the full submission
+      scope. The checkerboard containment in Theorem 1.1(v) of arXiv:2608.13451v2
+      requires the endpoint correction r >= 0 (in place of r > 0).
+      Specific omissions and differences of proof route are stated below.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    The library proves the stated geometric formulas for supplied PaperHalfPeriodRealization
+    objects and separately constructs such objects from the Enneper-Weierstrass data; existential
+    capstones combine existence and the formulas. Index is defined by the intrinsic
+    Jacobi quadratic form on compactly supported smooth complex tests; nullity is the
+    complex dimension of bounded smooth geometric Jacobi fields. The decimal bounds
+    are included in the combined submission target. The
+    introductory evaluations for m in {1,2,3,4,6} use qualitative threshold bounds.
+    An explicit numerical target also proves floor(m alpha*) = floor(4323617 m / 10000000)
+    and nonintegrality of m alpha* for every positive m <= 2298, yielding explicit
+    geometric index values and nullity 3 throughout that range.
+    The combined Challenge selects two geometric endpoints, threshold uniqueness,
+    strict decimal bounds, and the arithmetic consequences through period 2298.
+    All 2951 selected Lean module and standalone-script checks passed a local
+    clean-project build, with recorded repairs and resumptions. A fresh audit
+    confirmed the permitted axioms for all five Solution endpoints. Exports from
+    that build passed the stock comparator using both NanoDa and Lean's default
+    kernel, with pinned inputs rechecked afterward.
+  sorry_count: 0  # Excludes the five deliberate Challenge statement placeholders.
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Fable 5", "Claude Opus 4.8"]
+      framework: "Claude Code"
+      tool_setup: >-
+        AI-assisted: definitions, statements and proofs drafted and iterated by the models in
+        Claude Code sessions against a local Lean/Mathlib build; statements, design decisions
+        and mathematical review by the author. Selected principal declarations are checked
+        with #print axioms in Inventory. The Claude collaboration on the formalization
+        continues the collaboration acknowledged in the paper.
+        The project uses Tau Ceti at the pinned revision for supporting analytic
+        infrastructure, including selected proof bodies and interfaces for interior
+        elliptic regularity and Sobolev analysis.
+      cost:
+        spend_usd: "subscriptions"
+        hardware: "local machine"
+      prompting_notes: >-
+        Collaborative peer-style sessions: the author supplies the mathematics and reviews
+        mathematical statements and design decisions; the models propose designs, write Lean,
+        and flag faithfulness concerns.
+    - method: "agent"
+      models: ["GPT-6 Astra"]
+      framework: "Codex"
+      tool_setup: >-
+        OpenAI-assisted proof development, source-fidelity review, numerical certification,
+        integration checks, and public documentation review. These project-level roles
+        do not assign authorship of every declaration in the development.
+    - method: "other"
+      models: ["Harmonic Aristotle"]
+      framework: "Aristotle API"
+      tool_setup: |
+        Aristotle contributed proofs of selected lemmas, checked in the project's
+        Lean environment. The following table records selected Aristotle contributions;
+        it is not an exhaustive contribution history.
+        These entries retain their historical credits without claiming a new validation
+        of the original job logs or a fresh build on the current toolchain.
+
+        | `KsIndexLean/JacobiFields.lean` | Aristotle proofs; statements by Claude | `e45f5dd8` (batch 3) |
+        | `KsIndexLean/JacobiFieldsSym.lean` | Aristotle proofs; statements by Claude | `8ebbad09` (batch 4) |
+        | `KsIndexLean/PunctureCutoff.lean` | Claude, **Part B only** (the radial annulus integral) by Aristotle | batch 5 (`e2238df3`) |
+        | `KsIndexLean/ClosedDiskExt.lean` | Aristotle proof; statement by Claude | `dffeecf1` (batch 6) |
+        | `KsIndexLean/BallPolar.lean` | Aristotle proof; statement + route by Claude | `1d1d8d00` |
+        | `KsIndexLean/NonnegSwap.lean` | Aristotle proof; statement + route by Claude | `cba68e4a` |
+        | `KsIndexLean/ArcKernel.lean` | Aristotle proofs; statements + sketches by Claude | `6911b25f-…` (v4.28 probe) |
+        | `KsIndexLean/SquareWave.lean` | Aristotle proof; statement by Claude | `eef2c6d6` (v4.28 probe) |
+      cost:
+        spend_usd: "free"
+        hardware: "API-only"
+      prompting_notes: "Statement file with a proof-route sketch in the header; 'fill in the sorry'."
+  wall_time: "approximately two months, intermittently"
+  spend_usd: "subscriptions"
+  notes: >-
+    The author directed the project and reviewed mathematical statements and design
+    decisions. The reported time is the approximate project calendar span, not cumulative
+    person-hours or compute time. Source review, cached elaboration,
+    and clean rebuilding are distinct
+    verification activities; a record of one does not imply the others. Numerical
+    certificates require separate build and axiom checks.
+
+fidelity:
+  divergences: >-
+    The surfaces are constructed from Enneper-Weierstrass data; no surface-uniqueness theorem is
+    asserted. General topological genus identification, standalone completeness and end
+    asymptotic classification, half-period graphicality, and the proposed geometric
+    interpretations of exceptional ODE solutions are outside scope. Retained cellular
+    and Euler-characteristic certificates do not identify the genus of the geometric
+    quotient. The class-zero mixed-boundary index and nullity follow the paper's
+    strict Dirichlet-mixed-Neumann eigenvalue bracketing argument. The main two-period
+    index proof uses this route; the constructive Gram-matrix proof is retained as
+    an alternative.
+    In the checkerboard containment of Theorem 1.1(v) of arXiv:2608.13451v2,
+    the radial parameter includes zero (r >= 0, in place of the printed r > 0).
+    For k=3 and rotational character j=2 mod 3, the screw action on lower-trace Fourier
+    coefficients is exp(i pi (alpha+2/3)) times the circle involution, on finite period
+    quotients at rational phase alpha=n/m. The circle
+    half-order domain uses the weight 1+|l|, equivalent to but not identical with the
+    paper's sqrt(1+l^2), and expresses half-arc support by sgnHat * u = u.
+    Neither irrationality nor an exact value of alpha* is claimed. The numerical
+    interval does establish nonintegrality of m alpha* for every positive m <= 2298,
+    together with explicit floor values and the corresponding geometric index/nullity
+    formulas. README.md describes the public scope and verification boundaries.
+
+review:
+  status: "agent-reviewed"
+  reviewers:
+    - "Claude Opus 4.8 (Kai)"
+    - "Claude Fable 5 (Xi)"
+    - "GPT-6 Astra (OpenAI)"
+  notes: >-
+    Development-team agents have performed statement-fidelity, source and documentation
+    reviews at their recorded scopes. These activities are distinct from Lean kernel
+    verification and do not constitute external human peer review or exhaustive
+    independent review of every proof. The author directed the work and reviewed
+    mathematical design decisions, and reviewed the earlier definition guide and the
+    statements and definitions it references. The author has also reviewed and approved
+    the final combined repository for public availability. A separate fresh-session AI
+    review has not been completed.
+
+alignment:
+  scope: >-
+    One combined entry selects the five declarations listed in comparator.json,
+    all in namespace KSPalomar.Intrinsic.Full. The geometric staircase and the
+    numerical endpoints share one spectral threshold definition. The following
+    list records supporting library carriers as well as the selected results;
+    it is not a claim that every supporting declaration is separately compared.
+  statements:
+    - source: "Two-period geometric index, k >= 3"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.geometricIndex_two"
+      module: "KsIndexLean.KarcherGeometricCapstone"
+      status: "proved in library"
+    - source: "Two-period bounded-field nullity, k >= 3"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.geometricNullity_two"
+      module: "KsIndexLean.KarcherGeometricCapstone"
+      status: "proved in library"
+    - source: "Six-ended geometric index, every positive period"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.geometricIndex_three"
+      module: "KsIndexLean.KarcherGeometricCapstone"
+      status: "proved in library"
+    - source: "Six-ended bounded-field nullity dichotomy"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.geometricNullity_three"
+      module: "KsIndexLean.KarcherGeometricCapstone"
+      status: "proved in library"
+    - source: "Constructed realization with two-period formulas"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.exists_geometric_double_period"
+      module: "KsIndexLean.KarcherGeometricCapstone"
+      status: "proved in library"
+    - source: "One realization and threshold for all six-ended periods"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.exists_geometric_six_end_formulas"
+      module: "KsIndexLean.KarcherGeometricCapstone"
+      status: "proved in library"
+    - source: "Proper smooth EW embedding, k >= 2"
+      lean: "KsIndex.KarcherData.exists_proper_embedded_EW_realization"
+      module: "KsIndexLean.KarcherProperEmbedding"
+      status: "proved in library"
+    - source: "Boundedness iff finite Dirichlet energy for smooth geometric Jacobi fields"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.geometric_jacobi_finiteness"
+      module: "KsIndexLean.KarcherGeometricJacobiFiniteness"
+      status: "proved in library"
+    - source: "Strict lower decimal bound"
+      lean: "KsIndex.AlphaRemarkTrial.LowerAssembly.alphaStar_gt_4323617"
+      module: "KsIndexLean.AlphaRemarkLowerCertified"
+      status: "proved in library"
+    - source: "Strict upper decimal bound"
+      lean: "KsIndex.NegSignProd.alphaStar_lt_upper_decimal"
+      module: "KsIndexLean.NegSignDecimal"
+      status: "proved in library"
+    - source: "Class-zero mixed index 1 and nullity 0 by strict bracketing, k >= 3"
+      lean: "KsIndex.Spectral.mixed_class_zero_pair_bracketing_uncond"
+      module: "KsIndexLean.MixedClassZeroBracketing"
+      status: "proved in library"
+    - source: "Explicit floor values for every positive m <= 2298"
+      lean: "KsIndex.Staircase.alphaStar_floor_le_2298"
+      module: "KsIndexLean.AlphaStarNumericalPeriods"
+      status: "proved in library"
+    - source: "Nonresonance for every positive m <= 2298"
+      lean: "KsIndex.Staircase.alphaStar_nonresonant_le_2298"
+      module: "KsIndexLean.AlphaStarNumericalPeriods"
+      status: "proved in library"
+    - source: "Explicit geometric index and nullity 3 for every positive m <= 2298"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.geometric_numerical_periods"
+      module: "KsIndexLean.KarcherNumericalPeriods"
+      status: "proved in library"
+    - source: "Introductory small-period corollary with constructed realization"
+      lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.exists_geometric_small_periods"
+      module: "KsIndexLean.KarcherSmallPeriods"
+      status: "proved in library"
+  submission_preparation: >-
+    The combined geometric and numerical entry uses a public re-export Solution
+    module and five comparator targets. The clean-project build, fresh endpoint
+    axiom audit, and stock comparator checks by both NanoDa and Lean's default
+    kernel have passed. Final packaging, presentation checks and independent
+    review remain in progress. David will review and discuss the final repository
+    before publication. This draft does not claim registry acceptance.
+
+acknowledgements: >-
+  We thank the developers and contributors of Lean, Mathlib, and Tau Ceti for the
+  proof assistant and mathematical libraries used in this formalization. We also
+  acknowledge Harmonic's Aristotle for contributing Lean proofs of supporting
+  results, and Claude Fable 5 and Claude Opus 4.8 (Anthropic), and GPT-6 Astra
+  (OpenAI) as formalization collaborators.

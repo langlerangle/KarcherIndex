@@ -1,0 +1,71 @@
+{
+  "purpose": "Reproduce numerical certificate data and baseline proof templates. Optimized committed proof bodies are maintained separately; generation is not a Lean verification run.",
+  "generator": "scripts/negsign_generator.py",
+  "generator_sha256": "90e5b29e6d9ef6dc89a78e936172dec202861849d288dc37bf16b94db61c492a",
+  "inputs": {
+    "KsIndexLean/AlphaTrialIntegerData.lean": "72a160cd856488f61fe164d08006e937d63b46bac9e8dc93d08e7a3ccecff9e1",
+    "KsIndexLean/AlphaRemarkTrial.lean": "a2bf002a828202b41a085bbf7a71c014426c77fee81ab92167bed4b70bc662e8"
+  },
+  "input_migration": "Both inputs differ from the historical reference only by module/public-import/expose migration.",
+  "current_reproduction": {
+    "prototype": {
+      "generated_files": 26,
+      "byte_identical_files": 25,
+      "comment_only_differences": [
+        "ProtoAssembly.lean"
+      ]
+    },
+    "production": {
+      "generated_files": 566,
+      "byte_identical_files": 190,
+      "energy_files_with_identical_original_windows_and_theorem_statements_but_optimized_proofs": 372,
+      "tail_files_with_exact_center_radius_proof_replacements": 4
+    },
+    "lean_build_rerun": false,
+    "scope": "Source comparison, not proof certification or byte-identical reproduction of all optimized proof bodies."
+  },
+  "usage": "Run the portable commands below from the repository root with fresh output directories. Do not overwrite committed optimized proofs with these baseline templates. The combined target includes numerical proofs; generation remains separate from the Lean build.",
+  "commands": {
+    "prototype": "python3 -I scripts/negsign_generator.py --M 64 --CH 32 --prefix Proto --source-root KsIndexLean --outdir /tmp/negsign-prototype-new",
+    "production": "python3 -I scripts/negsign_generator.py --M 8192 --CH 128 --prefix Prod --source-root KsIndexLean --outdir /tmp/negsign-production-new"
+  },
+  "historical_pre_module_record": {
+    "purpose": "Reproduce the optional upper-bound certificate sources from pinned trial inputs. Generation does not run Lean or certify the spectral sign.",
+    "source_revision": "45d009bc284d0519d47b0d93476f3ff9cfade5cd",
+    "generator": "scripts/negsign_generator.py",
+    "generator_sha256": "1aafe8c884225899a6455b6163e64c3d0d7da9415895db7736ed4b65474d9bb4",
+    "inputs": {
+      "KsIndexLean/AlphaTrialIntegerData.lean": "5e5ef8dd74ac0f6c933efd8fb085b1ac6a6a25483e225b951a23704ebf956c35",
+      "KsIndexLean/AlphaRemarkTrial.lean": "754415fd8f2284a9d0d81535bdb506ed146bbf8e6a147c1d7712135ea1994550"
+    },
+    "production": {
+      "M": 8192,
+      "CH": 128,
+      "prefix": "Prod",
+      "original_invocation": "python3 negsign_generator.py --M 8192 --CH 128 --prefix Prod --outdir KsIndexLean",
+      "original_invocation_note": "Historical parameters for the original generator. Do not run this command against an existing source directory; use the portable command below with a fresh output directory.",
+      "portable_invocation": "python3 -I scripts/negsign_generator.py --M 8192 --CH 128 --prefix Prod --source-root KsIndexLean --outdir /tmp/negsign-production-new",
+      "source_comparison": {
+        "generated_files": 566,
+        "byte_identical_files": 566,
+        "tracked_Prod_file_set_exactly_matched": true,
+        "reference_revision": "45d009bc284d0519d47b0d93476f3ff9cfade5cd",
+        "lean_build_rerun": false
+      }
+    },
+    "prototype": {
+      "M": 64,
+      "CH": 32,
+      "prefix": "Proto",
+      "portable_invocation": "python3 -I scripts/negsign_generator.py --M 64 --CH 32 --prefix Proto --source-root KsIndexLean --outdir /tmp/negsign-prototype-new",
+      "source_comparison": {
+        "generated_files": 26,
+        "byte_identical_files": 25,
+        "remaining_difference": "ProtoAssembly.lean has the sign-neutral assembly header; non-comment text and documentation forms are unchanged.",
+        "reference_revision": "45d009bc284d0519d47b0d93476f3ff9cfade5cd",
+        "lean_build_rerun": false
+      }
+    },
+    "usage": "Run from the repository root. Output directories must not exist and their parents must exist. The generator checks input hashes before creating output. Generated sources must be checked by Lean before treating their arithmetic as certified. Optional numerical build roots remain separate from the default build."
+  }
+}

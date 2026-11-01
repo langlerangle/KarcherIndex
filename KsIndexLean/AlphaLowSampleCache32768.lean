@@ -1,0 +1,32 @@
+module
+
+public import KsIndexLean.AlphaLowModeCache
+public import KsIndexLean.AlphaLowProdAccessorFast
+
+@[expose] public section
+
+/-! Generated sample pairs: untrusted until each kernel check succeeds.
+No actual analytic enclosure is claimed without ValidCoefficientTable. -/
+namespace KsIndex.AlphaRemarkTrial.Cache32768
+open KsIndex.AlphaRemarkTrial
+set_option maxRecDepth 65536
+set_option maxHeartbeats 4000000
+def mode (i : ℕ) : ℤ := -16385 + 32768 + (i : ℤ)
+def entries : Array (ℤ × ℤ) := #[
+(-109422911724474528648157092397035706083367222,160703531957702713985333684016640139),
+(109413064976805358959620548198247484361173193,160688505818852369996556913743646969)
+]
+theorem checked0 :
+ (entries[0]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 0+1) ∧
+ (entries[0]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 0+1) := by decide +kernel
+theorem checked1 :
+ (entries[1]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 1+1) ∧
+ (entries[1]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 1+1) := by decide +kernel
+theorem checked (i : Fin 2) :
+ (entries[i.val]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode i.val+1) ∧
+ (entries[i.val]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode i.val+1) := by
+  fin_cases i
+  · exact checked0
+  · exact checked1
+#print axioms checked
+end KsIndex.AlphaRemarkTrial.Cache32768

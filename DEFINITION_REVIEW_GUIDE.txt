@@ -1,0 +1,50 @@
+COMBINED SUBMISSION — DEFINITION REVIEW GUIDE
+
+Private preparation draft. David has reviewed the earlier guide and its referenced
+statements/definitions; this guide identifies the combined submission surface for
+his final repository review and discussion before publication.
+
+Start with Palomar/CombinedChallenge.lean. Read definitions and theorem statements;
+its five sorry placeholders deliberately state the obligations supplied by the
+Solution. Palomar/Solution.lean re-exports the implementation in
+Palomar/CombinedSolution.lean. comparator.json lists the same five full names.
+
+The principal change from the separate entries is that all five statements share
+one IsThreshold and criticalPhase definition. The staircase theorem fixes one
+threshold for every period. unique_threshold ensures this is the threshold to
+which the universal decimal_bounds and period_arithmetic statements apply.
+There is no irrationality claim and no surface-uniqueness claim.
+
+Suggested order:
+1. The two geometric statements: hypotheses, complex index/nullity conventions,
+   and the order of existential and universal quantifiers.
+2. The shared variational definitions and IsThreshold sign conditions.
+3. The numerical statements: both strict endpoints and the finite m<=2298 range.
+4. Follow the geometric carriers back through CoveredSmoothSection and the
+   based Weierstrass-map specification if revisiting their meaning is useful.
+5. README scope qualifications and formalization.yaml attribution/review wording.
+
+Navigation in the current Challenge (line numbers may move):
+IsBasedEWMapSphere: lines 603
+CoveredSmoothSection: line 681
+CoveredSmoothSection.index: line 703
+CoveredSmoothSection.nullity: line 709
+sigP: lines 632
+MemDom: lines 640
+Qform: lines 646
+gam: lines 649
+IsThreshold: lines 653
+criticalPhase: lines 651
+exists_intrinsic_index_nullity_m2: lines 724
+exists_intrinsic_staircase_k3: lines 731
+unique_threshold: lines 755
+decimal_bounds: lines 759
+period_arithmetic: lines 765
+
+Verification status: local compilation and the all-five-results axiom audit passed.
+Complete combined comparator, clean snapshot build and submission/render checks
+remain pending. Earlier separate comparator passes do not certify the union.
+
+All source paths above are relative to this repository's root. The earlier
+personal review notes are preserved separately and are not required to navigate
+this combined entry.

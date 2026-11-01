@@ -1,0 +1,14 @@
+module
+
+public import KsIndexLean.DiskFiniteNonpositiveCount
+public import KsIndexLean.FiniteCopyFiniteNonpositiveCount
+
+@[expose] public section
+
+#print axioms KsIndex.Spectral.finite_le_iff_lt_count
+#print axioms KsIndex.Spectral.finite_nonpositive_trial_dimension_le_count
+#print axioms KsIndex.Spectral.exists_finite_nonpositive_trial_of_count
+#print axioms KsIndex.Spectral.disk_finite_nonpositive_dimension_le
+#print axioms KsIndex.Spectral.disk_finite_nonpositive_dimension_attained
+#print axioms KsIndex.Spectral.finiteCopy_finite_nonpositive_dimension_le
+#print axioms KsIndex.Spectral.finiteCopy_finite_nonpositive_dimension_attained

@@ -1,0 +1,16 @@
+module
+
+public import KsIndexLean.FiniteSolutionSpectrum
+public import KsIndexLean.WeakSolutionEigenvalue
+
+@[expose] public section
+
+#print axioms KsIndex.Spectral.PositiveCompactSolution.eigenspaces_complete
+#print axioms KsIndex.Spectral.PositiveCompactSolution.eigenvalue_re_pos
+#print axioms KsIndex.Spectral.PositiveCompactSolution.eigenspace_finite
+#print axioms KsIndex.Spectral.PositiveCompactSolution.finiteEigenvalues_multiplicity
+#print axioms KsIndex.Spectral.PositiveCompactSolution.finiteReciprocalShift_monotone
+#print axioms KsIndex.Spectral.coerciveForm_unique
+#print axioms KsIndex.Spectral.compactFormSolution_eigen_mem_range
+#print axioms KsIndex.Spectral.compactFormSolution_real_eigen_iff
+#print axioms KsIndex.Spectral.compactFormSolution_shifted_eigen_iff
