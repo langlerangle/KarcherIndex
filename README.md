@@ -174,9 +174,14 @@ from the source review below.
 A fresh-session Claude Opus 5.5 review examined public commit `97b6d52` through
 source reading and scripted checks, without building the project or running
 Comparator. The reviewer belongs to the same model family as earlier Claude
-collaborators. Its documentation and statement-explanation findings are being
-addressed in this revision; this is not a claim that the findings are closed or
-that Palomar has accepted the submission.
+collaborators. A follow-up review of commit `98ac7ef` independently confirmed
+that the Lean changes were comment-only, checked the revised mathematical
+documentation, and found no changes required before submission. Neither review
+included a build or Comparator run. These source reviews do not establish hosted
+runtime suitability or Palomar acceptance.
+
+We thank Claude Opus 5.5 for a fresh-session source review and follow-up that
+improved the mathematical exposition and clarified the scope of the formalization.
 
 ## Contributors
 
