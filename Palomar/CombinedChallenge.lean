@@ -230,10 +230,10 @@ def ewAreaMeasure (k : ℕ) : Measure ℂ :=
 def ewDiskMeasure (k : ℕ) : Measure (PuncturedClosedDisk k) :=
   (ewAreaMeasure k).comap (fun w => w.val.val)
 
-/-! ### The exposed disk-section structure -/
-/-- Exposed disk-section data over the carrier, pinned by explicit actual-immersion equations
-(projection = finite parameter, base half-period height normalization, closed embedding, and the
-based-map seam identity). The Solution supplies all fields from the actual realization. -/
+/-! ### A disk section in the height lift -/
+/-- A map to the ambient period quotient and an embedded lift of the punctured
+closed disk, with prescribed parameter projection, heights in [-π, 0], and
+compatibility with reflection across the seam. -/
 structure ExposedDiskSection (k : ℕ) (hk : 2 ≤ k) where
   F : ParameterSphere k → PeriodTarget
   baseSection : PuncturedClosedDisk k → HeightLift F
@@ -271,18 +271,18 @@ def orderedDiskPoint (m : ℕ) (n : ZMod (2 * m)) (w : PuncturedClosedDisk k) :
   if n.val % 2 = 0 then Quotient.mk _ (S.evenDiskPoint ((n.val / 2 : ℕ) : ℤ) w)
   else Quotient.mk _ (S.oddDiskPoint ((n.val / 2 : ℕ) : ℤ) w)
 
-/-- The unaveraged quotient area: the finite sum of the `2m` ordered-copy pushforwards of the EW disk
-measure (no averaging). -/
+/-- The quotient area measure: the sum of the 2m ordered-copy pushforwards of the
+Enneper-Weierstrass disk area, without division by the number of copies. -/
 def quotientArea (m : ℕ) [NeZero m] : Measure (HeightLift.PeriodQuotient S.F m) :=
   haveI : NeZero (2 * m) := ⟨Nat.mul_ne_zero (by decide) (NeZero.ne m)⟩
   ∑ n : ZMod (2 * m), Measure.map (fun w => S.orderedDiskPoint m n w) (ewDiskMeasure k)
 
-/-- The ordered copies cover the quotient (exposed; Solution supplies `orderedDiskPoint_surjective`). -/
+/-- Every quotient point is represented in at least one of the ordered disk copies. -/
 def Covers (m : ℕ) : Prop :=
   Function.Surjective (fun p : ZMod (2 * m) × PuncturedClosedDisk k => S.orderedDiskPoint m p.1 p.2)
 
-/-- The disk coordinate of a quotient point, defined by choice from coverage (coordinate agreement /
-seam independence is a checked Solution obligation). -/
+/-- A disk coordinate of a quotient point, chosen from an ordered-copy representative
+provided by `Covers`. The choice is used in the copywise expressions below. -/
 def diskCoordinate (m : ℕ) (hCov : S.Covers m) (q : HeightLift.PeriodQuotient S.F m) :
     PuncturedClosedDisk k :=
   (hCov q).choose.2
@@ -431,8 +431,9 @@ def geometricIndex (m : ℕ) [NeZero m] [ChartedSpace ℂ (HeightLift.PeriodQuot
     (hCov : S.Covers m) : ℕ∞ :=
   formIndex (S.quotientJacobiQ m hCov) (S.compactSmoothDomain m)
 
-/-- The geometric Jacobi operator at a lift, reconstructed from the compatible atlas: the chart center is
-the ATLAS self-value `(chartAt ⟦q⟧) ⟦q⟧` (rather than the folded disk coordinate). -/
+/-- The geometric Jacobi operator in the quotient chart centered at the image x of
+the lift q. Both the chart expression of u and the metric/curvature coefficients
+are evaluated at the coordinate `(chartAt ℂ x) x`. -/
 def jacobiAt (m : ℕ) [ChartedSpace ℂ (HeightLift.PeriodQuotient S.F m)]
     (u : HeightLift.PeriodQuotient S.F m → ℂ) (q : HeightLift S.F) : ℂ :=
   let x : HeightLift.PeriodQuotient S.F m := Quotient.mk (HeightLift.periodSetoid (F := S.F) m) q
@@ -627,27 +628,53 @@ structure CompatibleProjectionAtlas : Prop where
 
 end Atlas
 
-/-! ### Numerical threshold block (the ten definitions of the α* numerical Challenge) -/
-/-- The diagonal symbol (j² - 4)/|j| on frequencies j = 6n + 1. -/
+/-! ### The six-ended spectral threshold
+
+This is the sequence form of the reduced circle problem in Section 4,
+"Quotients with six ends", of the cited paper, especially "Reduction to the
+circle", "Frequency parity" and "Threshold". Section 2's half-period
+Dirichlet-to-Neumann symbol is `(j^2 - (k-1)^2) / |j|`; at `k = 3` it restricts
+to the rotation/parity sectors `j = 6n+1` and `j = 6m+4` below.
+
+The alternating-arc sign function `varsigma` has Fourier coefficients supported
+on `6ℤ+3`. Reindexing gives `chat d = varsigma_hat (6d+3)`, so multiplication by
+`varsigma` between these sectors is `convS`, since
+`(6m+4) - (6n+1) = 6(m-n)+3`. The two weighted summability conditions in
+`MemDom` express the form domain for the sequence and its sign transform.
+`Qform s` is the reduced quadratic form; `gam s` is its variational infimum
+on normalized domain sequences. Its spectral interpretation belongs to the
+paper's "Threshold" analysis.
+
+For `s > 0`, `criticalPhase s = (2/π) arctan(1/s)` inverts
+`s = cot(πα/2)`. Thus `1 < s < sqrt 3` corresponds to `1/3 < α < 1/2`.
+`IsThreshold` specifies the zero and signs of `gam`; `unique_threshold` proves
+existence and uniqueness. The resulting phase is the same threshold used by
+the geometric staircase and the certified numerical bounds.
+-/
+/-- The k = 3 half-period Dirichlet-to-Neumann symbol on the rotation/parity sector j = 6n + 1. -/
 def sigP (n : ℤ) : ℝ := ((6 * (n : ℝ) + 1) ^ 2 - 4) / |6 * (n : ℝ) + 1|
-/-- The diagonal symbol (j² - 4)/|j| on frequencies j = 6m + 4. -/
+/-- The same half-period Dirichlet-to-Neumann symbol on the sector j = 6m + 4. -/
 def sigM (m : ℤ) : ℝ := ((6 * (m : ℝ) + 4) ^ 2 - 4) / |6 * (m : ℝ) + 4|
-/-- The real convolution coefficient 2(-1)^d/(π(2d + 1)). -/
+/-- The coefficient of the alternating-arc sign function at frequency 6d + 3:
+`2(-1)^d/(π(2d + 1))`. Its other Fourier frequencies vanish outside 6ℤ + 3. -/
 def chat (d : ℤ) : ℝ := 2 / Real.pi * (-1) ^ d / (2 * (d : ℝ) + 1)
-/-- Convolution of a complex sequence with the coefficients chat, defined by the bilateral series. -/
+/-- Fourier representation of multiplication by the alternating-arc sign function,
+from frequencies 6n + 1 to frequencies 6m + 4, expressed as convolution with `chat`. -/
 def convS (u : ℤ → ℂ) (m : ℤ) : ℂ := ∑' n : ℤ, (chat (m - n) : ℂ) * u n
-/-- The form domain: weighted square summability of the sequence and its convolution. -/
+/-- The reduced form domain: weighted square summability of the sequence and its
+sign transform, with weights |6n + 1| and |6m + 4| respectively. -/
 def MemDom (u : ℤ → ℂ) : Prop :=
   Summable (fun n : ℤ => |6 * (n : ℝ) + 1| * ‖u n‖ ^ 2)
     ∧ Summable (fun m : ℤ => |6 * (m : ℝ) + 4| * ‖convS u m‖ ^ 2)
 /-- The squared ℓ² norm, expressed as the bilateral sum of squared absolute values. -/
 def normSq (u : ℤ → ℂ) : ℝ := ∑' n : ℤ, ‖u n‖ ^ 2
-/-- The two diagonal energy sums, with the transformed-sequence term multiplied by s². -/
+/-- The reduced circle quadratic form: energy in the 6n + 1 sector plus s² times
+the energy of the sign-transformed sequence in the 6m + 4 sector. -/
 def Qform (s : ℝ) (u : ℤ → ℂ) : ℝ :=
   (∑' n : ℤ, sigP n * ‖u n‖ ^ 2) + s ^ 2 * ∑' m : ℤ, sigM m * ‖convS u m‖ ^ 2
 /-- The infimum of Qform on unit-norm sequences in its form domain. -/
 def gam (s : ℝ) : ℝ := sInf {r : ℝ | ∃ u : ℤ → ℂ, MemDom u ∧ normSq u = 1 ∧ Qform s u = r}
-/-- Convert the positive spectral parameter s to the phase 2 arctan(1/s)/π. -/
+/-- For positive s, the phase α = 2 arctan(1/s)/π, inverse to s = cot(πα/2). -/
 def criticalPhase (s : ℝ) : ℝ := 2 / Real.pi * Real.arctan (1 / s)
 /-- A zero of gam in (1, √3), with gam negative below it on positive parameters and positive above it. -/
 def IsThreshold (s : ℝ) : Prop :=
@@ -675,9 +702,28 @@ def infinityParameter (k : ℕ) : ParameterSphere k :=
     rw [div_eq_one_iff_eq hd] at h2
     nlinarith [sq_nonneg ‖z‖]⟩
 
-/-- All data of a realized intrinsic EW surface: the exposed disk section, its being the based EW map,
-the parameter-sphere coordinate germs and the quotient atlas with its smooth structure and
-projection-compatibility, and the ordered-copy coverage. Data/structural facts only. -/
+/-- Data for a smooth periodic quotient of the based Enneper-Weierstrass realization.
+
+The underlying section is required to satisfy the based integral specification at
+w = 1. Its disk lift has prescribed projection and height in [-π, 0], a window
+shorter than the 2π deck period. Parameter charts are prescribed locally by their
+coordinate values and inverse-chart germs at finite points and at infinity.
+The quotient atlas is smooth and compatible with parameter projection, and the
+ordered disk copies cover the quotient. Germ conditions specify local coordinates;
+they do not assert equality of global chart domains or a surface-uniqueness theorem.
+
+The metric factor `rho` and curvature magnitude `absA` are explicit expressions
+for the data g = w^(k-1), η = k dw/(1+w^(2k)); the vertical differential is 2gη.
+They are not defined by differentiating the bundled map F. For nonzero,
+nonpunctured w, inversion σ(w) = 1/conj(w) gives
+`rho (σ w) = ‖w‖^2 * rho w`, so the metric transforms with the coordinate
+Jacobian; `absA` is a scalar invariant under this transition. The deck action
+uses vertical period 2π, and the quotient identifies heights modulo 2πm.
+
+The identification with the paper's named Karcher surface uses the
+characterization recalled in its Theorem 1.1, attributed to Scherk, Karcher and
+Pérez-Traizet. The formalization constructs the explicit realization and does
+not prove a surface-uniqueness theorem. -/
 structure CoveredSmoothSection (k : ℕ) (hk : 2 ≤ k) (m : ℕ) where
   toSection   : ExposedDiskSection k hk
   basedMap    : IsBasedEWMapSphere (reflectionBasepoint k) toSection.F

@@ -38,7 +38,11 @@ sources:
     note: >-
       The audited source is arXiv version 2. The proposed submission covers the main
       two-period and six-ended geometric index/nullity formulas, the supporting EW
-      realizations and identifications, and the remarked decimal bounds on alpha*.
+      realizations and identifications, and a rigorous certification of the paper's
+      heuristic decimal estimate for alpha*. The paper describes 0.4323618(1) as
+      heuristic and gives the m <= 2298 arithmetic consequences conditionally on
+      that estimate. The formalization proves the strict enclosure and those
+      finite-period consequences.
       The single-arc circle theorem is a supporting result, not the full submission
       scope. The checkerboard containment in Theorem 1.1(v) of arXiv:2608.13451v2
       requires the endpoint correction r >= 0 (in place of r > 0).
@@ -160,6 +164,7 @@ review:
     - "Claude Opus 4.8 (Kai)"
     - "Claude Fable 5 (Xi)"
     - "GPT-6 Astra (OpenAI)"
+    - "Claude Opus 5.5 (fresh-session source reviewer)"
   notes: >-
     Development-team agents have performed statement-fidelity, source and documentation
     reviews at their recorded scopes. These activities are distinct from Lean kernel
@@ -167,8 +172,12 @@ review:
     independent review of every proof. The author directed the work and reviewed
     mathematical design decisions, and reviewed the earlier definition guide and the
     statements and definitions it references. The author has also reviewed and approved
-    the final combined repository for public availability. A separate fresh-session AI
-    review has not been completed.
+    the final combined repository for public availability. A fresh-session Claude
+    Opus 5.5 review examined public commit 97b6d52aa27c9dfc0028e4cc3efdb3ed70da6187
+    through source reading and scripted checks, without building the project or
+    running Comparator. The reviewer belongs to the same model family as earlier
+    Claude collaborators. Its documentation and statement-explanation findings are
+    being addressed; no claim is made that the findings are already closed.
 
 alignment:
   scope: >-
@@ -180,6 +189,26 @@ alignment:
     The repository contains the substantive formalization development; its comparator
     Solution module is a thin re-export of proofs from that development.
   statements:
+    - source: "Two-period realization: index 4k-3 and bounded Jacobi-field nullity 3 for every k >= 3"
+      lean: "KSPalomar.Intrinsic.Full.exists_intrinsic_index_nullity_m2"
+      module: "Palomar.Solution"
+      status: "proved; selected by comparator.json"
+    - source: "One base realization and threshold for k=3, with compatible quotient witnesses and index/nullity formulas for every positive period"
+      lean: "KSPalomar.Intrinsic.Full.exists_intrinsic_staircase_k3"
+      module: "Palomar.Solution"
+      status: "proved; selected by comparator.json"
+    - source: "Exactly one real parameter satisfies the shared spectral sign characterization IsThreshold"
+      lean: "KSPalomar.Intrinsic.Full.unique_threshold"
+      module: "Palomar.Solution"
+      status: "proved; selected by comparator.json"
+    - source: "Every threshold parameter has criticalPhase strictly between 0.4323617 and 0.4323619"
+      lean: "KSPalomar.Intrinsic.Full.decimal_bounds"
+      module: "Palomar.Solution"
+      status: "proved; selected by comparator.json"
+    - source: "For 0 < m <= 2298, floor(m criticalPhase) = floor(4323617m/10000000) and m criticalPhase is nonintegral"
+      lean: "KSPalomar.Intrinsic.Full.period_arithmetic"
+      module: "Palomar.Solution"
+      status: "proved; selected by comparator.json"
     - source: "Two-period geometric index, k >= 3"
       lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.geometricIndex_two"
       module: "KsIndexLean.KarcherGeometricCapstone"
@@ -245,8 +274,10 @@ alignment:
     module and five comparator targets. The clean-project build, fresh endpoint
     axiom audit, and stock comparator checks by both NanoDa and Lean's default
     kernel have passed. The author has reviewed and approved the repository for
-    public availability, and the repository is now public. A fresh-session independent
-    AI audit of the public repository is planned before registry submission.
+    public availability, and the repository is now public. The fresh-session source
+    audit described above has been completed; its findings are being addressed in a
+    consolidated revision before registry submission. Hosted runtime suitability has
+    not been established by the successful local checks.
     This metadata does not claim registry acceptance.
 
 acknowledgements: >-

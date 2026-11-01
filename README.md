@@ -3,12 +3,34 @@
 A Lean 4 formalization of the Morse index and nullity of Karcher saddle towers.
 
 The project formalizes results from the preprint
-[*Morse index of Karcher saddle towers*](https://arxiv.org/abs/2608.13451v2).
+[*Morse index of Karcher saddle towers in ℝ² × S¹(m)*](https://arxiv.org/abs/2608.13451v2).
 The development connects
 explicit Enneper–Weierstrass data, geometric quotients, disk and circle problems,
 and certified bounds on the threshold α\*.
 
 ## Main results
+
+The five compared statements are in
+[`Palomar/CombinedChallenge.lean`](Palomar/CombinedChallenge.lean), in namespace
+`KSPalomar.Intrinsic.Full`. Their proofs are re-exported by
+[`Palomar/Solution.lean`](Palomar/Solution.lean).
+
+| Compared declaration | Mathematical statement |
+|---|---|
+| `exists_intrinsic_index_nullity_m2` | For every k ≥ 3, there exists an Enneper–Weierstrass realization of the two-period quotient with index 4k − 3 and bounded Jacobi-field nullity 3. |
+| `exists_intrinsic_staircase_k3` | For k = 3, one base realization and one threshold serve all positive periods, with compatible quotient witnesses having index 6m − 4⌊mα\*⌋ − 3 and nullity 7 at integral mα\*, and 3 otherwise. |
+| `unique_threshold` | Exactly one real parameter s satisfies the spectral sign characterization `IsThreshold`. |
+| `decimal_bounds` | Every such s gives 0.4323617 < `criticalPhase s` < 0.4323619. |
+| `period_arithmetic` | For 0 < m ≤ 2298, the floor of m times the critical phase is ⌊4323617m / 10000000⌋, and m times the critical phase is not an integer. |
+
+Here α\* denotes `criticalPhase s` for the unique parameter satisfying
+`IsThreshold`. The Solution identifies that parameter with
+`KsIndex.Staircase.sstar`; its critical phase is the library's
+`KsIndex.Staircase.alphaStar`. The geometric and numerical results therefore use
+the same threshold. The [definition review guide](DEFINITION_REVIEW_GUIDE.txt)
+gives a reading order through these statements and their definitions.
+
+The supporting library provides the following formulations and consequences.
 
 The geometric statements are in
 [`KarcherGeometricCapstone.lean`](KsIndexLean/KarcherGeometricCapstone.lean).
@@ -70,6 +92,10 @@ bounded-field nullity is 2 at the endpoints and 0 elsewhere. The rational-phase
 wrapper uses the reduced denominator to select the quotient.
 
 ## Scope and fidelity
+
+The paper describes α\* = 0.4323618(1) as a heuristic numerical computation.
+This formalization proves the strict decimal enclosure and its finite-period
+arithmetic consequences; it does not merely assume the numerical estimate.
 
 This is not a claim that every statement or argument in the paper has been
 formalized. In particular, the development does not assert surface uniqueness,
@@ -141,8 +167,16 @@ All 2,951 selected Lean module and standalone-script checks passed a local
 clean-project build on 31 October 2026, with recorded repairs and resumptions.
 A fresh audit of the five Solution endpoints confirmed the permitted axioms.
 Exports from that build passed the stock comparator with both NanoDa and Lean's
-default kernel; the pinned inputs were rechecked afterward. Final packaging and
-independent review remain in progress. This is not a claim of registry acceptance.
+default kernel; the pinned inputs were rechecked afterward. These checks underpin
+the published snapshot and its documentation-only successors; they are distinct
+from the source review below.
+
+A fresh-session Claude Opus 5.5 review examined public commit `97b6d52` through
+source reading and scripted checks, without building the project or running
+Comparator. The reviewer belongs to the same model family as earlier Claude
+collaborators. Its documentation and statement-explanation findings are being
+addressed in this revision; this is not a claim that the findings are closed or
+that Palomar has accepted the submission.
 
 ## Contributors
 

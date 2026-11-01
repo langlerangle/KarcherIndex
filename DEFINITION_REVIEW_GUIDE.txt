@@ -1,50 +1,73 @@
-COMBINED SUBMISSION — DEFINITION REVIEW GUIDE
+KARCHERINDEX — GUIDE TO THE COMPARED STATEMENTS AND DEFINITIONS
 
-Private preparation draft. David has reviewed the earlier guide and its referenced
-statements/definitions; this guide identifies the combined submission surface for
-his final repository review and discussion before publication.
+This guide suggests a reading order for the five statements selected by
+comparator.json and the definitions they use. Paths are relative to the repository
+root. Search for declaration names rather than relying on line numbers.
 
-Start with Palomar/CombinedChallenge.lean. Read definitions and theorem statements;
-its five sorry placeholders deliberately state the obligations supplied by the
-Solution. Palomar/Solution.lean re-exports the implementation in
-Palomar/CombinedSolution.lean. comparator.json lists the same five full names.
+Start with Palomar/CombinedChallenge.lean. Its five deliberate sorry placeholders
+state the obligations to be supplied by the Solution; they are not proofs.
+Palomar/Solution.lean re-exports the proofs from Palomar/CombinedSolution.lean.
+For project scope, verification evidence and review status, see README.md and
+formalization.yaml.
 
-The principal change from the separate entries is that all five statements share
-one IsThreshold and criticalPhase definition. The staircase theorem fixes one
-threshold for every period. unique_threshold ensures this is the threshold to
-which the universal decimal_bounds and period_arithmetic statements apply.
-There is no irrationality claim and no surface-uniqueness claim.
+1. Read the five compared statements
 
-Suggested order:
-1. The two geometric statements: hypotheses, complex index/nullity conventions,
-   and the order of existential and universal quantifiers.
-2. The shared variational definitions and IsThreshold sign conditions.
-3. The numerical statements: both strict endpoints and the finite m<=2298 range.
-4. Follow the geometric carriers back through CoveredSmoothSection and the
-   based Weierstrass-map specification if revisiting their meaning is useful.
-5. README scope qualifications and formalization.yaml attribution/review wording.
+All five have the namespace prefix KSPalomar.Intrinsic.Full:
 
-Navigation in the current Challenge (line numbers may move):
-IsBasedEWMapSphere: lines 603
-CoveredSmoothSection: line 681
-CoveredSmoothSection.index: line 703
-CoveredSmoothSection.nullity: line 709
-sigP: lines 632
-MemDom: lines 640
-Qform: lines 646
-gam: lines 649
-IsThreshold: lines 653
-criticalPhase: lines 651
-exists_intrinsic_index_nullity_m2: lines 724
-exists_intrinsic_staircase_k3: lines 731
-unique_threshold: lines 755
-decimal_bounds: lines 759
-period_arithmetic: lines 765
+  exists_intrinsic_index_nullity_m2
+    For every k >= 3 there exists a realization of the two-period quotient
+    with index 4k - 3 and bounded Jacobi-field nullity 3.
 
-Verification status: local compilation and the all-five-results axiom audit passed.
-Complete combined comparator, clean snapshot build and submission/render checks
-remain pending. Earlier separate comparator passes do not certify the union.
+  exists_intrinsic_staircase_k3
+    For k = 3, one base realization and one threshold serve all positive periods,
+    with compatible quotient witnesses satisfying the index and nullity formulas.
 
-All source paths above are relative to this repository's root. The earlier
-personal review notes are preserved separately and are not required to navigate
-this combined entry.
+  unique_threshold
+    Exactly one real parameter s satisfies IsThreshold.
+
+  decimal_bounds
+    Every parameter satisfying IsThreshold gives a criticalPhase strictly between
+    0.4323617 and 0.4323619.
+
+  period_arithmetic
+    For positive periods m <= 2298, the certified interval determines the floor
+    of m times criticalPhase and excludes integral m times criticalPhase.
+
+Read the precise hypotheses and quantifiers in the declarations. In particular,
+the staircase statement uses one threshold for all periods, and the numerical
+statements apply to any parameter satisfying the same IsThreshold predicate.
+No irrationality or exact-value claim follows from the finite arithmetic range.
+
+2. Follow the geometric definitions
+
+In CombinedChallenge.lean, locate CoveredSmoothSection, IsBasedEWMapSphere and
+CompatibleProjectionAtlas. Read the structure fields and map/chart conditions,
+then follow CoveredSmoothSection.index and CoveredSmoothSection.nullity to
+geometricIndex, compactSmoothDomain, formIndex, geometricNullity and
+boundedGeometricJacobi.
+
+The index counts complex dimensions of negative subspaces of compactly supported
+smooth test functions. Nullity counts complex dimensions of bounded smooth
+Jacobi fields. These are the paper's complex-valued-function conventions.
+Distinguish the construction of an explicit Enneper-Weierstrass realization
+from a uniqueness or classification theorem for surfaces; no such uniqueness
+claim is made here.
+
+3. Follow the shared spectral threshold
+
+Read sigP, sigM, chat, convS, MemDom, normSq, Qform and gam, then IsThreshold
+and criticalPhase. These define the circle variational problem and the phase
+used in both the geometric staircase and the numerical statements. Read the
+mathematical explanations in the Challenge alongside the definitions; follow
+CombinedSolution.lean to see how the library proofs supply these statements.
+
+4. Compare the paper and the formal statements
+
+Use the pinned arXiv v2 paper cited in README.md. Check the geometric theorem
+hypotheses, equality cases and scope qualifications. The paper describes its
+0.4323618(1) computation as heuristic; the formalization proves a strict enclosure
+and its finite-period arithmetic consequences. Consult the README's fidelity
+section and formalization.yaml for omissions and differences of proof route.
+
+For further proof navigation, use the README's guide to the development. This
+file is a reading guide, not an additional verification certificate.
