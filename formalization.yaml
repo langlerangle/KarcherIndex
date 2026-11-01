@@ -177,6 +177,8 @@ alignment:
     numerical endpoints share one spectral threshold definition. The following
     list records supporting library carriers as well as the selected results;
     it is not a claim that every supporting declaration is separately compared.
+    The repository contains the substantive formalization development; its comparator
+    Solution module is a thin re-export of proofs from that development.
   statements:
     - source: "Two-period geometric index, k >= 3"
       lean: "KsIndex.KarcherData.PaperHalfPeriodRealization.geometricIndex_two"
@@ -242,9 +244,10 @@ alignment:
     The combined geometric and numerical entry uses a public re-export Solution
     module and five comparator targets. The clean-project build, fresh endpoint
     axiom audit, and stock comparator checks by both NanoDa and Lean's default
-    kernel have passed. Final packaging, presentation checks and independent
-    review remain in progress. David will review and discuss the final repository
-    before publication. This draft does not claim registry acceptance.
+    kernel have passed. The author has reviewed and approved the repository for
+    public availability, and the repository is now public. A fresh-session independent
+    AI audit of the public repository is planned before registry submission.
+    This metadata does not claim registry acceptance.
 
 acknowledgements: >-
   We thank the developers and contributors of Lean, Mathlib, and Tau Ceti for the
