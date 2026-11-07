@@ -2,6 +2,10 @@ module
 
 public import KsIndexLean.AlphaLowModeCache
 public import KsIndexLean.AlphaLowProdAccessorFast
+public import KsIndexLean.AlphaLowTreeBackend
+
+public import KsIndexLean.AlphaLowSamplePartialBlock256
+public import KsIndexLean.AlphaLowSamplePartialBlock512
 
 @[expose] public section
 
@@ -272,772 +276,2308 @@ def entries : Array (ℤ × ℤ) := #[
 ]
 theorem checked0 :
  (entries[0]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 0+1) ∧
- (entries[0]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 0+1) := by decide +kernel
+ (entries[0]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 0+1) := by
+  have h : entries[0]?.getD (0,0) = (-114667305700780520159778632193714455088180487,168713826209553360810218696456681539) := by decide +kernel
+  have hk : 2*mode 0+1 = 31743 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31743 (entries[0]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block512.pair513).2
 theorem checked1 :
  (entries[1]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 1+1) ∧
- (entries[1]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 1+1) := by decide +kernel
+ (entries[1]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 1+1) := by
+  have h : entries[1]?.getD (0,0) = (114656653279281474752752422805311398307476084,168697541043283801153601278970561671) := by decide +kernel
+  have hk : 2*mode 1+1 = 31745 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31745 (entries[1]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block512.pair512).2
 theorem checked2 :
  (entries[2]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 2+1) ∧
- (entries[2]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 2+1) := by decide +kernel
+ (entries[2]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 2+1) := by
+  have h : entries[2]?.getD (0,0) = (-114646002520165605201647773351162809503495082,168681258477136160175751989344731174) := by decide +kernel
+  have hk : 2*mode 2+1 = 31747 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31747 (entries[2]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair511).2
 theorem checked3 :
  (entries[3]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 3+1) ∧
- (entries[3]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 3+1) := by decide +kernel
+ (entries[3]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 3+1) := by
+  have h : entries[3]?.getD (0,0) = (114635353423068612634763229775246066019486104,168664978510531314818580965452722233) := by decide +kernel
+  have hk : 2*mode 3+1 = 31749 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31749 (entries[3]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair510).2
 theorem checked4 :
  (entries[4]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 4+1) ∧
- (entries[4]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 4+1) := by decide +kernel
+ (entries[4]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 4+1) := by
+  have h : entries[4]?.getD (0,0) = (-114624705987626300982590309740647163182127460,168648701142890307515901232547449183) := by decide +kernel
+  have hk : 2*mode 4+1 = 31751 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31751 (entries[4]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair509).2
 theorem checked5 :
  (entries[5]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 5+1) ∧
- (entries[5]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 5+1) := by decide +kernel
+ (entries[5]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 5+1) := by
+  have h : entries[5]?.getD (0,0) = (114614060213474576942317057836711139621955559,168632426373634346135711327200624366) := by decide +kernel
+  have hk : 2*mode 5+1 = 31753 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31753 (entries[5]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair508).2
 theorem checked6 :
  (entries[6]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 6+1) ∧
- (entries[6]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 6+1) := by decide +kernel
+ (entries[6]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 6+1) := by
+  have h : entries[6]?.getD (0,0) = (-114603416100249449942361229835488994453580513,168616154202184803922496899251791734) := by decide +kernel
+  have hk : 2*mode 6+1 = 31755 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31755 (entries[6]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair507).2
 theorem checked7 :
  (entries[7]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 7+1) ∧
- (entries[7]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 7+1) := by decide +kernel
+ (entries[7]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 7+1) := by
+  have h : entries[7]?.getD (0,0) = (114592773647587032106902064557475923116109442,168599884627963219439561962553282989) := by decide +kernel
+  have hk : 2*mode 7+1 = 31757 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31757 (entries[7]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair506).2
 theorem checked8 :
  (entries[8]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 8+1) ∧
- (entries[8]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 8+1) := by decide +kernel
+ (entries[8]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 8+1) := by
+  have h : entries[8]?.getD (0,0) = (-114582132855123538220443422276351679825500211,168583617650391296511378087899237488) := by decide +kernel
+  have hk : 2*mode 8+1 = 31759 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31759 (entries[8]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair505).2
 theorem checked9 :
  (entries[9]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 9+1) ∧
- (entries[9]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 9+1) := by decide +kernel
+ (entries[9]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 9+1) := by
+  have h : entries[9]?.getD (0,0) = (114571493722495285692373895909706445275643377,168567353268890904165963240211479275) := by decide +kernel
+  have hk : 2*mode 9+1 = 31761 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31761 (entries[9]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair504).2
 theorem checked10 :
  (entries[10]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 10+1) ∧
- (entries[10]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 10+1) := by decide +kernel
+ (entries[10]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 10+1) := by
+  have h : entries[10]?.getD (0,0) = (-114560856249338694521559036328021117367693380,168551091482884076577277560135112089) := by decide +kernel
+  have hk : 2*mode 10+1 = 31763 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31763 (entries[10]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair503).2
 theorem checked11 :
  (entries[11]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 11+1) ∧
- (entries[11]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 11+1) := by decide +kernel
+ (entries[11]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 11+1) := by
+  have h : entries[11]?.getD (0,0) = (114550220435290287260929253461129099014627341,168534832291793013007649221819119045) := by decide +kernel
+  have hk : 2*mode 11+1 = 31765 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31765 (entries[11]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair502).2
 theorem checked12 :
  (entries[12]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 12+1) ∧
- (entries[12]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 12+1) := by decide +kernel
+ (entries[12]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 12+1) := by
+  have h : entries[12]?.getD (0,0) = (-114539586279986688982101557878419479120229345,168518575695040077750218236124536200) := by decide +kernel
+  have hk : 2*mode 12+1 = 31767 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31767 (entries[12]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair501).2
 theorem checked13 :
  (entries[13]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 13+1) ∧
- (entries[13]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 13+1) := by decide +kernel
+ (entries[13]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 13+1) := by
+  have h : entries[13]?.getD (0,0) = (114528953783064627239997534288166291630079337,168502321692047800071409919251860011) := by decide +kernel
+  have hk : 2*mode 13+1 = 31769 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31769 (entries[13]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair500).2
 theorem checked14 :
  (entries[14]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 14+1) ∧
- (entries[14]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 14+1) := by decide +kernel
+ (entries[14]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 14+1) := by
+  have h : entries[14]?.getD (0,0) = (-114518322944160932037493359865805030490593584,168486070282238874153426630405374087) := by decide +kernel
+  have hk : 2*mode 14+1 = 31771 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31771 (entries[14]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair499).2
 theorem checked15 :
  (entries[15]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 15+1) ∧
- (entries[15]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 15+1) := by decide +kernel
+ (entries[15]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 15+1) := by
+  have h : entries[15]?.getD (0,0) = (114507693762912535790065446380507233151849559,168469821465036159036767801022231297) := by decide +kernel
+  have hk : 2*mode 15+1 = 31773 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31773 (entries[15]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair498).2
 theorem checked16 :
  (entries[16]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 16+1) ∧
- (entries[16]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 16+1) := by decide +kernel
+ (entries[16]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 16+1) := by
+  have h : entries[16]?.getD (0,0) = (-114497066238956473290470272197289315897160742,168453575239862678562768329500398204) := by decide +kernel
+  have hk : 2*mode 16+1 = 31775 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31775 (entries[16]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair497).2
 theorem checked17 :
  (entries[17]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 17+1) ∧
- (entries[17]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 17+1) := by decide +kernel
+ (entries[17]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 17+1) := by
+  have h : entries[17]?.getD (0,0) = (114486440371929881673418128251244866808332130,168437331606141621316166562791580086) := by decide +kernel
+  have hk : 2*mode 17+1 = 31777 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31777 (entries[17]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair496).2
 theorem checked18 :
  (entries[18]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 18+1) ∧
- (entries[18]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 18+1) := by decide +kernel
+ (entries[18]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 18+1) := by
+  have h : entries[18]?.getD (0,0) = (-114475816161470000380284275387371962481406188,168421090563296340567690813585007469) := by decide +kernel
+  have hk : 2*mode 18+1 = 31779 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31779 (entries[18]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair495).2
 theorem checked19 :
  (entries[19]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 19+1) ∧
- (entries[19]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 19+1) := by decide +kernel
+ (entries[19]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 19+1) := by
+  have h : entries[19]?.getD (0,0) = (114465193607214171123807685094106821545109655,168404852110750354216673621911568992) := by decide +kernel
+  have hk : 2*mode 19+1 = 31781 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31781 (entries[19]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair494).2
 theorem checked20 :
  (entries[20]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 20+1) ∧
- (entries[20]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 20+1) := by decide +kernel
+ (entries[20]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 20+1) := by
+  have h : entries[20]?.getD (0,0) = (-114454572708799837852834255437506899068181748,168388616247927344733685265352783485) := by decide +kernel
+  have hk : 2*mode 20+1 = 31783 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31783 (entries[20]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair493).2
 theorem checked21 :
  (entries[21]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 21+1) ∧
- (entries[21]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 21+1) := by decide +kernel
+ (entries[21]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 21+1) := by
+  have h : entries[21]?.getD (0,0) = (114443953465864546717042541535595700711522277,168372382974251159103195709766607048) := by decide +kernel
+  have hk : 2*mode 21+1 = 31785 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31785 (entries[21]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair492).2
 theorem checked22 :
  (entries[22]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 22+1) ∧
- (entries[22]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 22+1) := by decide +kernel
+ (entries[22]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 22+1) := by
+  have h : entries[22]?.getD (0,0) = (-114433335878045946031714700430360688764374005,168356152289145808766255706471402562) := by decide +kernel
+  have hk : 2*mode 22+1 = 31787 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31787 (entries[22]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair491).2
 theorem checked23 :
  (entries[23]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 23+1) ∧
- (entries[23]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 23+1) := by decide +kernel
+ (entries[23]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 23+1) := by
+  have h : entries[23]?.getD (0,0) = (114422719944981786242496267309748339337812132,168339924192035469563205937292795696) := by decide +kernel
+  have hk : 2*mode 23+1 = 31789 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31789 (entries[23]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair490).2
 theorem checked24 :
  (entries[24]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 24+1) ∧
- (entries[24]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 24+1) := by decide +kernel
+ (entries[24]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 24+1) := by
+  have h : entries[24]?.getD (0,0) = (-114412105666309919890188215575941735981540813,168323698682344481676403764076587304) := by decide +kernel
+  have hk : 2*mode 24+1 = 31791 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31791 (entries[24]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair489).2
 theorem checked25 :
  (entries[25]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 25+1) ∧
- (entries[25]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 25+1) := by decide +kernel
+ (entries[25]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 25+1) := by
+  have h : entries[25]?.getD (0,0) = (114401493041668301575540518440850201357831286,168307475759497349572980520657131896) := by decide +kernel
+  have hk : 2*mode 25+1 = 31793 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31793 (entries[25]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair488).2
 theorem checked26 :
  (entries[26]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 26+1) ∧
- (entries[26]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 26+1) := by decide +kernel
+ (entries[26]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 26+1) := by
+  have h : entries[26]?.getD (0,0) = (-114390882070694987924071923143460548893659419,168291255422918741947615823285487415) := by decide +kernel
+  have hk : 2*mode 26+1 = 31795 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31795 (entries[26]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair487).2
 theorem checked27 :
  (entries[27]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 27+1) ∧
- (entries[27]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 27+1) := by decide +kernel
+ (entries[27]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 27+1) := by
+  have h : entries[27]?.getD (0,0) = (114380272753028137550891940766572711586390297,168275037672033491665341578418783171) := by decide +kernel
+  have hk : 2*mode 27+1 = 31797 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31797 (entries[27]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair486).2
 theorem checked28 :
  (entries[28]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 28+1) ∧
- (entries[28]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 28+1) := by decide +kernel
+ (entries[28]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 28+1) := by
+  have h : entries[28]?.getD (0,0) = (-114369665088306011025550033665630184039030177,168258822506266595704363158662664805) := by decide +kernel
+  have hk : 2*mode 28+1 = 31799 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31799 (entries[28]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair485).2
 theorem checked29 :
  (entries[29]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 29+1) ∧
- (entries[29]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 29+1) := by decide +kernel
+ (entries[29]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 29+1) := by
+  have h : entries[29]?.getD (0,0) = (114359059076166970836883363191480368951683042,168242609925043215098910114419801019) := by decide +kernel
+  have hk : 2*mode 29+1 = 31801 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31801 (entries[29]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair484).2
 theorem checked30 :
  (entries[30]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 30+1) ∧
- (entries[30]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 30+1) := by decide +kernel
+ (entries[30]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 30+1) := by
+  have h : entries[30]?.getD (0,0) = (-114348454716249481357898567577980157747273825,168226399927788674882104958079040945) := by decide +kernel
+  have hk : 2*mode 30+1 = 31803 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31803 (entries[30]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair483).2
 theorem checked31 :
  (entries[31]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 31+1) ∧
- (entries[31]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 31+1) := by decide +kernel
+ (entries[31]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 31+1) := by
+  have h : entries[31]?.getD (0,0) = (114337852008192108810646176002216560090746372,168210192513928464028860218204378295) := by decide +kernel
+  have hk : 2*mode 31+1 = 31805 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31805 (entries[31]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair482).2
 theorem checked32 :
  (entries[32]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 32+1) ∧
- (entries[32]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 32+1) := by decide +kernel
+ (entries[32]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 32+1) := by
+  have h : entries[32]?.getD (0,0) = (-114327250951633521231131239463091732836719805,168193987682888235398795125847884940) := by decide +kernel
+  have hk : 2*mode 32+1 = 31807 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31807 (entries[32]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair481).2
 theorem checked33 :
  (entries[33]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 33+1) ∧
- (entries[33]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 33+1) := by decide +kernel
+ (entries[33]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 33+1) := by
+  have h : entries[33]?.getD (0,0) = (114316651546212488434216570177802145415164572,168177785434093805679179576986093475) := by decide +kernel
+  have hk : 2*mode 33+1 = 31809 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31809 (entries[33]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair480).2
 theorem checked34 :
  (entries[34]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 34+1) ∧
- (entries[34]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 34+1) := by decide +kernel
+ (entries[34]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 34+1) := by
+  have h : entries[34]?.getD (0,0) = (-114306053791567881978561000809855888478252672,168161585766971155327896519539820664) := by decide +kernel
+  have hk : 2*mode 34+1 = 31811 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31811 (entries[34]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair479).2
 theorem checked35 :
  (entries[35]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 35+1) ∧
- (entries[35]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 35+1) := by decide +kernel
+ (entries[35]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 35+1) := by
+  have h : entries[35]?.getD (0,0) = (114295457687338675131552638357916631105143795,168145388680946428516433825025943560) := by decide +kernel
+  have hk : 2*mode 35+1 = 31813 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31813 (entries[35]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair478).2
 theorem checked36 :
  (entries[36]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 36+1) ∧
- (entries[36]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 36+1) := by decide +kernel
+ (entries[36]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 36+1) := by
+  have h : entries[36]?.getD (0,0) = (-114284863233163942834274247638804364869944368,168129194175445933072893055940563839) := by decide +kernel
+  have hk : 2*mode 36+1 = 31815 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31815 (entries[36]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair477).2
 theorem checked37 :
  (entries[37]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 37+1) ∧
- (entries[37]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 37+1) := by decide +kernel
+ (entries[37]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 37+1) := by
+  have h : entries[37]?.getD (0,0) = (114274270428682861666467217905235796679413848,168113002249896140425028841172610155) := by decide +kernel
+  have hk : 2*mode 37+1 = 31817 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31817 (entries[37]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair476).2
 theorem checked38 :
  (entries[38]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 38+1) ∧
- (entries[38]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 38+1) := by decide +kernel
+ (entries[38]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 38+1) := by
+  have h : entries[38]?.getD (0,0) = (-114263679273534709811522911652081458841175744,168096812903723685543304209071192930) := by decide +kernel
+  have hk : 2*mode 38+1 = 31819 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31819 (entries[38]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair475).2
 theorem checked39 :
  (entries[39]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 39+1) ∧
- (entries[39]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 39+1) := by decide +kernel
+ (entries[39]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 39+1) := by
+  have h : entries[39]?.getD (0,0) = (114253089767358867021477778993143651194526682,168080626136355366883975879143010627) := by decide +kernel
+  have hk : 2*mode 39+1 = 31821 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31821 (entries[39]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair474).2
 theorem checked40 :
  (entries[40]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 40+1) ∧
- (entries[40]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 40+1) := by decide +kernel
+ (entries[40]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 40+1) := by
+  have h : entries[40]?.getD (0,0) = (-114242501909794814582030885475474091746245761,168064441947218146332197263985704833) := by decide +kernel
+  have hk : 2*mode 40+1 = 31823 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31823 (entries[40]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair473).2
 theorem checked41 :
  (entries[41]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 41+1) ∧
- (entries[41]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 41+1) := by decide +kernel
+ (entries[41]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 41+1) := by
+  have h : entries[41]?.getD (0,0) = (114231915700482135277566401904533481406091964,168048260335739149145150099765914538) := by decide +kernel
+  have hk : 2*mode 41+1 = 31825 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31825 (entries[41]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair472).2
 theorem checked42 :
  (entries[42]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 42+1) ∧
- (entries[42]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 42+1) := by decide +kernel
+ (entries[42]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 42+1) := by
+  have h : entries[42]?.getD (0,0) = (-114221331139060513356206790685299661307462530,168032081301345663895195094861352454) := by decide +kernel
+  have hk : 2*mode 42+1 = 31827 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31827 (entries[42]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair471).2
 theorem checked43 :
  (entries[43]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 43+1) ∧
- (entries[43]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 43+1) := by decide +kernel
+ (entries[43]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 43+1) := by
+  have h : entries[43]?.getD (0,0) = (114210748225169734494854102993685251253566414,168015904843465142413049864678019893) := by decide +kernel
+  have hk : 2*mode 43+1 = 31829 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31829 (entries[43]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair470).2
 theorem checked44 :
  (entries[44]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 44+1) ∧
- (entries[44]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 44+1) := by decide +kernel
+ (entries[44]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 44+1) := by
+  have h : entries[44]?.getD (0,0) = (-114200166958449685764278468538435367385567870,167999730961525199730986000838710644) := by decide +kernel
+  have hk : 2*mode 44+1 = 31831 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31831 (entries[44]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair469).2
 theorem checked45 :
  (entries[45]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 45+1) ∧
- (entries[45]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 45+1) := by decide +kernel
+ (entries[45]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 45+1) := by
+  have h : entries[45]?.getD (0,0) = (114189587338540355594185738537996613495382366,167983559654953614026053399656431583) := by decide +kernel
+  have hk : 2*mode 45+1 = 31833 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31833 (entries[45]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair468).2
 theorem checked46 :
  (entries[46]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 46+1) ∧
- (entries[46]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 46+1) := by decide +kernel
+ (entries[46]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 46+1) := by
+  have h : entries[46]?.getD (0,0) = (-114179009365081833738332411313674427397025492,167967390923178326563323923519198118) := by decide +kernel
+  have hk : 2*mode 46+1 = 31835 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31835 (entries[46]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair467).2
 theorem checked47 :
  (entries[47]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 47+1) ∧
- (entries[47]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 47+1) := by decide +kernel
+ (entries[47]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 47+1) := by
+  have h : entries[47]?.getD (0,0) = (114168433037714311239625711021099004695419602,167951224765627441639162625805436279) := by decide +kernel
+  have hk : 2*mode 47+1 = 31837 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31837 (entries[47]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair466).2
 theorem checked48 :
  (entries[48]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 48+1) ∧
- (entries[48]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 48+1) := by decide +kernel
+ (entries[48]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 48+1) := by
+  have h : entries[48]?.getD (0,0) = (-114157858356078080395263139027227348252564100,167935061181729226524518030154150887) := by decide +kernel
+  have hk : 2*mode 48+1 = 31839 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31839 (entries[48]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair465).2
 theorem checked49 :
  (entries[49]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 49+1) ∧
- (entries[49]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 49+1) := by decide +kernel
+ (entries[49]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 49+1) := by
+  have h : entries[49]?.getD (0,0) = (114147285319813534721863984720483192862578294,167918900170912111408241015418669305) := by decide +kernel
+  have hk : 2*mode 49+1 = 31841 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31841 (entries[49]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair464).2
 theorem checked50 :
  (entries[50]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 50+1) ∧
- (entries[50]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 50+1) := by decide +kernel
+ (entries[50]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 50+1) := by
+  have h : entries[50]?.getD (0,0) = (-114136713928561168920635092790122707229259528,167902741732604689340420925559069519) := by decide +kernel
+  have hk : 2*mode 50+1 = 31843 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31843 (entries[50]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair463).2
 theorem checked51 :
  (entries[51]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 51+1) ∧
- (entries[51]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 51+1) := by decide +kernel
+ (entries[51]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 51+1) := by
+  have h : entries[51]?.getD (0,0) = (114126144181961578842532736840551706004619245,167886585866235716175750604370035804) := by decide +kernel
+  have hk : 2*mode 51+1 = 31845 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31845 (entries[51]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair462).2
 theorem checked52 :
  (entries[52]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 52+1) ∧
- (entries[52]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 52+1) := by decide +kernel
+ (entries[52]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 52+1) := by
+  have h : entries[52]?.getD (0,0) = (-114115576079655461453453620156798532327287994,167870432571234110516908869509367984) := by decide +kernel
+  have hk : 2*mode 52+1 = 31847 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31847 (entries[52]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair461).2
 theorem checked53 :
  (entries[53]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 53+1) ∧
- (entries[53]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 53+1) := by decide +kernel
+ (entries[53]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 53+1) := by
+  have h : entries[53]?.getD (0,0) = (114105009621283614799428431898570724670969199,167854281847028953657972048900663863) := by decide +kernel
+  have hk : 2*mode 53+1 = 31849 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31849 (entries[53]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair460).2
 theorem checked54 :
  (entries[54]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 54+1) ∧
- (entries[54]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 54+1) := by decide +kernel
+ (entries[54]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 54+1) := by
+  have h : entries[54]?.getD (0,0) = (-114094444806486937971839481332228526621913703,167838133693049489527842937228087675) := by decide +kernel
+  have hk : 2*mode 54+1 = 31851 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31851 (entries[54]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair459).2
 theorem checked55 :
  (entries[55]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 55+1) ∧
- (entries[55]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 55+1) := by decide +kernel
+ (entries[55]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 55+1) := by
+  have h : entries[55]?.getD (0,0) = (114083881634906431072641619669502134690721713,167821988108725124633709224031352935) := by decide +kernel
+  have hk : 2*mode 55+1 = 31853 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31853 (entries[55]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair458).2
 theorem checked56 :
  (entries[56]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 56+1) ∧
- (entries[56]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 56+1) := by decide +kernel
+ (entries[56]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 56+1) := by
+  have h : entries[56]?.getD (0,0) = (-114073320106183195179612476230848383960382841,167805845093485428004519406833455297) := by decide +kernel
+  have hk : 2*mode 56+1 = 31855 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31855 (entries[56]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair457).2
 theorem checked57 :
  (entries[57]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 57+1) ∧
- (entries[57]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 57+1) := by decide +kernel
+ (entries[57]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 57+1) := by
+  have h : entries[57]?.getD (0,0) = (114062760219958432311596056036887634656869270,167789704646760131134486852702529505) := by decide +kernel
+  have hk : 2*mode 57+1 = 31857 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31857 (entries[57]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair456).2
 theorem checked58 :
  (entries[58]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 58+1) ∧
- (entries[58]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 58+1) := by decide +kernel
+ (entries[58]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 58+1) := by
+  have h : entries[58]?.getD (0,0) = (-114052201975873445393783624023327065354478261,167773566767979127926612496002391793) := by decide +kernel
+  have hk : 2*mode 58+1 = 31859 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31859 (entries[58]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair455).2
 theorem checked59 :
  (entries[59]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 59+1) ∧
- (entries[59]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 59+1) := by decide +kernel
+ (entries[59]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 59+1) := by
+  have h : entries[59]?.getD (0,0) = (114041645373569638222988561208165030618203270,167757431456572474636234800531295147) := by decide +kernel
+  have hk : 2*mode 59+1 = 31861 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31861 (entries[59]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair454).2
 theorem checked60 :
  (entries[60]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 60+1) ∧
- (entries[60]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 60+1) := by decide +kernel
+ (entries[60]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 60+1) := by
+  have h : entries[60]?.getD (0,0) = (-114031090412688515432950033078538497044414509,167741298711970389814598537083964548) := by decide +kernel
+  have hk : 2*mode 60+1 = 31863 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31863 (entries[60]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair453).2
 theorem checked61 :
  (entries[61]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 61+1) ∧
- (entries[61]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 61+1) := by decide +kernel
+ (entries[61]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 61+1) := by
+  have h : entries[61]?.getD (0,0) = (114020537092871682459639334298769896866384521,167725168533603254252451345851045331) := by decide +kernel
+  have hk : 2*mode 61+1 = 31865 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31865 (entries[61]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair452).2
 theorem checked62 :
  (entries[62]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 62+1) ∧
- (entries[62]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 62+1) := by decide +kernel
+ (entries[62]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 62+1) := by
+  have h : entries[62]?.getD (0,0) = (-114009985413760845506593105499639747802913845,167709040920901610923659074454167487) := by decide +kernel
+  have hk : 2*mode 62+1 = 31867 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31867 (entries[62]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair451).2
 theorem checked63 :
  (entries[63]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 63+1) ∧
- (entries[63]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 63+1) := by decide +kernel
+ (entries[63]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 63+1) := by
+  have h : entries[63]?.getD (0,0) = (113999435374997811510242610737790539201134307,167692915873296164928849194612071140) := by decide +kernel
+  have hk : 2*mode 63+1 = 31869 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31869 (entries[63]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair450).2
 theorem checked64 :
  (entries[64]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 64+1) ∧
- (entries[64]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 64+1) := by decide +kernel
+ (entries[64]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 64+1) := by
+  have h : entries[64]?.getD (0,0) = (-113988886976224488105281552840641526926808961,167676793390217783439071920017854202) := by decide +kernel
+  have hk : 2*mode 64+1 = 31871 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31871 (entries[64]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair449).2
 theorem checked65 :
  (entries[65]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 65+1) ∧
- (entries[65]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 65+1) := by decide +kernel
+ (entries[65]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 65+1) := by
+  have h : entries[65]?.getD (0,0) = (113978340217082883590020025639471971300889800,167660673471097495639489245768560179) := by decide +kernel
+  have hk : 2*mode 65+1 = 31873 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31873 (entries[65]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair448).2
 theorem checked66 :
  (entries[66]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 66+1) ∧
- (entries[66]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 66+1) := by decide +kernel
+ (entries[66]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 66+1) := by
+  have h : entries[66]?.getD (0,0) = (-113967795097215106891779401611470672826767092,167644556115366492673082238842516074) := by decide +kernel
+  have hk : 2*mode 66+1 = 31875 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31875 (entries[66]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair447).2
 theorem checked67 :
  (entries[67]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 67+1) ∧
- (entries[67]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 67+1) := by decide +kernel
+ (entries[67]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 67+1) := by
+  have h : entries[67]?.getD (0,0) = (113957251616263367532278411561430814688606970,167628441322456127584387356675859709) := by decide +kernel
+  have hk : 2*mode 67+1 = 31877 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31877 (entries[67]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair446).2
 theorem checked68 :
  (entries[68]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 68+1) ∧
- (entries[68]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 68+1) := by decide +kernel
+ (entries[68]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 68+1) := by
+  have h : entries[68]?.getD (0,0) = (-113946709773869975593052374458865953906566793,167612329091797915263249271052029016) := by decide +kernel
+  have hk : 2*mode 68+1 = 31879 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31879 (entries[68]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair445).2
 theorem checked69 :
  (entries[69]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 69+1) ∧
- (entries[69]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 69+1) := by decide +kernel
+ (entries[69]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 69+1) := by
+  have h : entries[69]?.getD (0,0) = (113936169569677341680868543634943331556453334,167596219422823532388602806509835756) := by decide +kernel
+  have hk : 2*mode 69+1 = 31881 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31881 (entries[69]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair444).2
 theorem checked70 :
  (entries[70]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 70+1) ∧
- (entries[70]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 70+1) := by decide +kernel
+ (entries[70]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 70+1) := by
+  have h : entries[70]?.getD (0,0) = (-113925631003327976893174880190617196798213342,167580112314964817372272406677564742) := by decide +kernel
+  have hk : 2*mode 70+1 = 31883 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31883 (entries[70]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair443).2
 theorem checked71 :
  (entries[71]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 71+1) ∧
- (entries[71]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 71+1) := by decide +kernel
+ (entries[71]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 71+1) := by
+  have h : entries[71]?.getD (0,0) = (113915094074464492783542036800780754345799500,167564007767653770302800573021764975) := by decide +kernel
+  have hk : 2*mode 71+1 = 31885 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31885 (entries[71]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair442).2
 theorem checked72 :
  (entries[72]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 72+1) ∧
- (entries[72]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 72+1) := by decide +kernel
+ (entries[72]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 72+1) := by
+  have h : entries[72]?.getD (0,0) = (-113904558782729601327140230820427954581799538,167547905780322552889293423391047320) := by decide +kernel
+  have hk : 2*mode 72+1 = 31887 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31887 (entries[72]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair441).2
 theorem checked73 :
  (entries[73]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 73+1) ∧
- (entries[73]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 73+1) := by decide +kernel
+ (entries[73]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 73+1) := by
+  have h : entries[73]?.getD (0,0) = (113894025127766114886211145231305664934094491,167531806352403488405294526702860564) := by decide +kernel
+  have hk : 2*mode 73+1 = 31889 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31889 (entries[73]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair440).2
 theorem checked74 :
  (entries[74]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 74+1) ∧
- (entries[74]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 74+1) := by decide +kernel
+ (entries[74]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 74+1) := by
+  have h : entries[74]?.getD (0,0) = (-113883493109216946175569523714234238377729448,167515709483329061632676362819339536) := by decide +kernel
+  have hk : 2*mode 74+1 = 31891 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31891 (entries[74]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair439).2
 theorem checked75 :
  (entries[75]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 75+1) ∧
- (entries[75]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 75+1) := by decide +kernel
+ (entries[75]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 75+1) := by
+  have h : entries[75]?.getD (0,0) = (113872962726725108228105700403267953276376029,167499615172531918805560582355155742) := by decide +kernel
+  have hk : 2*mode 75+1 = 31893 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31893 (entries[75]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair438).2
 theorem checked76 :
  (entries[76]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 76+1) ∧
- (entries[76]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 76+1) := by decide +kernel
+ (entries[76]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 76+1) := by
+  have h : entries[76]?.getD (0,0) = (-113862433979933714360315625981508938124380980,167483523419444867554256241459090698) := by decide +kernel
+  have hk : 2*mode 76+1 = 31895 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31895 (entries[76]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair437).2
 theorem checked77 :
  (entries[77]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 77+1) ∧
- (entries[77]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 77+1) := by decide +kernel
+ (entries[77]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 77+1) := by
+  have h : entries[77]?.getD (0,0) = (113851906868485978137828817200751814593440704,167467434223500876849225157153116623) := by decide +kernel
+  have hk : 2*mode 77+1 = 31897 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31897 (entries[77]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair436).2
 theorem checked78 :
  (entries[78]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 78+1) ∧
- (entries[78]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 78+1) := by decide +kernel
+ (entries[78]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 78+1) := by
+  have h : entries[78]?.getD (0,0) = (-113841381392025213340969084837565345578008832,167451347584133076945065672326254215) := by decide +kernel
+  have hk : 2*mode 78+1 = 31899 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31899 (entries[78]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair435).2
 theorem checked79 :
  (entries[79]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 79+1) ∧
- (entries[79]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 79+1) := by decide +kernel
+ (entries[79]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 79+1) := by
+  have h : entries[79]?.getD (0,0) = (113830857550194833930309023711919778665207476,167435263500774759324524379229547176) := by decide +kernel
+  have hk : 2*mode 79+1 = 31901 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31901 (entries[79]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair434).2
 theorem checked80 :
  (entries[80]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 80+1) ∧
- (entries[80]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 80+1) := by decide +kernel
+ (entries[80]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 80+1) := by
+  have h : entries[80]?.getD (0,0) = (-113820335342638354012258181724312295355367775,167419181972859376642526018733787203) := by decide +kernel
+  have hk : 2*mode 80+1 = 31903 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31903 (entries[80]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair433).2
 theorem checked81 :
  (entries[81]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 81+1) ∧
- (entries[81]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 81+1) := by decide +kernel
+ (entries[81]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 81+1) := by
+  have h : entries[81]?.getD (0,0) = (113809814768999387804647919493603796673820982,167403102999820542670231166460194829) := by decide +kernel
+  have hk : 2*mode 81+1 = 31905 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31905 (entries[81]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair432).2
 theorem checked82 :
  (entries[82]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 82+1) ∧
- (entries[82]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 82+1) := by decide +kernel
+ (entries[82]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 82+1) := by
+  have h : entries[82]?.getD (0,0) = (-113799295828921649602346051945798369654856810,167387026581092032239111590751209879) := by decide +kernel
+  have hk : 2*mode 82+1 = 31907 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31907 (entries[82]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair431).2
 theorem checked83 :
  (entries[83]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 83+1) ∧
- (entries[83]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 83+1) := by decide +kernel
+ (entries[83]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 83+1) := by
+  have h : entries[83]?.getD (0,0) = (113788778522048953742867278178060055282819188,167370952716107781185053920795324222) := by decide +kernel
+  have hk : 2*mode 83+1 = 31909 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31909 (entries[83]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair430).2
 theorem checked84 :
  (entries[84]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 84+1) ∧
- (entries[84]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 84+1) := by decide +kernel
+ (entries[84]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 84+1) := by
+  have h : entries[84]?.getD (0,0) = (-113778262848025214572020732799272625400396644,167354881404301886292481053661079658) := by decide +kernel
+  have hk : 2*mode 84+1 = 31911 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31911 (entries[84]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair429).2
 theorem checked85 :
  (entries[85]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 85+1) ∧
- (entries[85]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 85+1) := by decide +kernel
+ (entries[85]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 85+1) := by
+  have h : entries[85]?.getD (0,0) = (113767748806494446409545610334106869716590344,167338812645108605238501499465618520) := by decide +kernel
+  have hk : 2*mode 85+1 = 31913 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31913 (entries[85]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair428).2
 theorem checked86 :
  (entries[86]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 86+1) ∧
- (entries[86]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 86+1) := by decide +kernel
+ (entries[86]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 86+1) := by
+  have h : entries[86]?.getD (0,0) = (-113757236397100763514784118614137621425434309,167322746437962356537076413530729444) := by decide +kernel
+  have hk : 2*mode 86+1 = 31915 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31915 (entries[86]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair427).2
 theorem checked87 :
  (entries[87]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 87+1) ∧
- (entries[87]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 87+1) := by decide +kernel
+ (entries[87]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 87+1) := by
+  have h : entries[87]?.getD (0,0) = (113746725619488380052350447890894418651758594,167306682782297719483214574889715502) := by decide +kernel
+  have hk : 2*mode 87+1 = 31917 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31917 (entries[87]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair426).2
 theorem checked88 :
  (entries[88]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 88+1) ∧
- (entries[88]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 88+1) := by decide +kernel
+ (entries[88]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 88+1) := by
+  have h : entries[88]?.getD (0,0) = (-113736216473301610057827867856982803767749045,167290621677549434097185792608086286) := by decide +kernel
+  have hk : 2*mode 88+1 = 31919 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31919 (entries[88]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair425).2
 theorem checked89 :
  (entries[89]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 89+1) ∧
- (entries[89]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 89+1) := by decide +kernel
+ (entries[89]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 89+1) := by
+  have h : entries[89]?.getD (0,0) = (113725708958184867403466687023028166977813322,167274563123152401068761197564806970) := by decide +kernel
+  have hk : 2*mode 89+1 = 31921 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31921 (entries[89]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair424).2
 theorem checked90 :
  (entries[90]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 90+1) ∧
- (entries[90]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 90+1) := by decide +kernel
+ (entries[90]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 90+1) := by
+  have h : entries[90]?.getD (0,0) = (-113715203073782665763908685093459695834522721,167258507118541681701472125272573575) := by decide +kernel
+  have hk : 2*mode 90+1 = 31923 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31923 (entries[90]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair423).2
 theorem checked91 :
  (entries[91]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 91+1) ∧
- (entries[91]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 91+1) := by decide +kernel
+ (entries[91]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 91+1) := by
+  have h : entries[91]?.getD (0,0) = (113704698819739618581912850080557165223720756,167242453663152497856896320504474412) := by decide +kernel
+  have hk : 2*mode 91+1 = 31925 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31925 (entries[91]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair422).2
 theorem checked92 :
  (entries[92]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 92+1) ∧
- (entries[92]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 92+1) := by decide +kernel
+ (entries[92]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 92+1) := by
+  have h : entries[92]?.getD (0,0) = (-113694196195700439034109151247468105787736225,167226402756420231898962091868554055) := by decide +kernel
+  have hk : 2*mode 92+1 = 31927 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31927 (entries[92]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair421).2
 theorem checked93 :
  (entries[93]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 93+1) ∧
- (entries[93]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 93+1) := by decide +kernel
+ (entries[93]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 93+1) := by
+  have h : entries[93]?.getD (0,0) = (113683695201309939996750332138113585451432631,167210354397780426638280733828040116) := by decide +kernel
+  have hk : 2*mode 93+1 = 31929 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31929 (entries[93]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair420).2
 theorem checked94 :
  (entries[94]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 94+1) ∧
- (entries[94]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 94+1) := by decide +kernel
+ (entries[94]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 94+1) := by
+  have h : entries[94]?.getD (0,0) = (-113673195836213034011493959687404223015723227,167194308586668785276495569280432769) := by decide +kernel
+  have hk : 2*mode 94+1 = 31931 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31931 (entries[94]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair419).2
 theorem checked95 :
  (entries[95]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 95+1) ∧
- (entries[95]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 95+1) := by decide +kernel
+ (entries[95]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 95+1) := by
+  have h : entries[95]?.getD (0,0) = (113662698100054733251182546814828311982978426,167178265322521171350660657616242531) := by decide +kernel
+  have hk : 2*mode 95+1 = 31933 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31933 (entries[95]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair418).2
 theorem checked96 :
  (entries[96]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 96+1) ∧
- (entries[96]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 96+1) := by decide +kernel
+ (entries[96]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 96+1) := by
+  have h : entries[96]?.getD (0,0) = (-113652201992480149485653625845542425054485709,167162224604773608677635488523418241) := by decide +kernel
+  have hk : 2*mode 96+1 = 31935 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31935 (entries[96]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair417).2
 theorem checked97 :
  (entries[97]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 97+1) ∧
- (entries[97]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 97+1) := by decide +kernel
+ (entries[97]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 97+1) := by
+  have h : entries[97]?.getD (0,0) = (113641707513134494047546039806854471499653517,167146186432862281298509027050560733) := by decide +kernel
+  have hk : 2*mode 97+1 = 31937 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31937 (entries[97]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair416).2
 theorem checked98 :
  (entries[98]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 98+1) ∧
- (entries[98]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 98+1) := by decide +kernel
+ (entries[98]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 98+1) := by
+  have h : entries[98]?.getD (0,0) = (-113631214661663077798138951577399187801763271,167130150806223533423039553232977377) := by decide +kernel
+  have hk : 2*mode 98+1 = 31939 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31939 (entries[98]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair415).2
 theorem checked99 :
  (entries[99]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 99+1) ∧
- (entries[99]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 99+1) := by decide +kernel
+ (entries[99]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 99+1) := by
+  have h : entries[99]?.getD (0,0) = (113620723437711311093186272480825100672148139,167114117724293869374123973175031086) := by decide +kernel
+  have hk : 2*mode 99+1 = 31941 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31941 (entries[99]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair414).2
 theorem checked100 :
  (entries[100]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 100+1) ∧
- (entries[100]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 100+1) := by decide +kernel
+ (entries[100]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 100+1) := by
+  have h : entries[100]?.getD (0,0) = (-113610233840924703748781822960852721945190227,167098087186509953532283785480610255) := by decide +kernel
+  have hk : 2*mode 100+1 = 31943 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31943 (entries[100]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair413).2
 theorem checked101 :
  (entries[101]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 101+1) ∧
- (entries[101]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 101+1) := by decide +kernel
+ (entries[101]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 101+1) := by
+  have h : entries[101]?.getD (0,0) = (113599745870948865007224317781307328073751547,167082059192308610280180373390830306) := by decide +kernel
+  have hk : 2*mode 101+1 = 31945 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31945 (entries[101]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair412).2
 theorem checked102 :
  (entries[102]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 102+1) ∧
- (entries[102]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 102+1) := by decide +kernel
+ (entries[102]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 102+1) := by
+  have h : entries[102]?.getD (0,0) = (-113589259527429503502906652958930145121071773,167066033741126823947145655120579865) := by decide +kernel
+  have hk : 2*mode 102+1 = 31947 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31947 (entries[102]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair411).2
 theorem checked103 :
  (entries[103]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 103+1) ∧
- (entries[103]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 103+1) := by decide +kernel
+ (entries[103]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 103+1) := by
+  have h : entries[103]?.getD (0,0) = (113578774810012427228211710535095380556807568,167050010832401738753741694144528888) := by decide +kernel
+  have hk : 2*mode 103+1 = 31949 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31949 (entries[103]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair410).2
 theorem checked104 :
  (entries[104]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 104+1) ∧
- (entries[104]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 104+1) := by decide +kernel
+ (entries[104]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 104+1) := by
+  have h : entries[104]?.getD (0,0) = (-113568291718343543499427055614066142649589202,167033990465570658756338276907169444) := by decide +kernel
+  have hk : 2*mode 104+1 = 31951 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31951 (entries[104]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair409).2
 theorem checked105 :
  (entries[105]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 105+1) ∧
- (entries[105]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 105+1) := by decide +kernel
+ (entries[105]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 105+1) := by
+  have h : entries[105]?.getD (0,0) = (113557810252068858922667568013717452775438191,167017972640071047791717508584570604) := by decide +kernel
+  have hk : 2*mode 105+1 = 31953 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31953 (entries[105]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair408).2
 theorem checked106 :
  (entries[106]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 106+1) ∧
- (entries[106]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 106+1) := by decide +kernel
+ (entries[106]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 106+1) := by
+  have h : entries[106]?.getD (0,0) = (-113547330410834479359824044468316388218808096,167001957355340529421697276959662939) := by decide +kernel
+  have hk : 2*mode 106+1 = 31955 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31955 (entries[106]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair407).2
 theorem checked107 :
  (entries[107]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 107+1) ∧
- (entries[107]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 107+1) := by decide +kernel
+ (entries[107]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 107+1) := by
+  have h : entries[107]?.getD (0,0) = (113536852194286609894505669753137675510712969,166985944610816886877780179258954168) := by decide +kernel
+  have hk : 2*mode 107+1 = 31957 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31957 (entries[107]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair406).2
 theorem checked108 :
  (entries[108]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 108+1) ∧
- (entries[108]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 108+1) := by decide +kernel
+ (entries[108]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 108+1) := by
+  have h : entries[108]?.getD (0,0) = (-113526375602071554798019607991018739305688700,166969934405938063005822676695982332) := by decide +kernel
+  have hk : 2*mode 108+1 = 31959 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31959 (entries[108]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair405).2
 theorem checked109 :
  (entries[109]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 109+1) ∧
- (entries[109]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 109+1) := by decide +kernel
+ (entries[109]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 109+1) := by
+  have h : entries[109]?.getD (0,0) = (113515900633835717495341817115914651509078456,166953926740142160210729724941206676) := by decide +kernel
+  have hk : 2*mode 109+1 = 31961 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31961 (entries[109]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair404).2
 theorem checked110 :
  (entries[110]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 110+1) ∧
- (entries[110]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 110+1) := by decide +kernel
+ (entries[110]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 110+1) := by
+  have h : entries[110]?.getD (0,0) = (-113505427289225600531122912398792337386493316,166937921612867440401168669360637816) := by decide +kernel
+  have hk : 2*mode 110+1 = 31963 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31963 (entries[110]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair403).2
 theorem checked111 :
  (entries[111]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 111+1) ∧
- (entries[111]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 111+1) := by decide +kernel
+ (entries[111]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 111+1) := by
+  have h : entries[111]?.getD (0,0) = (113494955567887805535688375379723236532606025,166921919023552324934309307075043115) := by decide +kernel
+  have hk : 2*mode 111+1 = 31965 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31965 (entries[111]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair402).2
 theorem checked112 :
  (entries[112]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 112+1) ∧
- (entries[112]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 112+1) := by decide +kernel
+ (entries[112]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 112+1) := by
+  have h : entries[112]?.getD (0,0) = (-113484485469469033191069541774125240819637884,166905918971635394560582367867169425) := by decide +kernel
+  have hk : 2*mode 112+1 = 31967 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31967 (entries[112]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair401).2
 theorem checked113 :
  (entries[113]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 113+1) ∧
- (entries[113]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 113+1) := by decide +kernel
+ (entries[113]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 113+1) := by
+  have h : entries[113]?.getD (0,0) = (113474016993616083197031408199348558584250824,166889921456555389368465527947699184) := by decide +kernel
+  have hk : 2*mode 113+1 = 31969 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31969 (entries[113]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair400).2
 theorem checked114 :
  (entries[114]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 114+1) ∧
- (entries[114]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 114+1) := by decide +kernel
+ (entries[114]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 114+1) := by
+  have h : entries[114]?.getD (0,0) = (-113463550139975854237135143526789712718099871,166873926477751208729287433654695944) := by decide +kernel
+  have hk : 2*mode 114+1 = 31971 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31971 (entries[114]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair399).2
 theorem checked115 :
  (entries[115]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 115+1) ∧
- (entries[115]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 115+1) := by decide +kernel
+ (entries[115]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 115+1) := by
+  have h : entries[115]?.getD (0,0) = (113453084908195343944788102715352778152625177,166857934034661911242058184306928187) := by decide +kernel
+  have hk : 2*mode 115+1 = 31973 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31973 (entries[115]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair398).2
 theorem checked116 :
  (entries[116]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 116+1) ∧
- (entries[116]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 116+1) := by decide +kernel
+ (entries[116]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 116+1) := by
+  have h : entries[116]?.getD (0,0) = (-113442621297921648869337561576536829968968290,166841944126726714678318750642148402) := by decide +kernel
+  have hk : 2*mode 116+1 = 31975 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31975 (entries[116]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair397).2
 theorem checked117 :
  (entries[117]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 117+1) ∧
- (entries[117]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 117+1) := by decide +kernel
+ (entries[117]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 117+1) := by
+  have h : entries[117]?.getD (0,0) = (113432159308801964442147058168530375226467671,166825956753384995927016053971871675) := by decide +kernel
+  have hk : 2*mode 117+1 = 31977 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31977 (entries[117]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair396).2
 theorem checked118 :
  (entries[118]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 118+1) ∧
- (entries[118]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 118+1) := by decide +kernel
+ (entries[118]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 118+1) := by
+  have h : entries[118]?.getD (0,0) = (-113421698940483584942716639797892829648326545,166809971914076290939397612135030240) := by decide +kernel
+  have hk : 2*mode 118+1 = 31979 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31979 (entries[118]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair395).2
 theorem checked119 :
  (entries[119]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 119+1) ∧
- (entries[119]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 119+1) := by decide +kernel
+ (entries[119]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 119+1) := by
+  have h : entries[119]?.getD (0,0) = (113411240192613903464788354434171738880817351,166793989608240294673932252596019312) := by decide +kernel
+  have hk : 2*mode 119+1 = 31981 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31981 (entries[119]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair394).2
 theorem checked120 :
  (entries[120]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 120+1) ∧
- (entries[120]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 120+1) := by decide +kernel
+ (entries[120]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 120+1) := by
+  have h : entries[120]?.getD (0,0) = (-113400783064840411882492499322728351888657129,166778009835316861041249810941645419) := by decide +kernel
+  have hk : 2*mode 120+1 = 31983 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31983 (entries[120]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair393).2
 theorem checked121 :
  (entries[121]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 121+1) ∧
- (entries[121]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 121+1) := by decide +kernel
+ (entries[121]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 121+1) := by
+  have h : entries[121]?.getD (0,0) = (113390327556810700816483341644011316164934238,166762032594746002849107055299427932) := by decide +kernel
+  have hk : 2*mode 121+1 = 31985 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31985 (entries[121]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair392).2
 theorem checked122 :
  (entries[122]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 122+1) ∧
- (entries[122]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 122+1) := by decide +kernel
+ (entries[122]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 122+1) := by
+  have h : entries[122]?.getD (0,0) = (-113379873668172459600109016570362303467993601,166746057885967891747371300206972879) := by decide +kernel
+  have hk : 2*mode 122+1 = 31987 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31987 (entries[122]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair391).2
 theorem checked123 :
  (entries[123]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 123+1) ∧
- (entries[123]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 123+1) := by decide +kernel
+ (entries[123]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 123+1) := by
+  have h : entries[123]?.getD (0,0) = (113369421398573476245575781621469817713527324,166730085708422858173031198246355662) := by decide +kernel
+  have hk : 2*mode 123+1 = 31989 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31989 (entries[123]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair390).2
 theorem checked124 :
  (entries[124]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 124+1) ∧
- (entries[124]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 124+1) := by decide +kernel
+ (entries[124]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 124+1) := by
+  have h : entries[124]?.getD (0,0) = (-113358970747661637410147247237627334524535735,166714116061551391295226562421012914) := by decide +kernel
+  have hk : 2*mode 124+1 = 31991 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31991 (entries[124]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair389).2
 theorem checked125 :
  (entries[125]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 125+1) ∧
- (entries[125]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 125+1) := by decide +kernel
+ (entries[125]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 125+1) := by
+  have h : entries[125]?.getD (0,0) = (113348521715084928362334931798688300237078978,166698148944794138960304654622534974) := by decide +kernel
+  have hk : 2*mode 125+1 = 31993 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31993 (entries[125]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair388).2
 theorem checked126 :
  (entries[126]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 126+1) ∧
- (entries[126]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 126+1) := by decide +kernel
+ (entries[126]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 126+1) := by
+  have h : entries[126]?.getD (0,0) = (-113338074300491432948125259500847804327858628,166682184357591907636893193999148557) := by decide +kernel
+  have hk : 2*mode 126+1 = 31995 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31995 (entries[126]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair387).2
 theorem checked127 :
  (entries[127]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 127+1) ∧
- (entries[127]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 127+1) := by decide +kernel
+ (entries[127]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 127+1) := by
+  have h : entries[127]?.getD (0,0) = (113327628503529333557195319905905127699654158,166666222299385662361001775321581950) := by decide +kernel
+  have hk : 2*mode 127+1 = 31997 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31997 (entries[127]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair386).2
 theorem checked128 :
  (entries[128]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 128+1) ∧
- (entries[128]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 128+1) := by decide +kernel
+ (entries[128]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 128+1) := by
+  have h : entries[128]?.getD (0,0) = (-113317184323846911089168736220285538749901052,166650262769616526681140124440015576) := by decide +kernel
+  have hk : 2*mode 128+1 = 31999 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 31999 (entries[128]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair385).2
 theorem checked129 :
  (entries[129]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 129+1) ∧
- (entries[129]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 129+1) := by decide +kernel
+ (entries[129]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 129+1) := by
+  have h : entries[129]?.getD (0,0) = (113306741761092544919860905060984532268245337,166634305767725782603464289313190769) := by decide +kernel
+  have hk : 2*mode 129+1 = 32001 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32001 (entries[129]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair384).2
 theorem checked130 :
  (entries[130]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 130+1) ∧
- (entries[130]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 130+1) := by decide +kernel
+ (entries[130]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 130+1) := by
+  have h : entries[130]?.getD (0,0) = (-113296300814914712867559096299225773297596901,166618351293154870536940414257996883) := by decide +kernel
+  have hk : 2*mode 130+1 = 32003 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32003 (entries[130]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair383).2
 theorem checked131 :
  (entries[131]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 131+1) ∧
- (entries[131]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 131+1) := by decide +kernel
+ (entries[131]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 131+1) := by
+  have h : entries[131]?.getD (0,0) = (113285861484961991159295676321455190406445953,166602399345345389238535392191563140) := by decide +kernel
+  have hk : 2*mode 131+1 = 32005 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32005 (entries[131]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair382).2
 theorem checked132 :
  (entries[132]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 132+1) ∧
- (entries[132]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 132+1) := by decide +kernel
+ (entries[132]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 132+1) := by
+  have h : entries[132]?.getD (0,0) = (-113275423770883054397157518135470161639858475,166586449923739095758425409151979626) := by decide +kernel
+  have hk : 2*mode 132+1 = 32007 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32007 (entries[132]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair381).2
 theorem checked133 :
  (entries[133]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 133+1) ∧
- (entries[133]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 133+1) := by decide +kernel
+ (entries[133]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 133+1) := by
+  have h : entries[133]?.getD (0,0) = (113264987672326675524583386771502751691237461,166570503027777905385230484363800039) := by decide +kernel
+  have hk : 2*mode 133+1 = 32009 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32009 (entries[133]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair380).2
 theorem checked134 :
  (entries[134]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 134+1) ∧
- (entries[134]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 134+1) := by decide +kernel
+ (entries[134]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 134+1) := by
+  have h : entries[134]?.getD (0,0) = (-113254553188941725792703351116277483240639819,166554558656903891591268580673417210) := by decide +kernel
+  have hk : 2*mode 134+1 = 32011 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32011 (entries[134]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair379).2
 theorem checked135 :
  (entries[135]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 135+1) ∧
- (entries[135]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 135+1) := by decide +kernel
+ (entries[135]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 135+1) := by
+  have h : entries[135]?.getD (0,0) = (113244120320377174726662150242190335226918995,166538616810559285977835622126500734) := by decide +kernel
+  have hk : 2*mode 135+1 = 32013 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32013 (entries[135]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair378).2
 theorem checked136 :
  (entries[136]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 136+1) ∧
- (entries[136]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 136+1) := by decide +kernel
+ (entries[136]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 136+1) := by
+  have h : entries[136]?.getD (0,0) = (-113233689066282090091985021306551686174998949,166522677488186478220502951063796901) := by decide +kernel
+  have hk : 2*mode 136+1 = 32015 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32015 (entries[136]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair377).2
 theorem checked137 :
  (entries[137]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 137+1) ∧
- (entries[137]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 137+1) := by decide +kernel
+ (entries[137]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 137+1) := by
+  have h : entries[137]?.getD (0,0) = (113223259426305637860932483103134769098762142,166506740689228016014442187891958127) := by decide +kernel
+  have hk : 2*mode 137+1 = 32017 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32017 (entries[137]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair376).2
 theorem checked138 :
  (entries[138]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 138+1) ∧
- (entries[138]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 138+1) := by decide +kernel
+ (entries[138]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 138+1) := by
+  have h : entries[138]?.getD (0,0) = (-113212831400097082178886652102624536474974386,166490806413126605019767578082222416) := by decide +kernel
+  have hk : 2*mode 138+1 = 32019 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32019 (entries[138]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair375).2
 theorem checked139 :
  (entries[139]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 139+1) ∧
- (entries[139]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 139+1) := by decide +kernel
+ (entries[139]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 139+1) := by
+  have h : entries[139]?.getD (0,0) = (113202404987305785330737851213625312781008833,166474874659325108806906166299591065) := by decide +kernel
+  have hk : 2*mode 139+1 = 32021 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32021 (entries[139]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair374).2
 theorem checked140 :
  (entries[140]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 140+1) ∧
- (entries[140]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 140+1) := by decide +kernel
+ (entries[140]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 140+1) := by
+  have h : entries[140]?.getD (0,0) = (-113191980187581207707298862775198262787522385,166458945427266548801984465331484428) := by decide +kernel
+  have hk : 2*mode 140+1 = 32023 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32023 (entries[140]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair373).2
 theorem checked141 :
  (entries[141]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 141+1) ∧
- (entries[141]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 141+1) := by decide +kernel
+ (entries[141]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 141+1) := by
+  have h : entries[141]?.getD (0,0) = (113181557000572907771716371275096089461415154,166443018716394104232243100840594608) := by decide +kernel
+  have hk : 2*mode 141+1 = 32025 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32025 (entries[141]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair372).2
 theorem checked142 :
  (entries[142]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 142+1) ∧
- (entries[142]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 142+1) := by decide +kernel
+ (entries[142]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 142+1) := by
+  have h : entries[142]?.getD (0,0) = (-113171135425930542025912190231363800548301446,166427094526151112071467992442936402) := by decide +kernel
+  have hk : 2*mode 142+1 = 32027 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32027 (entries[142]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair371).2
 theorem checked143 :
  (entries[143]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 143+1) ∧
- (entries[143]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 143+1) := by decide +kernel
+ (entries[143]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 143+1) := by
+  have h : entries[143]?.getD (0,0) = (113160715463303864977023324111849730440772490,166411172855981066985449439829216214) := by decide +kernel
+  have hk : 2*mode 143+1 = 32029 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32029 (entries[143]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair370).2
 theorem checked144 :
  (entries[144]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 144+1) ∧
- (entries[144]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 144+1) := by decide +kernel
+ (entries[144]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 144+1) := by
+  have h : entries[144]?.getD (0,0) = (-113150297112342729103871257271394550441801478,166395253705327621277457397690732483) := by decide +kernel
+  have hk : 2*mode 144+1 = 32031 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32031 (entries[144]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair369).2
 theorem checked145 :
  (entries[145]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 145+1) ∧
- (entries[145]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 145+1) := by decide +kernel
+ (entries[145]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 145+1) := by
+  have h : entries[145]?.getD (0,0) = (113139880372697084823424744419106808891509464,166379337073634584833745704084383499) := by decide +kernel
+  have hk : 2*mode 145+1 = 32033 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32033 (entries[145]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair368).2
 theorem checked146 :
  (entries[146]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 146+1) ∧
- (entries[146]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 146+1) := by decide +kernel
+ (entries[146]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 146+1) := by
+  have h : entries[146]?.getD (0,0) = (-113129465244016980457301492428195781662214632,166363422960345925069072286681036375) := by decide +kernel
+  have hk : 2*mode 146+1 = 32035 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32035 (entries[146]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair367).2
 theorem checked147 :
  (entries[147]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 147+1) ∧
- (entries[147]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 147+1) := by decide +kernel
+ (entries[147]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 147+1) := by
+  have h : entries[147]?.getD (0,0) = (113119051725952562198256550398078310830828581,166347511364905766872247580376361956) := by decide +kernel
+  have hk : 2*mode 147+1 = 32037 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32037 (entries[147]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair366).2
 theorem checked148 :
  (entries[148]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 148+1) ∧
- (entries[148]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 148+1) := by decide +kernel
+ (entries[148]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 148+1) := by
+  have h : entries[148]?.getD (0,0) = (-113108639818154074076707275766368273508008287,166331602286758392551699441924301172) := by decide +kernel
+  have hk : 2*mode 148+1 = 32039 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32039 (entries[148]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair365).2
 theorem checked149 :
  (entries[149]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 149+1) ∧
- (entries[149]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 149+1) := by decide +kernel
+ (entries[149]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 149+1) := by
+  have h : entries[149]?.getD (0,0) = (113098229520271857927255137263750193742944359,166315695725348241781064769311404397) := by decide +kernel
+  have hk : 2*mode 149+1 = 32041 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32041 (entries[149]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair364).2
 theorem checked150 :
  (entries[150]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 150+1) ∧
- (entries[150]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 150+1) := by decide +kernel
+ (entries[150]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 150+1) := by
+  have h : entries[150]?.getD (0,0) = (-113087820831956353355233501983311420645669535,166299791680119911544799563916332085) := by decide +kernel
+  have hk : 2*mode 150+1 = 32043 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32043 (entries[150]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair363).2
 theorem checked151 :
  (entries[151]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 151+1) ∧
- (entries[151]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 151+1) := by decide +kernel
+ (entries[151]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 151+1) := by
+  have h : entries[151]?.getD (0,0) = (113077413752858097703255527882678704071748864,166283890150518156083814897143523221) := by decide +kernel
+  have hk : 2*mode 151+1 = 32045 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32045 (entries[151]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair362).2
 theorem checked152 :
  (entries[152]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 152+1) ∧
- (entries[152]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 152+1) := by decide +kernel
+ (entries[152]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 152+1) := by
+  have h : entries[152]?.getD (0,0) = (-113067008282627726017795059008166661068517952,166267991135987886841131635855833824) := by decide +kernel
+  have hk : 2*mode 152+1 = 32047 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32047 (entries[152]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair361).2
 theorem checked153 :
  (entries[153]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 153+1) ∧
- (entries[153]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 153+1) := by decide +kernel
+ (entries[153]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 153+1) := by
+  have h : entries[153]?.getD (0,0) = (113056604420915971015754409991333339834852305,166252094635974172407560601476254059) := by decide +kernel
+  have hk : 2*mode 153+1 = 32049 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32049 (entries[153]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair360).2
 theorem checked154 :
  (entries[154]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 154+1) ∧
- (entries[154]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 154+1) := by decide +kernel
+ (entries[154]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 154+1) := by
+  have h : entries[154]?.getD (0,0) = (-113046202167373663051076170100526127777104900,166236200649922238467401777252080002) := by decide +kernel
+  have hk : 2*mode 154+1 = 32051 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32051 (entries[154]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair359).2
 theorem checked155 :
  (entries[155]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 155+1) ∧
- (entries[155]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 155+1) := by decide +kernel
+ (entries[155]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 155+1) := by
+  have h : entries[155]?.getD (0,0) = (113035801521651730081338600160325134748306343,166220309177277467744169033462080029) := by decide +kernel
+  have hk : 2*mode 155+1 = 32053 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32053 (entries[155]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair358).2
 theorem checked156 :
  (entries[156]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 156+1) ∧
- (entries[156]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 156+1) := by decide +kernel
+ (entries[156]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 156+1) := by
+  have h : entries[156]?.getD (0,0) = (-113025402483401197634390811427454264991430373,166204420217485399946332783037182569) := by decide +kernel
+  have hk : 2*mode 156+1 = 32055 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32055 (entries[156]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair357).2
 theorem checked157 :
  (entries[157]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 157+1) ∧
- (entries[157]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 157+1) := by decide +kernel
+ (entries[157]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 157+1) := by
+  have h : entries[157]?.getD (0,0) = (113015005052273188774980599009031665924582194,166188533769991731713089557386886419) := by decide +kernel
+  have hk : 2*mode 157+1 = 32057 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32057 (entries[157]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair356).2
 theorem checked158 :
  (entries[158]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 158+1) ∧
- (entries[158]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 158+1) := by decide +kernel
+ (entries[158]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 158+1) := by
+  have h : entries[158]?.getD (0,0) = (-113004609227918924071410961825816746690112936,166172649834242316560148328886745712) := by decide +kernel
+  have hk : 2*mode 158+1 = 32059 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32059 (entries[158]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair355).2
 theorem checked159 :
  (entries[159]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 159+1) ∧
- (entries[159]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 159+1) := by decide +kernel
+ (entries[159]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 159+1) := by
+  have h : entries[159]?.getD (0,0) = (112994215009989721562198050866802682175065117,166156768409683164825544972815202187) := by decide +kernel
+  have hk : 2*mode 159+1 = 32061 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32061 (entries[159]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair354).2
 theorem checked160 :
  (entries[160]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 160+1) ∧
- (entries[160]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 160+1) := by decide +kernel
+ (entries[160]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 160+1) := by
+  have h : entries[160]?.getD (0,0) = (-112983822398136996722754805484438382126053114,166140889495760443615472469794058686) := by decide +kernel
+  have hk : 2*mode 160+1 = 32063 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32063 (entries[160]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair353).2
 theorem checked161 :
  (entries[161]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 161+1) ∧
- (entries[161]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 161+1) := by decide +kernel
+ (entries[161]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 161+1) := by
+  have h : entries[161]?.getD (0,0) = (112973431392012262432074198638182245425201632,166125013091920476750139754058983617) := by decide +kernel
+  have hk : 2*mode 161+1 = 32065 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32065 (entries[161]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair352).2
 theorem checked162 :
  (entries[162]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 162+1) ∧
- (entries[162]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 162+1) := by decide +kernel
+ (entries[162]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 162+1) := by
+  have h : entries[162]?.getD (0,0) = (-112963041991267128939441879412948390511723147,166109139197609744709646237079423543) := by decide +kernel
+  have hk : 2*mode 162+1 = 32067 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32067 (entries[162]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair351).2
 theorem checked163 :
  (entries[163]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 163+1) ∧
- (entries[163]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 163+1) := by decide +kernel
+ (entries[163]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 163+1) := by
+  have h : entries[163]?.getD (0,0) = (112952654195553303831144127626362130385141512,166093267812274884579884533684221494) := by decide +kernel
+  have hk : 2*mode 163+1 = 32069 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32069 (entries[163]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair350).2
 theorem checked164 :
  (entries[164]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 164+1) ∧
- (entries[164]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 164+1) := by decide +kernel
+ (entries[164]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 164+1) := by
+  have h : entries[164]?.getD (0,0) = (-112942268004522591997208929428193359205489052,166077398935362689998458896078165802) := by decide +kernel
+  have hk : 2*mode 164+1 = 32071 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32071 (entries[164]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair349).2
 theorem checked165 :
  (entries[165]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 165+1) ∧
- (entries[165]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 165+1) := by decide +kernel
+ (entries[165]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 165+1) := by
+  have h : entries[165]?.getD (0,0) = (112931883417826895598140379665459971173564320,166061532566320111100632627425881172) := by decide +kernel
+  have hk : 2*mode 165+1 = 32073 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32073 (entries[165]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair348).2
 theorem checked166 :
  (entries[166]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 166+1) ∧
- (entries[166]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 166+1) := by decide +kernel
+ (entries[166]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 166+1) := by
+  have h : entries[166]?.getD (0,0) = (-112921500435118214031686372860241390573667843,166045668704594254465289927856852476) := by decide +kernel
+  have hk : 2*mode 166+1 = 32075 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32075 (entries[166]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair347).2
 theorem checked167 :
  (entries[167]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 167+1) ∧
- (entries[167]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 167+1) := by decide +kernel
+ (entries[167]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 167+1) := by
+  have h : entries[167]?.getD (0,0) = (112911119056048643899600948267907514613525680,166029807349632383060927461677886452) := by decide +kernel
+  have hk : 2*mode 167+1 = 32077 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32077 (entries[167]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair346).2
 theorem checked168 :
  (entries[168]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 168+1) ∧
- (entries[168]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 168+1) := by decide +kernel
+ (entries[168]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 168+1) := by
+  have h : entries[168]?.getD (0,0) = (-112900739280270378974436348879089082364869854,166013948500881916191660730275676881) := by decide +kernel
+  have hk : 2*mode 168+1 = 32079 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32079 (entries[168]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair345).2
 theorem checked169 :
  (entries[169]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 169+1) ∧
- (entries[169]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 169+1) := by decide +kernel
+ (entries[169]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 169+1) := by
+  have h : entries[169]?.getD (0,0) = (112890361107435710166335693818399099454370703,165998092157790429443258907497856497) := by decide +kernel
+  have hk : 2*mode 169+1 = 32081 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32081 (entries[169]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair344).2
 theorem checked170 :
  (entries[170]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 170+1) ∧
- (entries[170]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 170+1) := by decide +kernel
+ (entries[170]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 170+1) := by
+  have h : entries[170]?.getD (0,0) = (-112879984537197025489849969112839076379369731,165982238319805654629196304510704838) := by decide +kernel
+  have hk : 2*mode 170+1 = 32083 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32083 (entries[170]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair343).2
 theorem checked171 :
  (entries[171]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 171+1) ∧
- (entries[171]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 171+1) := by decide +kernel
+ (entries[171]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 171+1) := by
+  have h : entries[171]?.getD (0,0) = (112869609569206810030755296016729600425201962,165966386986375479736730973717299266) := by decide +kernel
+  have hk : 2*mode 171+1 = 32085 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32085 (entries[171]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair342).2
 theorem checked172 :
  (entries[172]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 172+1) ∧
- (entries[172]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 172+1) := by decide +kernel
+ (entries[172]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 172+1) := by
+  have h : entries[172]?.getD (0,0) = (-112859236203117645912901845748861613777830854,165950538156947948872999847833728503) := by decide +kernel
+  have hk : 2*mode 172+1 = 32087 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32087 (entries[172]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair341).2
 theorem checked173 :
  (entries[173]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 173+1) ∧
- (entries[173]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 173+1) := by decide +kernel
+ (entries[173]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 173+1) := by
+  have h : entries[173]?.getD (0,0) = (112848864438582212265055140983662331422528378,165934691830971262211140789037604810) := by decide +kernel
+  have hk : 2*mode 173+1 = 32089 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32089 (entries[173]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair340).2
 theorem checked174 :
  (entries[174]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 174+1) ∧
- (entries[174]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 174+1) := by decide +kernel
+ (entries[174]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 174+1) := by
+  have h : entries[174]?.getD (0,0) = (-112838494275253285187770281212274156486100152,165918848007893775936431275838745484) := by decide +kernel
+  have hk : 2*mode 174+1 = 32091 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32091 (entries[174]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair339).2
 theorem checked175 :
  (entries[175]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 175+1) ∧
- (entries[175]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 175+1) := by decide +kernel
+ (entries[175]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 175+1) := by
+  have h : entries[175]?.getD (0,0) = (112828125712783737720260283643445758038344052,165903006687164002192455418362972533) := by decide +kernel
+  have hk : 2*mode 175+1 = 32093 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32093 (entries[175]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair338).2
 theorem checked176 :
  (entries[176]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 176+1) ∧
- (entries[176]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 176+1) := by decide +kernel
+ (entries[176]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 176+1) := by
+  have h : entries[176]?.getD (0,0) = (-112817758750826539807301211890651024228445940,165887167868230609027286264405861577) := by decide +kernel
+  have hk : 2*mode 176+1 = 32095 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32095 (entries[176]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair337).2
 theorem checked177 :
  (entries[177]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 177+1) ∧
- (entries[177]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 177+1) := by decide +kernel
+ (entries[177]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 177+1) := by
+  have h : entries[177]?.getD (0,0) = (112807393389034758266123758028776444182616302,165871331550542420339697237813057627) := by decide +kernel
+  have hk : 2*mode 177+1 = 32097 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32097 (entries[177]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair336).2
 theorem checked178 :
  (entries[178]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 178+1) ∧
- (entries[178]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 178+1) := by decide +kernel
+ (entries[178]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 178+1) := by
+  have h : entries[178]?.getD (0,0) = (-112797029627061556753343326003424365739014713,165855497733548415825387527112044255) := by decide +kernel
+  have hk : 2*mode 178+1 = 32099 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32099 (entries[178]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair335).2
 theorem checked179 :
  (entries[179]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 179+1) ∧
- (entries[179]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 179+1) := by decide +kernel
+ (entries[179]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 179+1) := by
+  have h : entries[179]?.getD (0,0) = (112786667464560195731883955395804059990445244,165839666416697730923237833412027378) := by decide +kernel
+  have hk : 2*mode 179+1 = 32101 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32101 (entries[179]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair334).2
 theorem checked180 :
  (entries[180]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 180+1) ∧
- (entries[180]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 180+1) := by decide +kernel
+ (entries[180]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 180+1) := by
+  have h : entries[180]?.getD (0,0) = (-112776306901184032437929891947440896581542656,165823837599439656761578815826618466) := by decide +kernel
+  have hk : 2*mode 180+1 = 32103 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32103 (entries[180]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair333).2
 theorem checked181 :
  (entries[181]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 181+1) ∧
- (entries[181]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 181+1) := by decide +kernel
+ (entries[181]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 181+1) := by
+  have h : entries[181]?.getD (0,0) = (112765947936586520847878789842965079621378918,165808011281223640104490004635504298) := by decide +kernel
+  have hk : 2*mode 181+1 = 32105 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32105 (entries[181]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair332).2
 theorem checked182 :
  (entries[182]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 182+1) ∧
- (entries[182]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 182+1) := by decide +kernel
+ (entries[182]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 182+1) := by
+  have h : entries[182]?.getD (0,0) = (-112755590570421211645318280341847055150562446,165792187461499283298113563961360342) := by decide +kernel
+  have hk : 2*mode 182+1 = 32107 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32107 (entries[182]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair331).2
 theorem checked183 :
  (entries[183]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 183+1) ∧
- (entries[183]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 183+1) := by decide +kernel
+ (entries[183]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 183+1) := by
+  have h : entries[183]?.getD (0,0) = (112745234802341752188007639161788053161308142,165776366139716344216997007517528822) := by decide +kernel
+  have hk : 2*mode 183+1 = 32109 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32109 (entries[183]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair330).2
 theorem checked184 :
  (entries[184]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 184+1) ∧
- (entries[184]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 184+1) := by decide +kernel
+ (entries[184]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 184+1) := by
+  have h : entries[184]?.getD (0,0) = (-112734880632001886474881212072549926880519135,165760547315324736210450145506957486) := by decide +kernel
+  have hk : 2*mode 184+1 = 32111 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32111 (entries[184]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair329).2
 theorem checked185 :
  (entries[185]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 185+1) ∧
- (entries[185]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 185+1) := by decide +kernel
+ (entries[185]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 185+1) := by
+  have h : entries[185]?.getD (0,0) = (112724528059055455113054974508108395667447944,165744730987774528048930452868890487) := by decide +kernel
+  have hk : 2*mode 185+1 = 32113 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32113 (entries[185]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair328).2
 theorem checked186 :
  (entries[186]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 186+1) ∧
- (entries[186]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 186+1) := by decide +kernel
+ (entries[186]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 186+1) := by
+  have h : entries[186]?.getD (0,0) = (-112714177083156395284856985452140785070197922,165728917156515943870444873884211831) := by decide +kernel
+  have hk : 2*mode 186+1 = 32115 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32115 (entries[186]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair327).2
 theorem checked187 :
  (entries[187]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 187+1) ∧
- (entries[187]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 187+1) := by decide +kernel
+ (entries[187]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 187+1) := by
+  have h : entries[187]?.getD (0,0) = (112703827703958740714861895221623420991939237,165713105820999363126978886584637532) := by decide +kernel
+  have hk : 2*mode 187+1 = 32117 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32117 (entries[187]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair326).2
 theorem checked188 :
  (entries[188]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 188+1) ∧
- (entries[188]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 188+1) := by decide +kernel
+ (entries[188]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 188+1) := by
+  have h : entries[188]?.getD (0,0) = (-112693479921116621636947596198113742700897785,165697296980675320530941890488762683) := by decide +kernel
+  have hk : 2*mode 188+1 = 32119 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32119 (entries[188]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair325).2
 theorem checked189 :
  (entries[189]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 189+1) ∧
- (entries[189]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 189+1) := by decide +kernel
+ (entries[189]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 189+1) := by
+  have h : entries[189]?.getD (0,0) = (112683133734284264761353895513740915156852063,165681490634994506001639386448951658) := by decide +kernel
+  have hk : 2*mode 189+1 = 32121 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32121 (entries[189]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair324).2
 theorem checked190 :
  (entries[190]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 190+1) ∧
- (entries[190]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 190+1) := by decide +kernel
+ (entries[190]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 190+1) := by
+  have h : entries[190]?.getD (0,0) = (-112672789143115993241769032501942175770405656,165665686783407764611762096708107767) := by decide +kernel
+  have hk : 2*mode 190+1 = 32123 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32123 (entries[190]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair323).2
 theorem checked191 :
  (entries[191]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 191+1) ∧
- (entries[191]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 191+1) := by decide +kernel
+ (entries[191]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 191+1) := by
+  have h : entries[191]?.getD (0,0) = (112662446147266226642414148809321860189766946,165649885425366096533901815730780330) := by decide +kernel
+  have hk : 2*mode 191+1 = 32125 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32125 (entries[191]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair322).2
 theorem checked192 :
  (entries[192]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 192+1) ∧
- (entries[192]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 192+1) := by decide +kernel
+ (entries[192]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 192+1) := by
+  have h : entries[192]?.getD (0,0) = (-112652104746389480905155034418998836602469847,165634086560320656987083450443752978) := by decide +kernel
+  have hk : 2*mode 192+1 = 32127 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32127 (entries[192]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair321).2
 theorem checked193 :
  (entries[193]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 193+1) ∧
- (entries[193]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 193+1) := by decide +kernel
+ (entries[193]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 193+1) := by
+  have h : entries[193]?.getD (0,0) = (112641764940140368316613499176247665447772309,165618290187722756183325578736101003) := by decide +kernel
+  have hk : 2*mode 193+1 = 32129 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32129 (entries[193]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair320).2
 theorem checked194 :
  (entries[194]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 194+1) ∧
- (entries[194]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 194+1) := by decide +kernel
+ (entries[194]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 194+1) := by
+  have h : entries[194]?.getD (0,0) = (-112631426728173597475307093139950985266805504,165602496307023859274215776049277045) := by decide +kernel
+  have hk : 2*mode 194+1 = 32131 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32131 (entries[194]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair319).2
 theorem checked195 :
  (entries[195]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 195+1) ∧
- (entries[195]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 195+1) := by decide +kernel
+ (entries[195]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 195+1) := by
+  have h : entries[195]?.getD (0,0) = (112621090110143973258786734707257914297952768,165586704917675586297514227232461714) := by decide +kernel
+  have hk : 2*mode 195+1 = 32133 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32133 (entries[195]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair318).2
 theorem checked196 :
  (entries[196]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 196+1) ∧
- (entries[196]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 196+1) := by decide +kernel
+ (entries[196]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 196+1) := by
+  have h : entries[196]?.getD (0,0) = (-112610755085706396790799967903972285300379474,165570916019129712123772254111935183) := by decide +kernel
+  have hk : 2*mode 196+1 = 32135 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32135 (entries[196]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair317).2
 theorem checked197 :
  (entries[197]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 197+1) ∧
- (entries[197]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 197+1) := by decide +kernel
+ (entries[197]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 197+1) := by
+  have h : entries[197]?.getD (0,0) = (112600421654515865408457907060555192788445662,165555129610838166402979383071213651) := by decide +kernel
+  have hk : 2*mode 197+1 = 32137 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32137 (entries[197]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair316).2
 theorem checked198 :
  (entries[198]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 198+1) ∧
- (entries[198]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 198+1) := by decide +kernel
+ (entries[198]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 198+1) := by
+  have h : entries[198]?.getD (0,0) = (-112590089816227472629426748190222731336073288,165539345692253033511226220309595663) := by decide +kernel
+  have hk : 2*mode 198+1 = 32139 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32139 (entries[198]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair315).2
 theorem checked199 :
  (entries[199]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 199+1) ∧
- (entries[199]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 199+1) := by decide +kernel
+ (entries[199]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 199+1) := by
+  have h : entries[199]?.getD (0,0) = (112579759570496408119116755690438914988066389,165523564262826552497394314213972022) := by decide +kernel
+  have hk : 2*mode 199+1 = 32141 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32141 (entries[199]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair314).2
 theorem checked200 :
  (entries[200]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 200+1) ∧
- (entries[200]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 200+1) := by decide +kernel
+ (entries[200]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 200+1) := by
+  have h : entries[200]?.getD (0,0) = (-112569430916977957657902481566260339586118812,165507785322011117029862492689734616) := by decide +kernel
+  have hk : 2*mode 200+1 = 32143 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32143 (entries[200]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair313).2
 theorem checked201 :
  (entries[201]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 201+1) ∧
- (entries[201]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 201+1) := by decide +kernel
+ (entries[201]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 201+1) := by
+  have h : entries[201]?.getD (0,0) = (112559103855327503108338179216600504742497973,165492008869259275343240202366614663) := by decide +kernel
+  have hk : 2*mode 201+1 = 32145 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32145 (entries[201]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair312).2
 theorem checked202 :
  (entries[202]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 202+1) ∧
- (entries[202]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 202+1) := by decide +kernel
+ (entries[202]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 202+1) := by
+  have h : entries[202]?.getD (0,0) = (-112548778385200522382405759405202464492663853,165476234904023730185117175528276067) := by decide +kernel
+  have hk : 2*mode 202+1 = 32147 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32147 (entries[202]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair311).2
 theorem checked203 :
  (entries[203]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 203+1) ∧
- (entries[203]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 203+1) := by decide +kernel
+ (entries[203]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 203+1) := by
+  have h : entries[203]?.getD (0,0) = (112538454506252589408753566503734074260805230,165460463425757338762839872904081722) := by decide +kernel
+  have hk : 2*mode 203+1 = 32149 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32149 (entries[203]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair310).2
 theorem checked204 :
  (entries[204]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 204+1) ∧
- (entries[204]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 204+1) := by decide +kernel
+ (entries[204]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 204+1) := by
+  have h : entries[204]?.getD (0,0) = (-112528132218139374099973435051176520460131327,165444694433913112690303984267840833) := by decide +kernel
+  have hk : 2*mode 204+1 = 32151 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32151 (entries[204]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair309).2
 theorem checked205 :
  (entries[205]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 205+1) ∧
- (entries[205]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 205+1) := by decide +kernel
+ (entries[205]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 205+1) := by
+  have h : entries[205]?.getD (0,0) = (112517811520516642319864203035010970898416290,165428927927944217934774410851246793) := by decide +kernel
+  have hk : 2*mode 205+1 = 32153 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32153 (entries[205]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair308).2
 theorem checked206 :
  (entries[206]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 206+1) ∧
- (entries[206]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 206+1) := by decide +kernel
+ (entries[206]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 206+1) := by
+  have h : entries[206]?.getD (0,0) = (-112507492413040255850734717212873813282162453,165413163907303974763721855920411330) := by decide +kernel
+  have hk : 2*mode 206+1 = 32155 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32155 (entries[206]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair307).2
 theorem checked207 :
  (entries[207]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 207+1) ∧
- (entries[207]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 207+1) := by decide +kernel
+ (entries[207]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 207+1) := by
+  have h : entries[207]?.getD (0,0) = (112497174895366172360697435245270119357628144,165397402371445857691686019191550562) := by decide +kernel
+  have hk : 2*mode 207+1 = 32157 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32157 (entries[207]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair306).2
 theorem checked208 :
  (entries[208]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 208+1) ∧
- (entries[208]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 208+1) := by decide +kernel
+ (entries[208]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 208+1) := by
+  have h : entries[208]?.getD (0,0) = (-112486858967150445370994369820590209207412299,165381643319823495427154780148322632) := by decide +kernel
+  have hk : 2*mode 208+1 = 32159 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32159 (entries[208]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair305).2
 theorem checked209 :
  (entries[209]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 209+1) ∧
- (entries[209]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 209+1) := by decide +kernel
+ (entries[209]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 209+1) := by
+  have h : entries[209]?.getD (0,0) = (112476544628049224223315901290165698789484326,165365886751890670819470277440167378) := by decide +kernel
+  have hk : 2*mode 209+1 = 32161 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32161 (entries[209]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair304).2
 theorem checked210 :
  (entries[210]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 210+1) ∧
- (entries[210]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 210+1) := by decide +kernel
+ (entries[210]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 210+1) := by
+  have h : entries[210]?.getD (0,0) = (-112466231877718754047157171164580662512457336,165350132667101320805751366751303432) := by decide +kernel
+  have hk : 2*mode 210+1 = 32163 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32163 (entries[210]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair303).2
 theorem checked211 :
  (entries[211]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 211+1) ∧
- (entries[211]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 211+1) := by decide +kernel
+ (entries[211]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 211+1) := by
+  have h : entries[211]?.getD (0,0) = (112455920715815375727160214582910520728308214,165334381064909536357843818401311323) := by decide +kernel
+  have hk : 2*mode 211+1 = 32165 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32165 (entries[211]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair302).2
 theorem checked212 :
  (entries[212]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 212+1) ∧
- (entries[212]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 212+1) := by decide +kernel
+ (entries[212]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 212+1) := by
+  have h : entries[212]?.getD (0,0) = (-112445611141995525870498217403567821020626360,165318631944769562429286108022473976) := by decide +kernel
+  have hk : 2*mode 212+1 = 32167 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32167 (entries[212]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair301).2
 theorem checked213 :
  (entries[213]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 213+1) ∧
- (entries[213]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 213+1) := by decide +kernel
+ (entries[213]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 213+1) := by
+  have h : entries[213]?.getD (0,0) = (112435303155915736774242883243483701532237648,165302885306135797902301407167609489) := by decide +kernel
+  have hk : 2*mode 213+1 = 32169 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32169 (entries[213]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair300).2
 theorem checked214 :
  (entries[214]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 214+1) ∧
- (entries[214]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 214+1) := by decide +kernel
+ (entries[214]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 214+1) := by
+  have h : entries[214]?.getD (0,0) = (-112424996757232636392773536940566191796667285,165287141148462795534806059792889766) := by decide +kernel
+  have hk : 2*mode 214+1 = 32171 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32171 (entries[214]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair299).2
 theorem checked215 :
  (entries[215]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 215+1) ∧
- (entries[215]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 215+1) := by decide +kernel
+ (entries[215]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 215+1) := by
+  have h : entries[215]?.getD (0,0) = (112414691945602948305175682339365406296088673,165271399471205261907445272753808332) := by decide +kernel
+  have hk : 2*mode 215+1 = 32173 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32173 (entries[215]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair298).2
 theorem checked216 :
  (entries[216]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 216+1) ∧
- (entries[216]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 216+1) := by decide +kernel
+ (entries[216]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 216+1) := by
+  have h : entries[216]?.getD (0,0) = (-112404388720683491682671033653923341460986211,165255660273818057370646012889810345) := by decide +kernel
+  have hk : 2*mode 216+1 = 32175 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32175 (entries[216]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair297).2
 theorem checked217 :
  (entries[217]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 217+1) ∧
- (entries[217]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 217+1) := by decide +kernel
+ (entries[217]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 217+1) := by
+  have h : entries[217]?.getD (0,0) = (112394087082131181256045273117933227933398399,165239923555756195991695754320877353) := by decide +kernel
+  have hk : 2*mode 217+1 = 32177 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32177 (entries[217]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair296).2
 theorem checked218 :
  (entries[218]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 218+1) ∧
- (entries[218]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 218+1) := by decide +kernel
+ (entries[218]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 218+1) := by
+  have h : entries[218]?.getD (0,0) = (-112383787029603027283104968657106696649345869,165224189316474845501836934256336140) := by decide +kernel
+  have hk : 2*mode 218+1 = 32179 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32179 (entries[218]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair295).2
 theorem checked219 :
  (entries[219]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 219+1) ∧
- (entries[219]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 219+1) := by decide +kernel
+ (entries[219]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 219+1) := by
+  have h : entries[219]?.getD (0,0) = (112373488562756135516128400093863157081775139,165208457555429327243388324286137492) := by decide +kernel
+  have hk : 2*mode 219+1 = 32181 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32181 (entries[219]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair294).2
 theorem checked220 :
  (entries[220]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 220+1) ∧
- (entries[220]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 220+1) := by decide +kernel
+ (entries[220]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 220+1) := by
+  have h : entries[220]?.getD (0,0) = (-112363191681247707169350822618434329414166548,165192728272075116116882294975727681) := by decide +kernel
+  have hk : 2*mode 220+1 = 32183 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32183 (entries[220]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair293).2
 theorem checked221 :
  (entries[221]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 221+1) ∧
- (entries[221]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 221+1) := by decide +kernel
+ (entries[221]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 221+1) := by
+  have h : entries[221]?.getD (0,0) = (112352896384735038886441159595500930139132376,165177001465867840528230968331086719) := by decide +kernel
+  have hk : 2*mode 221+1 = 32185 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32185 (entries[221]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair292).2
 theorem checked222 :
  (entries[222]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 222+1) ∧
- (entries[222]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 222+1) := by decide +kernel
+ (entries[222]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 222+1) := by
+  have h : entries[222]?.getD (0,0) = (-112342602672875522708013866340302388046062440,165161277136263282335906260512531001) := by decide +kernel
+  have hk : 2*mode 222+1 = 32187 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32187 (entries[222]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair291).2
 theorem checked223 :
  (entries[223]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 223+1) ∧
- (entries[223]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 223+1) := by decide +kernel
+ (entries[223]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 223+1) := by
+  have h : entries[223]?.getD (0,0) = (112332310545326646039132222361846881966639275,165145555282717376798148360133053157) := by decide +kernel
+  have hk : 2*mode 223+1 = 32189 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32189 (entries[223]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair290).2
 theorem checked224 :
  (entries[224]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 224+1) ∧
- (entries[224]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 224+1) := by decide +kernel
+ (entries[224]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 224+1) := by
+  have h : entries[224]?.getD (0,0) = (-112322020001745991616844298658120517359010050,165129835904686212520188154466920680) := by decide +kernel
+  have hk : 2*mode 224+1 = 32191 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32191 (entries[224]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair289).2
 theorem checked225 :
  (entries[225]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 225+1) ∧
- (entries[225]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 225+1) := by decide +kernel
+ (entries[225]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 225+1) := by
+  have h : entries[225]?.getD (0,0) = (112311731041791237477713722750756764634424101,165114119001626031401498489962011971) := by decide +kernel
+  have hk : 2*mode 225+1 = 32193 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32193 (entries[225]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair288).2
 theorem checked226 :
  (entries[226]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 226+1) ∧
- (entries[226]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 226+1) := by decide +kernel
+ (entries[226]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 226+1) := by
+  have h : entries[226]?.getD (0,0) = (-112301443665120156925382666337287189978413037,165098404572993228583060275315812978) := by decide +kernel
+  have hk : 2*mode 226+1 = 32195 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32195 (entries[226]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair287).2
 theorem checked227 :
  (entries[227]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 227+1) ∧
- (entries[227]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 227+1) := by decide +kernel
+ (entries[227]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 227+1) := by
+  have h : entries[227]?.getD (0,0) = (112291157871390618498127038136698708260668761,165082692618244352394656767194913006) := by decide +kernel
+  have hk : 2*mode 227+1 = 32197 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32197 (entries[227]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair286).2
 theorem checked228 :
  (entries[228]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 228+1) ∧
- (entries[228]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 228+1) := by decide +kernel
+ (entries[228]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 228+1) := by
+  have h : entries[228]?.getD (0,0) = (-112280873660260585936446749065707223248973639,165066983136836104302182079348943618) := by decide +kernel
+  have hk : 2*mode 228+1 = 32199 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32199 (entries[228]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair285).2
 theorem checked229 :
  (entries[229]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 229+1) ∧
- (entries[229]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 229+1) := by decide +kernel
+ (entries[229]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 229+1) := by
+  have h : entries[229]?.getD (0,0) = (112270591031388118150647186031291461774541645,165051276128225338854977882256337110) := by decide +kernel
+  have hk : 2*mode 229+1 = 32201 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32201 (entries[229]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair284).2
 theorem checked230 :
  (entries[230]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 230+1) ∧
- (entries[230]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 230+1) := by decide +kernel
+ (entries[230]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 230+1) := by
+  have h : entries[230]?.getD (0,0) = (-112260309984431369188453498081955920948234023,165035571591869063633184612699403624) := by decide +kernel
+  have hk : 2*mode 230+1 = 32203 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32203 (entries[230]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair283).2
 theorem checked231 :
  (entries[231]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 231+1) ∧
- (entries[231]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 231+1) := by decide +kernel
+ (entries[231]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 231+1) := by
+  have h : entries[231]?.getD (0,0) = (112250030519048588202621275751540978630713724,165019869527224439195121226741202787) := by decide +kernel
+  have hk : 2*mode 231+1 = 32205 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32205 (entries[231]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair282).2
 theorem checked232 :
  (entries[232]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 232+1) ∧
- (entries[232]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 232+1) := by decide +kernel
+ (entries[232]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 232+1) := by
+  have h : entries[232]?.getD (0,0) = (-112239752634898119418574467800175934502539032,165004169933748779024679317657952072) := by decide +kernel
+  have hk : 2*mode 232+1 = 32207 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32207 (entries[232]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair281).2
 theorem checked233 :
  (entries[233]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 233+1) ∧
- (entries[233]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 233+1) := by decide +kernel
+ (entries[233]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 233+1) := by
+  have h : entries[233]?.getD (0,0) = (112229476331638402102042580594681962355839574,164988472810899549478745725447931872) := by decide +kernel
+  have hk : 2*mode 233+1 = 32209 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32209 (entries[233]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair280).2
 theorem checked234 :
  (entries[234]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 234+1) ∧
- (entries[234]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 234+1) := by decide +kernel
+ (entries[234]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 234+1) := by
+  have h : entries[234]?.getD (0,0) = (-112219201608927970526725959485726643085134031,164972778158134369734640102896201948) := by decide +kernel
+  have hk : 2*mode 234+1 = 32211 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32211 (entries[234]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair279).2
 theorem checked235 :
  (entries[235]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 235+1) ∧
- (entries[235]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 235+1) := by decide +kernel
+ (entries[235]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 235+1) := by
+  have h : entries[235]?.getD (0,0) = (112208928466425453941958600203962244681230342,164957085974911011737578675094489355) := by decide +kernel
+  have hk : 2*mode 235+1 = 32213 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32213 (entries[235]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair278).2
 theorem checked236 :
  (entries[236]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 236+1) ∧
- (entries[236]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 236+1) := by decide +kernel
+ (entries[236]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 236+1) := by
+  have h : entries[236]?.getD (0,0) = (-112198656903789576540398598789016526398938132,164941396260687400148154553353666057) := by decide +kernel
+  have hk : 2*mode 236+1 = 32215 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32215 (entries[236]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair277).2
 theorem checked237 :
  (entries[237]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 237+1) ∧
- (entries[237]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 237+1) := by decide +kernel
+ (entries[237]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 237+1) := by
+  have h : entries[237]?.getD (0,0) = (112188386920679157425714898975277911017399684,164925709014921612289844776001570100) := by decide +kernel
+  have hk : 2*mode 237+1 = 32217 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32217 (entries[237]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair276).2
 theorem checked238 :
  (entries[238]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 238+1) ∧
- (entries[238]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 238+1) := by decide +kernel
+ (entries[238]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 238+1) := by
+  have h : entries[238]?.getD (0,0) = (-112178118516753110580310307948004837414247490,164910024237071878096533481984187617) := by decide +kernel
+  have hk : 2*mode 238+1 = 32219 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32219 (entries[238]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair275).2
 theorem checked239 :
  (entries[239]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 239+1) ∧
- (entries[239]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 239+1) := by decide +kernel
+ (entries[239]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 239+1) := by
+  have h : entries[239]?.getD (0,0) = (112167851691670444833027873979589914132131787,164894341926596580060061003993019713) := by decide +kernel
+  have hk : 2*mode 239+1 = 32221 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32221 (entries[239]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair274).2
 theorem checked240 :
  (entries[240]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 240+1) ∧
- (entries[240]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 240+1) := by decide +kernel
+ (entries[240]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 240+1) := by
+  have h : entries[240]?.getD (0,0) = (-112157586445090263826900558617555855516844459,164878662082954253177788869557080827) := by decide +kernel
+  have hk : 2*mode 240+1 = 32223 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32223 (entries[240]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair273).2
 theorem checked241 :
  (entries[241]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 241+1) ∧
- (entries[241]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 241+1) := by decide +kernel
+ (entries[241]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 241+1) := by
+  have h : entries[241]?.getD (0,0) = (112147322776671765986888366093222775400062358,164862984705603584900192986113463676) := by decide +kernel
+  have hk : 2*mode 241+1 = 32225 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32225 (entries[241]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair272).2
 theorem checked242 :
  (entries[242]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 242+1) ∧
- (entries[242]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 242+1) := by decide +kernel
+ (entries[242]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 242+1) := by
+  have h : entries[242]?.getD (0,0) = (-112137060686074244487648327711782382413579735,164847309794003415078471071067723695) := by decide +kernel
+  have hk : 2*mode 242+1 = 32227 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32227 (entries[242]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair271).2
 theorem checked243 :
  (entries[243]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 243+1) ∧
- (entries[243]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 243+1) := by decide +kernel
+ (entries[243]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 243+1) := by
+  have h : entries[243]?.getD (0,0) = (112126800172957087221301994395002074174489673,164831637347612735912177925826165015) := by decide +kernel
+  have hk : 2*mode 243+1 = 32229 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32229 (entries[243]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair270).2
 theorem checked244 :
  (entries[244]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 244+1) ∧
- (entries[244]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 244+1) := by decide +kernel
+ (entries[244]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 244+1) := by
+  have h : entries[244]?.getD (0,0) = (-112116541236979776765227518662857757615839450,164815967365890691896874358587063901) := by decide +kernel
+  have hk : 2*mode 244+1 = 32231 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32231 (entries[244]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair269).2
 theorem checked245 :
  (entries[245]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 245+1) ∧
- (entries[245]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 245+1) := by decide +kernel
+ (entries[245]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 245+1) := by
+  have h : entries[245]?.getD (0,0) = (112106283877801890349855464408910569052897104,164800299848296579771805844863378876) := by decide +kernel
+  have hk : 2*mode 245+1 = 32233 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32233 (entries[245]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair268).2
 theorem checked246 :
  (entries[246]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 246+1) ∧
- (entries[246]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 246+1) := by decide +kernel
+ (entries[246]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 246+1) := by
+  have h : entries[246]?.getD (0,0) = (-112096028095083099826486856309617269593861036,164784634794289848467594985491417512) := by decide +kernel
+  have hk : 2*mode 246+1 = 32235 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32235 (entries[246]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair267).2
 theorem checked247 :
  (entries[247]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 247+1) ∧
- (entries[247]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 247+1) := by decide +kernel
+ (entries[247]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 247+1) := by
+  have h : entries[247]?.getD (0,0) = (112085773888483171635113453259282024942590918,164768972203330099053961090572701929) := by decide +kernel
+  have hk : 2*mode 247+1 = 32237 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32237 (entries[247]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair266).2
 theorem checked248 :
  (entries[248]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 248+1) ∧
- (entries[248]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 248+1) := by decide +kernel
+ (entries[248]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 248+1) := by
+  have h : entries[248]?.getD (0,0) = (-112075521257661966772263617101867945134218463,164753312074877084687455476926688487) := by decide +kernel
+  have hk : 2*mode 248+1 = 32239 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32239 (entries[248]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair265).2
 theorem checked249 :
  (entries[249]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 249+1) ∧
- (entries[249]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 249+1) := by decide +kernel
+ (entries[249]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 249+1) := by
+  have h : entries[249]?.getD (0,0) = (112065270202279440758845871817584430146788012,164737654408390710559223030796200654) := by decide +kernel
+  have hk : 2*mode 249+1 = 32241 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32241 (entries[249]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair264).2
 theorem checked250 :
  (entries[250]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 250+1) ∧
- (entries[250]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 250+1) := by decide +kernel
+ (entries[250]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 250+1) := by
+  have h : entries[250]?.getD (0,0) = (-112055020721995643608021695650701895059451957,164721999203331033842780427718071260) := by decide +kernel
+  have hk : 2*mode 250+1 = 32243 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32243 (entries[250]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair263).2
 theorem checked251 :
  (entries[251]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 251+1) ∧
- (entries[251]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 251+1) := by decide +kernel
+ (entries[251]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 251+1) := by
+  have h : entries[251]?.getD (0,0) = (112044772816470719793076425051207639565836767,164706346459158263641820187542657716) := by decide +kernel
+  have hk : 2*mode 251+1 = 32245 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32245 (entries[251]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair262).2
 theorem checked252 :
  (entries[252]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 252+1) ∧
- (entries[252]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 252+1) := by decide +kernel
+ (entries[252]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 252+1) := by
+  have h : entries[252]?.getD (0,0) = (-112034526485364908215317196540694745710596961,164690696175332760938031215589999249) := by decide +kernel
+  have hk : 2*mode 252+1 = 32247 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32247 (entries[252]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair261).2
 theorem checked253 :
  (entries[253]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 253+1) ∧
- (entries[253]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 253+1) := by decide +kernel
+ (entries[253]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 253+1) := by
+  have h : entries[253]?.getD (0,0) = (112024281728338542171968019511946337600290419,164675048351315038538945137402613812) := by decide +kernel
+  have hk : 2*mode 253+1 = 32249 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32249 (entries[253]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair260).2
 theorem checked254 :
  (entries[254]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 254+1) ∧
- (entries[254]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 254+1) := by decide +kernel
+ (entries[254]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 254+1) := by
+  have h : entries[254]?.getD (0,0) = (-112014038545052049324095646966687518881271189,164659402986565761025798537448991010) := by decide +kernel
+  have hk : 2*mode 254+1 = 32251 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32251 (entries[254]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair259).2
 theorem checked255 :
  (entries[255]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 255+1) ∧
- (entries[255]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 255+1) := by decide +kernel
+ (entries[255]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode 255+1) := by
+  have h : entries[255]?.getD (0,0) = (112003796935165951664529077024569960122054776,164643760080545744701421978239273915) := by decide +kernel
+  have hk : 2*mode 255+1 = 32253 := by decide +kernel
+  rw [hk]
+  change KsIndex.SamplePartialSumProof.sampleClaim 32253 (entries[255]?.getD (0,0))
+  rw [h]
+  exact (KsIndex.SamplePartialSumProof.Block256.pair258).2
 theorem checked (i : Fin 256) :
  (entries[i.val]?.getD (0,0)).1 = tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode i.val+1) ∧
  (entries[i.val]?.getD (0,0)).2 = tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2*mode i.val+1) := by

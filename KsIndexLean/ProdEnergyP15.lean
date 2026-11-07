@@ -1,6 +1,7 @@
 module
 
 public import KsIndexLean.ProdAccessor
+import KsIndexLean.ProdEnergyP7
 
 @[expose] public section
 

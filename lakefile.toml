@@ -29,3 +29,45 @@ globs = ["KsIndexLean.*"]
 [[lean_lib]]
 name = "PalomarCombined"
 roots = ["Palomar.CombinedChallenge", "Palomar.CombinedSolution", "Palomar.Solution"]
+
+# Explicit ownership for the smaller-window certificate modules.
+[[lean_lib]]
+name = "Energy4096Certificates"
+roots = [
+  "AlphaEnergy4096Boundary",
+  "AlphaEnergy4096Decimal",
+  "AlphaEnergy4096Endpoints",
+  "AlphaEnergy4096FiniteBounds",
+  "AlphaEnergy4096FiniteMmCenter",
+  "AlphaEnergy4096FiniteMmRadius",
+  "AlphaEnergy4096FinitePCenter",
+  "AlphaEnergy4096FinitePRadius",
+  "AlphaEnergy4096MminusRows0",
+  "AlphaEnergy4096MminusRows10",
+  "AlphaEnergy4096MminusRows15",
+  "AlphaEnergy4096MminusRows20",
+  "AlphaEnergy4096MminusRows5",
+  "AlphaEnergy4096MplusRows0",
+  "AlphaEnergy4096MplusRows10",
+  "AlphaEnergy4096MplusRows15",
+  "AlphaEnergy4096MplusRows20",
+  "AlphaEnergy4096MplusRows5",
+  "AlphaEnergy4096PminusRows0",
+  "AlphaEnergy4096PminusRows10",
+  "AlphaEnergy4096PminusRows15",
+  "AlphaEnergy4096PminusRows20",
+  "AlphaEnergy4096PminusRows5",
+  "AlphaEnergy4096PplusRows0",
+  "AlphaEnergy4096PplusRows10",
+  "AlphaEnergy4096PplusRows15",
+  "AlphaEnergy4096PplusRows20",
+  "AlphaEnergy4096PplusRows5",
+  "AlphaEnergy4096Qform",
+  "AlphaEnergy4096RowData",
+  "AlphaEnergy4096RowTotals",
+  "AlphaEnergy4096SampleTails",
+  "AlphaEnergy4096TailAssembly",
+  "AlphaEnergyWindow4096",
+  "AlphaVariableEnergyBudget",
+  "CorrectedTrialTailEnclosure",
+]

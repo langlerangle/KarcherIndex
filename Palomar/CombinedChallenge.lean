@@ -81,7 +81,7 @@ lemma sphereChart_injective : Function.Injective sphereChart := by
 def ParameterSphere (k : ℕ) := {p : Sphere // p ∉ sphereChart '' punctures k}
 
 instance (k : ℕ) : TopologicalSpace (ParameterSphere k) :=
-  inferInstanceAs (TopologicalSpace {p : Sphere // p ∉ sphereChart '' punctures k})
+  @instTopologicalSpaceSubtype Sphere (fun p => p ∉ sphereChart '' punctures k) inferInstance
 
 /-- Embed a finite nonpunctured complex parameter into the parameter sphere. -/
 def finiteParameter {k : ℕ} (w : PuncturedPlane k) : ParameterSphere k :=
@@ -199,7 +199,7 @@ def PeriodQuotient (F : P → PeriodTarget) (m : ℕ) := Quotient (periodSetoid 
 
 instance periodQuotientTopology [TopologicalSpace P] (m : ℕ) :
     TopologicalSpace (PeriodQuotient F m) :=
-  inferInstanceAs (TopologicalSpace (Quotient (periodSetoid (F := F) m)))
+  @instTopologicalSpaceQuotient (HeightLift F) (periodSetoid (F := F) m) inferInstance
 
 end HeightLift
 
@@ -214,10 +214,10 @@ instance periodQuotientMeasurableSpace {P : Type*} [TopologicalSpace P] {F : P �
 def PuncturedClosedDisk (k : ℕ) := {w : PuncturedPlane k // ‖w.val‖ ≤ 1}
 
 instance (k : ℕ) : TopologicalSpace (PuncturedClosedDisk k) :=
-  inferInstanceAs (TopologicalSpace {w : PuncturedPlane k // ‖w.val‖ ≤ 1})
+  @instTopologicalSpaceSubtype (PuncturedPlane k) (fun w => ‖w.val‖ ≤ 1) inferInstance
 
 instance (k : ℕ) : MeasurableSpace (PuncturedClosedDisk k) :=
-  inferInstanceAs (MeasurableSpace {w : PuncturedPlane k // ‖w.val‖ ≤ 1})
+  @Subtype.instMeasurableSpace (PuncturedPlane k) (fun w => ‖w.val‖ ≤ 1) inferInstance
 
 /-- The EW conformal length factor k (|w|^(2k-2) + 1) / |w^(2k) + 1|. -/
 def rho (k : ℕ) (w : ℂ) : ℝ := k * (‖w‖ ^ (2 * k - 2) + 1) / ‖w ^ (2 * k) + 1‖
@@ -689,18 +689,22 @@ def reflectionBasepoint (k : ℕ) : PuncturedPlane k := ⟨1, by norm_num [punct
 agreeing with `sphereChart (v⁻¹)` for `v ≠ 0`. -/
 def infinitySphereChart (v : ℂ) : Sphere := reflectSphere (sphereChart (starRingEnd ℂ v))
 
+/-- The north point is outside the image of the finite punctures. -/
+theorem infinitySphereChart_zero_not_mem_punctures (k : ℕ) :
+    infinitySphereChart 0 ∉ sphereChart '' punctures k := by
+  rintro ⟨z, _hz, he⟩
+  have hd : 1 + ‖z‖ ^ 2 ≠ 0 := ne_of_gt (by positivity)
+  have h2 := congrArg (fun p : Sphere => p.val 2) he
+  have hz2 : stereoPoint z 2 = (‖z‖ ^ 2 - 1) / (1 + ‖z‖ ^ 2) := rfl
+  have hinf : (infinitySphereChart 0).val 2 = 1 := by
+    simp [infinitySphereChart, reflectSphere, reflectAmbient, sphereChart, stereoPoint]
+  rw [show ((sphereChart z).val 2) = stereoPoint z 2 from rfl, hz2, hinf] at h2
+  rw [div_eq_one_iff_eq hd] at h2
+  nlinarith [sq_nonneg ‖z‖]
+
 /-- The regular point at infinity of the parameter sphere (the north point), not a finite puncture. -/
 def infinityParameter (k : ℕ) : ParameterSphere k :=
-  ⟨infinitySphereChart 0, by
-    rintro ⟨z, _hz, he⟩
-    have hd : 1 + ‖z‖ ^ 2 ≠ 0 := ne_of_gt (by positivity)
-    have h2 := congrArg (fun p : Sphere => p.val 2) he
-    have hz2 : stereoPoint z 2 = (‖z‖ ^ 2 - 1) / (1 + ‖z‖ ^ 2) := rfl
-    have hinf : (infinitySphereChart 0).val 2 = 1 := by
-      simp [infinitySphereChart, reflectSphere, reflectAmbient, sphereChart, stereoPoint]
-    rw [show ((sphereChart z).val 2) = stereoPoint z 2 from rfl, hz2, hinf] at h2
-    rw [div_eq_one_iff_eq hd] at h2
-    nlinarith [sq_nonneg ‖z‖]⟩
+  ⟨infinitySphereChart 0, infinitySphereChart_zero_not_mem_punctures k⟩
 
 /-- Data for a smooth periodic quotient of the based Enneper-Weierstrass realization.
 

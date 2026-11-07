@@ -163,13 +163,21 @@ Solution proofs use only `propext`, `Classical.choice`, and `Quot.sound`, as che
 by a local axiom audit. These statement placeholders are excluded from the
 metadata's proof-development `sorry` counts.
 
-All 2,951 selected Lean module and standalone-script checks passed a local
-clean-project build on 31 October 2026, with recorded repairs and resumptions.
-A fresh audit of the five Solution endpoints confirmed the permitted axioms.
-Exports from that build passed the stock comparator with both NanoDa and Lean's
-default kernel; the pinned inputs were rechecked afterward. These checks underpin
-the published snapshot and its documentation-only successors; they are distinct
-from the source review below.
+The original published snapshot passed a local clean-project build and stock
+comparator checks on 31 October 2026. Subsequent proof optimizations preserve all
+five selected results, including the same strict decimal bounds and arithmetic
+consequences through period 2298. They reduce concurrent compilation within a
+large certificate family and reduce the work needed to check numerical proofs.
+The optimized candidate has passed comparison, the permitted-axiom check, and
+local replay by both NanoDa and Lean's default kernel. Hosted component checks
+also passed comparison, the axiom check, and both mandatory kernels on the same
+exports. In a separate bounded attempt, con-ron reached its 30-minute resource
+limit and was classified as a capacity decline by the pinned Palomar verifier.
+That decline is permitted after the mandatory checks pass; it is not con-ron
+acceptance. A hosted cold-build diagnostic rebuilt the candidate's selected-Solution closure
+and reproduced both exports byte for byte; that diagnostic was deliberately stopped
+before its kernel checking finished. These are component checks, not a completed
+Palomar verification or registry acceptance.
 
 A fresh-session Claude Opus 5.5 review examined public commit `97b6d52` through
 source reading and scripted checks, without building the project or running

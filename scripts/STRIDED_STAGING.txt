@@ -1,0 +1,9 @@
+Reproducing the ProdEnergyP staging in this candidate
+
+After regenerating the original ProdEnergyP0..256 sources with negsign_generator.py, run:
+  python3 scripts/stride_stage.py --repo . --leaf-start 0 --leaf-count 257 --width 8
+The transform refuses already-staged input. It adds one private predecessor import to each
+leaf 8..256, leaving proof bodies and public glue unchanged. There are eight residue chains.
+This bounds concurrent builds in this family to eight; it does not limit all Lake tasks.
+Do not pass these private imports through the generator's public-import header rewriting.
+The transform was measured on 16 vCPU / 32 GB; full candidate verification is separate.

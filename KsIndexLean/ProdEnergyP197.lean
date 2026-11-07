@@ -1,8 +1,10 @@
 module
 
 public import KsIndexLean.ProdAccessor
+import KsIndexLean.ProdEnergyP189
 public import KsIndexLean.ProdValid
 public import KsIndexLean.AlphaLowProdValid
+public import KsIndexLean.AlphaLowTreeBackend
 
 @[expose] public section
 
@@ -90,6 +92,7 @@ theorem checkedE (i : Fin 64) :
         tableSampleNumerator KsIndex.PositiveEnergyAlphaLowProd.tFast (2 * modeE i.val) ∧
     (entriesE[i.val]?.getD (0, 0)).2 =
         tableSampleRadius KsIndex.PositiveEnergyAlphaLowProd.tFast (2 * modeE i.val) := by
+  rw [← KsIndex.AlphaLowTreeBackend.table_eq]
   fin_cases i <;> decide +kernel
 
 def idxE (n : ℤ) : ℕ := (n - (4416)).toNat

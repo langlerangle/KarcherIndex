@@ -7,7 +7,9 @@ the resulting proof in Lean.
 
 ## Lean checks
 
-The 54 `.lean` files in this directory were exercised in the full source build.
+The 54 `.lean` files in this directory were exercised in the original published
+snapshot's local full-source build. The later hosted cold-build diagnostic checks
+the selected Solution closure; it does not rerun all these standalone scripts.
 The 50 `audit_stage5*.lean` files inspect declarations and axiom dependencies in
 the spectral, index, and nullity arguments. The historical `stage5` filename label
 refers to this part of the development; it is not a separate build workflow.
@@ -51,12 +53,16 @@ baseline proof templates for the upper bound on the critical phase.
 hashes, commands using fresh output directories, and the reproduction boundaries.
 Do not overwrite the committed optimized proofs with the generated templates.
 
-For the recorded production comparison, 190 of 566 files are byte-identical;
-372 energy files retain the original windows and theorem statements but use
-optimized proofs, and four tail files use exact center-radius proof replacements.
+In the historical production comparison recorded by that file, 190 of 566 files
+were byte-identical;
+372 energy files retained the original windows and theorem statements but used
+optimized proofs, and four tail files used exact center-radius proof replacements.
 This generator therefore does not reproduce all committed proof bodies byte for
-byte. Those counts describe the upper-bound production generator, not the
-separate multiplier generator.
+byte. Those counts describe the historical upper-bound production comparison, not the
+current optimized candidate or the separate multiplier generator. Later changes
+include different proof lookup structures, a smaller certified energy window,
+and private imports that constrain compilation order. The committed Lean source
+is the input to verification; this generator alone does not reconstruct it.
 
 [`negsign_prod_module_order.txt`](negsign_prod_module_order.txt) lists production
 build targets. The optional [`negsign_gate_driver.sh`](negsign_gate_driver.sh)
@@ -67,6 +73,20 @@ cap is 12G, configurable through `MEMCAP`, with swap disabled for each scope.
 Lake may still build dependencies concurrently within a target. This specialized
 driver does not run the combined comparator or establish axiom or fidelity checks;
 use the root README for the primary verification workflow.
+
+### Compilation ordering for energy certificates
+
+The committed `ProdEnergyP` modules include private predecessor imports that
+arrange compilation into eight independent chains. This limits concurrent
+compilation within that family, not all Lake work. Ordinary builds already use
+these imports; users do not need to run a preprocessing command.
+
+[`stride_stage.py`](stride_stage.py) applies this import-only transform to an
+unstaged copy of the family. See [STRIDED_STAGING.txt](STRIDED_STAGING.txt) for
+the command and regeneration boundary. It edits files in place and refuses input
+that already contains the expected staging imports. It does not reconstruct the
+other optimized proof bodies, run Lean, or establish a verification verdict.
+Use a separate working copy when regenerating baseline templates and applying it.
 
 ## Python diagnostics
 
