@@ -66,7 +66,7 @@ status:
     geometric index values and nullity 3 throughout that range.
     The combined Challenge selects two geometric endpoints, threshold uniqueness,
     strict decimal bounds, and the arithmetic consequences through period 2298.
-    The optimized proofs preserve all five selected results and have passed statement
+    The optimized proofs preserve all five selected results and have locally passed statement
     comparison, the permitted-axiom check, and independent checking by Lean's default
     kernel and NanoDa.
   sorry_count: 0  # Excludes the five deliberate Challenge statement placeholders.
@@ -99,7 +99,8 @@ automation:
       framework: "Codex"
       tool_setup: >-
         OpenAI-assisted proof development, source-fidelity review, numerical certification,
-        integration checks, and public documentation review. These project-level roles
+        integration checks, and public documentation review. Hosted diagnostic verification
+        used GitHub Actions with Namespace runners. These project-level roles
         do not assign authorship of every declaration in the development.
     - method: "other"
       models: ["Harmonic Aristotle"]

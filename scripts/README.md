@@ -76,16 +76,22 @@ use the root README for the primary verification workflow.
 
 ### Compilation ordering for energy certificates
 
-The committed `ProdEnergyP` modules include private predecessor imports that
-arrange compilation into eight independent chains. This limits concurrent
-compilation within that family, not all Lake work. Ordinary builds already use
-these imports; users do not need to run a preprocessing command.
+The committed `ProdEnergyP0..256` modules form sixteen predecessor-import chains:
+eight start at 0..7 and end at 56..63; eight restart at 64..71 and extend through
+256. Each non-head module imports its predecessor eight indices earlier.
+The selected Solution imports only `ProdEnergyP64..191`, through
+`AlphaEnergy4096FinitePCenter`. This subset has eight chains, with heads 64..71;
+the restart prevents it from importing the discarded lower blocks. These imports
+limit concurrent compilation within this family, not all Lake work. Ordinary
+builds already use them; users do not need a preprocessing command.
 
-[`stride_stage.py`](stride_stage.py) applies this import-only transform to an
-unstaged copy of the family. See [STRIDED_STAGING.txt](STRIDED_STAGING.txt) for
-the command and regeneration boundary. It edits files in place and refuses input
-that already contains the expected staging imports. It does not reconstruct the
-other optimized proof bodies, run Lean, or establish a verification verdict.
+[`stride_stage.py`](stride_stage.py) applies predecessor imports to an unstaged
+copy of a specified range. Applying it once to the full family creates eight
+chains, without the committed restart at 64. Thus that command alone does not
+reproduce the committed staging. See [STRIDED_STAGING.txt](STRIDED_STAGING.txt)
+for the command and regeneration boundary. It edits files in place and refuses
+input that already contains the expected staging imports. It does not reconstruct
+the optimized proof bodies, run Lean, or establish a verification verdict.
 Use a separate working copy when regenerating baseline templates and applying it.
 
 ## Python diagnostics

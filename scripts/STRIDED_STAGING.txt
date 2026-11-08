@@ -1,9 +1,21 @@
-Reproducing the ProdEnergyP staging in this candidate
+ProdEnergyP compilation ordering and regeneration boundary
 
-After regenerating the original ProdEnergyP0..256 sources with negsign_generator.py, run:
+The committed ProdEnergyP0..256 family has sixteen predecessor-import chains.
+Heads 0..7 lead through 56..63. Heads 64..71 restart the chains, which extend
+through 256. Every non-head module imports its predecessor eight indices earlier.
+The selected Solution uses only ProdEnergyP64..191, through
+AlphaEnergy4096FinitePCenter: eight chains with heads 64..71. Their restart
+keeps the discarded lower blocks out of the selected import closure.
+This limits concurrent compilation within this family, not all Lake tasks.
+
+On a separate copy of the original sources regenerated with negsign_generator.py:
   python3 scripts/stride_stage.py --repo . --leaf-start 0 --leaf-count 257 --width 8
-The transform refuses already-staged input. It adds one private predecessor import to each
-leaf 8..256, leaving proof bodies and public glue unchanged. There are eight residue chains.
-This bounds concurrent builds in this family to eight; it does not limit all Lake tasks.
+The transform refuses already-staged input. This full-range command adds one
+private predecessor import to each leaf 8..256, leaving proof bodies and public
+glue unchanged. It creates eight chains WITHOUT the committed restart at 64;
+its output therefore does not reproduce the committed staging or optimized proofs.
+In the committed sources, the predecessor imports at 64..71 are absent. Do not
+restore them: that would bring the lower blocks into the selected Solution closure.
 Do not pass these private imports through the generator's public-import header rewriting.
-The transform was measured on 16 vCPU / 32 GB; full candidate verification is separate.
+The original full-family transform was measured on 16 vCPU / 32 GB; that measurement
+is separate from verification of the current selected proofs.

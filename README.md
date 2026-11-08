@@ -143,15 +143,14 @@ The Lean package and module namespace remain `KsIndexLean`.
 With `elan` installed and the pinned dependencies available:
 
 ```sh
-lake build KsIndexLean PalomarCombined
+lake build PalomarCombined
 lake comparator --config comparator.json
 ```
 
 The combined target includes the numerical proofs. A clean build and the complete
 comparator can require substantial time and memory. The default target is
-`PalomarCombined`; building it checks its imported proof dependencies. The explicit
-`KsIndexLean` target above additionally builds every library source module, including
-supporting results outside the five selected proofs.
+`PalomarCombined`; building it checks its imported proof dependencies. To additionally build every library source module, including supporting results
+outside the five selected proofs, run the optional `lake build KsIndexLean` command.
 
 Optional checks, certificate generators, and finite diagnostics are described in
 [the scripts guide](scripts/README.md). They supplement the workflow above.
@@ -166,7 +165,7 @@ metadata's proof-development `sorry` counts.
 The numerical proofs use optimized certificate representations and compilation
 ordering while preserving all five selected results, including the same strict
 decimal bounds and arithmetic consequences through period 2298. The selected
-proofs have passed statement comparison, the permitted-axiom check, and independent
+proofs have locally passed statement comparison, the permitted-axiom check, and independent
 checking by Lean's default kernel and NanoDa.
 
 A fresh-session Claude Opus 5.5 source review examined public commit `97b6d52`.
