@@ -613,7 +613,7 @@ def quotientProjection (m : ℕ) : PeriodQuotient F m → P :=
   Quotient.lift projection (by rintro q r ⟨n, rfl⟩; rfl)
 end HeightLift
 
-/-! ### Exposed atlas-compatibility (intended parameter-sphere atlas) -/
+/-! ### Compatibility with the parameter-sphere atlas -/
 section Atlas
 variable {k : ℕ} [ChartedSpace ℂ (ParameterSphere k)] {F : ParameterSphere k → PeriodTarget} (m : ℕ)
   [ChartedSpace ℂ (HeightLift.PeriodQuotient F m)]
@@ -733,7 +733,7 @@ structure CoveredSmoothSection (k : ℕ) (hk : 2 ≤ k) (m : ℕ) where
   basedMap    : IsBasedEWMapSphere (reflectionBasepoint k) toSection.F
   pos         : 0 < m
   paramChart  : ChartedSpace ℂ (ParameterSphere k)
-  -- the intended parameter atlas, pinned by its finite/infinity coordinate germs:
+  -- Parameter charts specified by their coordinate germs at finite points and infinity:
   chart_finite_center : ∀ w : PuncturedPlane k,
     @chartAt ℂ _ (ParameterSphere k) _ paramChart (finiteParameter w) (finiteParameter w) = w.val
   chart_finite_germ : ∀ w : PuncturedPlane k,

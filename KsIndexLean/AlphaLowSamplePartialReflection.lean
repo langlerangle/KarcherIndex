@@ -18,31 +18,31 @@ def partialSumB (t : CoefficientTable) (k : ℤ) : ℤ :=
   ∑ i ∈ Finset.univ.filter (fun i : Fin 25 => ¬ i.val < 12),
     coefficientNumerator i * tableCellA t i (k + shift i) * cellZ i (k + shift i)
 
-/-- (c3) The split is exact: A + B is the existing sample numerator. -/
+/-- The split is exact: A + B is the existing sample numerator. -/
 theorem partialSum_add (t : CoefficientTable) (k : ℤ) :
     partialSumA t k + partialSumB t k = tableSampleNumerator t k := by
   unfold partialSumA partialSumB tableSampleNumerator
   exact Finset.sum_filter_add_sum_filter_not _ _ _
 
-/-- (c1) Cell evenness: the coefficient cell depends on k only through |k|. -/
+/-- Cell evenness: the coefficient cell depends on k only through |k|. -/
 theorem tableCellA_neg (t : CoefficientTable) (i : Fin 25) (m : ℤ) :
     tableCellA t i (-m) = tableCellA t i m := by
   simp [tableCellA, Int.natAbs_neg]
 
-/-- (c1) Seed-factor evenness. -/
+/-- Seed-factor evenness. -/
 theorem cellZ_neg (i : Fin 25) (m : ℤ) : cellZ i (-m) = cellZ i m := by
   simp [cellZ, Int.natAbs_neg]
 
-/-- TOTAL odd-block reflection: pairs i ↦ 11 − i inside `i.val < 12`, identity outside. -/
+/-- Total odd-block reflection: pairs i ↦ 11 − i inside `i.val < 12`, identity outside. -/
 def reflectA (i : Fin 25) : Fin 25 :=
   if h : i.val < 12 then ⟨11 - i.val, by omega⟩ else i
 
-/-- TOTAL even-block reflection: identity inside `i.val < 12`, pairs i ↦ 36 − i outside
+/-- Total even-block reflection: identity inside `i.val < 12`, pairs i ↦ 36 − i outside
 (there 12 ≤ i.val ≤ 24, so 12 ≤ 36 − i.val ≤ 24 < 25). -/
 def reflectB (i : Fin 25) : Fin 25 :=
   if h : i.val < 12 then i else ⟨36 - i.val, by omega⟩
 
-/-- (c2) Pairing data facts for the odd block (stated on the total reflection). -/
+/-- Pairing data facts for the odd block (stated on the total reflection). -/
 theorem pairA_facts : ∀ i : Fin 25, i.val < 12 →
     coefficientNumerator (reflectA i) = -coefficientNumerator i ∧
     shift (reflectA i) = -shift i ∧
@@ -50,7 +50,7 @@ theorem pairA_facts : ∀ i : Fin 25, i.val < 12 →
     seedNumerator (reflectA i) = seedNumerator i := by
   decide
 
-/-- (c2) Pairing data facts for the even block (stated on the total reflection). -/
+/-- Pairing data facts for the even block (stated on the total reflection). -/
 theorem pairB_facts : ∀ i : Fin 25, ¬ i.val < 12 →
     coefficientNumerator (reflectB i) = coefficientNumerator i ∧
     shift (reflectB i) = -shift i ∧
@@ -90,8 +90,7 @@ theorem cellZ_congr {i j : Fin 25}
     (h : seedNumerator i = seedNumerator j) (m : ℤ) : cellZ i m = cellZ j m := by
   simp [cellZ, h]
 
-/-- Pointwise: the odd-block term at −k equals MINUS the reflected term at k
-(oriented for the nbij' value obligation; Astra 4146 fix 2). -/
+/-- Pointwise: the odd-block term at −k equals the negative of the reflected term at k. -/
 theorem termA_reflect (t : CoefficientTable) (k : ℤ) {i : Fin 25} (h : i.val < 12) :
     coefficientNumerator i * tableCellA t i (-k + shift i) * cellZ i (-k + shift i) =
       -(coefficientNumerator (reflectA i) *
@@ -116,7 +115,7 @@ theorem termB_reflect (t : CoefficientTable) (k : ℤ) {i : Fin 25} (h : ¬ i.va
   rw [harg, tableCellA_neg, cellZ_neg,
     tableCellA_congr t hn, cellZ_congr hz, hc]
 
-/-- A is ODD in k. -/
+/-- The partial sum A is odd in k. -/
 theorem partialSumA_neg (t : CoefficientTable) (k : ℤ) :
     partialSumA t (-k) = -partialSumA t k := by
   unfold partialSumA
@@ -138,7 +137,7 @@ theorem partialSumA_neg (t : CoefficientTable) (k : ℤ) :
     simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hi
     exact termA_reflect t k hi
 
-/-- B is EVEN in k. -/
+/-- The partial sum B is even in k. -/
 theorem partialSumB_neg (t : CoefficientTable) (k : ℤ) :
     partialSumB t (-k) = partialSumB t k := by
   unfold partialSumB
@@ -159,7 +158,7 @@ theorem partialSumB_neg (t : CoefficientTable) (k : ℤ) :
     simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hi
     exact termB_reflect t k hi
 
-/-- The two exact identities requested in 4144: sample values are A+B and −A+B. -/
+/-- The sample numerators at k and −k are respectively A+B and −A+B. -/
 theorem tableSampleNumerator_eq_partialSums (t : CoefficientTable) (k : ℤ) :
     tableSampleNumerator t k = partialSumA t k + partialSumB t k :=
   (partialSum_add t k).symm

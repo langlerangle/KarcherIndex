@@ -615,7 +615,7 @@ def quotientProjection (m : ℕ) : PeriodQuotient F m → P :=
   Quotient.lift projection (by rintro q r ⟨n, rfl⟩; rfl)
 end HeightLift
 
-/-! ### Exposed atlas-compatibility (intended parameter-sphere atlas) -/
+/-! ### Compatibility with the parameter-sphere atlas -/
 section Atlas
 variable {k : ℕ} [ChartedSpace ℂ (ParameterSphere k)] {F : ParameterSphere k → PeriodTarget} (m : ℕ)
   [ChartedSpace ℂ (HeightLift.PeriodQuotient F m)]
@@ -735,7 +735,7 @@ structure CoveredSmoothSection (k : ℕ) (hk : 2 ≤ k) (m : ℕ) where
   basedMap    : IsBasedEWMapSphere (reflectionBasepoint k) toSection.F
   pos         : 0 < m
   paramChart  : ChartedSpace ℂ (ParameterSphere k)
-  -- the intended parameter atlas, pinned by its finite/infinity coordinate germs:
+  -- Parameter charts specified by their coordinate germs at finite points and infinity:
   chart_finite_center : ∀ w : PuncturedPlane k,
     @chartAt ℂ _ (ParameterSphere k) _ paramChart (finiteParameter w) (finiteParameter w) = w.val
   chart_finite_germ : ∀ w : PuncturedPlane k,
@@ -822,7 +822,7 @@ end EWChain
 theorem quotientIntegral_toLibrary (k : ℕ) (c : EWChain) :
     KsIndex.KarcherData.quotientIntegral k c.toLibrary = quotientIntegral k c := rfl
 
-/-- The new path type has genuine avoiding chains between all finite points.
+/-- Puncture-avoiding chains exist between all finite parameter points.
 This prevents vacuity when the map is characterized by all such chains. -/
 theorem exists_avoiding_chain {k : ℕ} (hk : 2 ≤ k) (b w : PuncturedPlane k) :
     ∃ c : EWChain, c.start = b.val ∧ c.finish = w.val ∧
@@ -830,7 +830,7 @@ theorem exists_avoiding_chain {k : ℕ} (hk : 2 ≤ k) (b w : PuncturedPlane k) 
   obtain ⟨c, hs, ht, ha⟩ := KsIndex.KarcherData.exists_connecting_chain hk b.property w.property
   exact ⟨EWChain.ofLibrary c, hs, ht, ha⟩
 
-/-- Every new-type chain computes the same existing based EW integral. -/
+/-- Every puncture-avoiding chain computes the based EW integral. -/
 theorem descendedIntegral_eq_new_chain {k : ℕ} (hk : 2 ≤ k)
     (b w : PuncturedPlane k) (c : EWChain)
     (hs : c.start = b.val) (ht : c.finish = w.val)
@@ -942,7 +942,7 @@ theorem actual_nullity {k m : ℕ} [h : Fact (2 ≤ k)] [NeZero m]
     Cardinal.toENat (Module.rank ℂ V)) he
 
 
-/-! ### The two Challenge theorems (Solution proofs of both targets) -/
+/-! ### Geometric index and nullity theorems -/
 
 /-- **Intrinsic index/nullity, m = 2, k ≥ 3.** -/
 theorem exists_intrinsic_index_nullity_m2 {k : ℕ} (hk : 2 ≤ k) (hk3 : 3 ≤ k) :

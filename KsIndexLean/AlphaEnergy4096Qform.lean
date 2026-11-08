@@ -1,6 +1,6 @@
 module
-public import AlphaEnergy4096FiniteBounds
-public import AlphaEnergy4096SampleTails
+public import KsIndexLean.AlphaEnergy4096FiniteBounds
+public import KsIndexLean.AlphaEnergy4096SampleTails
 @[expose] public section
 namespace KsIndex.AlphaRemarkTrial.EnergyWindow4096
 open CircleQ

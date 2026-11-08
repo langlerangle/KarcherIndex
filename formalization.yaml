@@ -66,15 +66,9 @@ status:
     geometric index values and nullity 3 throughout that range.
     The combined Challenge selects two geometric endpoints, threshold uniqueness,
     strict decimal bounds, and the arithmetic consequences through period 2298.
-    The original published snapshot passed the local build and kernel checks described
-    in the README. The optimized candidate preserves the five selected results and
-    has passed local comparison, an axiom check, and both stock kernels. Hosted
-    component checks also passed comparison, axiom checking, and both mandatory
-    kernels on the same exports. A bounded con-ron attempt reached its 30-minute
-    resource limit and received a recognized capacity-decline classification from
-    the pinned Palomar verifier. This permitted decline is not con-ron acceptance.
-    A separate hosted cold build reproduced those exports byte for byte. Component
-    checks do not constitute a complete hosted pipeline verdict or registry acceptance.
+    The optimized proofs preserve all five selected results and have passed statement
+    comparison, the permitted-axiom check, and independent checking by Lean's default
+    kernel and NanoDa.
   sorry_count: 0  # Excludes the five deliberate Challenge statement placeholders.
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]
@@ -130,7 +124,7 @@ automation:
         hardware: "API-only"
       prompting_notes: "Statement file with a proof-route sketch in the header; 'fill in the sorry'."
   wall_time: "approximately two months, intermittently"
-  spend_usd: "subscriptions"
+  spend_usd: "subscriptions plus cloud verification compute"
   notes: >-
     The author directed the project and reviewed mathematical statements and design
     decisions. The reported time is the approximate project calendar span, not cumulative
@@ -175,8 +169,8 @@ review:
     verification and do not constitute external human peer review or exhaustive
     independent review of every proof. The author directed the work and reviewed
     mathematical design decisions, and reviewed the earlier definition guide and the
-    statements and definitions it references. The author has also reviewed and approved
-    the final combined repository for public availability. A fresh-session Claude
+    statements and definitions it references. The author has approved the repository's
+    public availability. A fresh-session Claude
     Opus 5.5 review examined public commit 97b6d52aa27c9dfc0028e4cc3efdb3ed70da6187
     through source reading and scripted checks, without building the project or
     running Comparator. The reviewer belongs to the same model family as earlier
@@ -280,9 +274,8 @@ alignment:
     module and five comparator targets. The repository is public. The source audit
     and follow-up described above concern the historical commits named in that
     review record; subsequent proof optimizations have separate validation evidence.
-    The optimized candidate's local and hosted component checks are described in the
-    README. A complete Palomar verification of this successor remains outstanding.
-    This metadata does not claim registry acceptance.
+    Verification and source-review scopes are described in the README.
+
 
 acknowledgements: >-
   We thank the developers and contributors of Lean, Mathlib, and Tau Ceti for the

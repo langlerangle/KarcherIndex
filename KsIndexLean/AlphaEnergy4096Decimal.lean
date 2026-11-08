@@ -1,6 +1,6 @@
 module
-public import AlphaEnergy4096Qform
-public import AlphaVariableEnergyBudget
+public import KsIndexLean.AlphaEnergy4096Qform
+public import KsIndexLean.AlphaVariableEnergyBudget
 public import KsIndexLean.AlphaActualWindow1025Assembly
 public import KsIndexLean.AlphaMomentBounds
 public import KsIndexLean.AlphaActualRemainderIdentity

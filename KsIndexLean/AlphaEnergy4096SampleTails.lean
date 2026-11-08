@@ -1,5 +1,5 @@
 module
-public import AlphaEnergy4096TailAssembly
+public import KsIndexLean.AlphaEnergy4096TailAssembly
 @[expose] public section
 namespace KsIndex.AlphaRemarkTrial.Energy4096Rows
 open PowerArc

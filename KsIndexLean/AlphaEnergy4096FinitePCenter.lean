@@ -127,7 +127,7 @@ public import KsIndexLean.ProdEnergyP188
 public import KsIndexLean.ProdEnergyP189
 public import KsIndexLean.ProdEnergyP190
 public import KsIndexLean.ProdEnergyP191
-public import AlphaEnergy4096Boundary
+public import KsIndexLean.AlphaEnergy4096Boundary
 @[expose] public section
 namespace KsIndex.AlphaRemarkTrial.Energy4096Finite
 open KsIndex.NegSignProd

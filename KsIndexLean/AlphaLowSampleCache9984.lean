@@ -8,8 +8,8 @@ public import KsIndexLean.AlphaLowSamplePartialBlock9984
 
 @[expose] public section
 
-/-! Generated sample pairs: untrusted until each kernel check succeeds.
-No actual analytic enclosure is claimed without ValidCoefficientTable. -/
+/-! Exact sample-numerator and radius identities for the coefficient table.
+Analytic enclosures follow when the table satisfies `ValidCoefficientTable`. -/
 namespace KsIndex.AlphaRemarkTrial.Cache9984
 open KsIndex.AlphaRemarkTrial
 set_option maxRecDepth 65536

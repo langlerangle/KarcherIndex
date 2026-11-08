@@ -1,7 +1,7 @@
 module
-public import AlphaEnergy4096RowTotals
-public import AlphaEnergy4096Endpoints
-public import CorrectedTrialTailEnclosure
+public import KsIndexLean.AlphaEnergy4096RowTotals
+public import KsIndexLean.AlphaEnergy4096Endpoints
+public import KsIndexLean.CorrectedTrialTailEnclosure
 @[expose] public section
 namespace KsIndex.AlphaRemarkTrial.Energy4096Rows
 open PowerArc

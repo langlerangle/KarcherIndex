@@ -1,5 +1,5 @@
 module
-public import AlphaEnergy4096RowData
+public import KsIndexLean.AlphaEnergy4096RowData
 @[expose] public section
 namespace KsIndex.AlphaRemarkTrial.Energy4096Rows
 set_option maxRecDepth 10000

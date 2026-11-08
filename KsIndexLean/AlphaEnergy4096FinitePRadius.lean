@@ -1,401 +1,401 @@
 module
-public import KsIndexLean.ProdEnergyMm64
-public import KsIndexLean.ProdEnergyMm65
-public import KsIndexLean.ProdEnergyMm66
-public import KsIndexLean.ProdEnergyMm67
-public import KsIndexLean.ProdEnergyMm68
-public import KsIndexLean.ProdEnergyMm69
-public import KsIndexLean.ProdEnergyMm70
-public import KsIndexLean.ProdEnergyMm71
-public import KsIndexLean.ProdEnergyMm72
-public import KsIndexLean.ProdEnergyMm73
-public import KsIndexLean.ProdEnergyMm74
-public import KsIndexLean.ProdEnergyMm75
-public import KsIndexLean.ProdEnergyMm76
-public import KsIndexLean.ProdEnergyMm77
-public import KsIndexLean.ProdEnergyMm78
-public import KsIndexLean.ProdEnergyMm79
-public import KsIndexLean.ProdEnergyMm80
-public import KsIndexLean.ProdEnergyMm81
-public import KsIndexLean.ProdEnergyMm82
-public import KsIndexLean.ProdEnergyMm83
-public import KsIndexLean.ProdEnergyMm84
-public import KsIndexLean.ProdEnergyMm85
-public import KsIndexLean.ProdEnergyMm86
-public import KsIndexLean.ProdEnergyMm87
-public import KsIndexLean.ProdEnergyMm88
-public import KsIndexLean.ProdEnergyMm89
-public import KsIndexLean.ProdEnergyMm90
-public import KsIndexLean.ProdEnergyMm91
-public import KsIndexLean.ProdEnergyMm92
-public import KsIndexLean.ProdEnergyMm93
-public import KsIndexLean.ProdEnergyMm94
-public import KsIndexLean.ProdEnergyMm95
-public import KsIndexLean.ProdEnergyMm96
-public import KsIndexLean.ProdEnergyMm97
-public import KsIndexLean.ProdEnergyMm98
-public import KsIndexLean.ProdEnergyMm99
-public import KsIndexLean.ProdEnergyMm100
-public import KsIndexLean.ProdEnergyMm101
-public import KsIndexLean.ProdEnergyMm102
-public import KsIndexLean.ProdEnergyMm103
-public import KsIndexLean.ProdEnergyMm104
-public import KsIndexLean.ProdEnergyMm105
-public import KsIndexLean.ProdEnergyMm106
-public import KsIndexLean.ProdEnergyMm107
-public import KsIndexLean.ProdEnergyMm108
-public import KsIndexLean.ProdEnergyMm109
-public import KsIndexLean.ProdEnergyMm110
-public import KsIndexLean.ProdEnergyMm111
-public import KsIndexLean.ProdEnergyMm112
-public import KsIndexLean.ProdEnergyMm113
-public import KsIndexLean.ProdEnergyMm114
-public import KsIndexLean.ProdEnergyMm115
-public import KsIndexLean.ProdEnergyMm116
-public import KsIndexLean.ProdEnergyMm117
-public import KsIndexLean.ProdEnergyMm118
-public import KsIndexLean.ProdEnergyMm119
-public import KsIndexLean.ProdEnergyMm120
-public import KsIndexLean.ProdEnergyMm121
-public import KsIndexLean.ProdEnergyMm122
-public import KsIndexLean.ProdEnergyMm123
-public import KsIndexLean.ProdEnergyMm124
-public import KsIndexLean.ProdEnergyMm125
-public import KsIndexLean.ProdEnergyMm126
-public import KsIndexLean.ProdEnergyMm127
-public import KsIndexLean.ProdEnergyMm128
-public import KsIndexLean.ProdEnergyMm129
-public import KsIndexLean.ProdEnergyMm130
-public import KsIndexLean.ProdEnergyMm131
-public import KsIndexLean.ProdEnergyMm132
-public import KsIndexLean.ProdEnergyMm133
-public import KsIndexLean.ProdEnergyMm134
-public import KsIndexLean.ProdEnergyMm135
-public import KsIndexLean.ProdEnergyMm136
-public import KsIndexLean.ProdEnergyMm137
-public import KsIndexLean.ProdEnergyMm138
-public import KsIndexLean.ProdEnergyMm139
-public import KsIndexLean.ProdEnergyMm140
-public import KsIndexLean.ProdEnergyMm141
-public import KsIndexLean.ProdEnergyMm142
-public import KsIndexLean.ProdEnergyMm143
-public import KsIndexLean.ProdEnergyMm144
-public import KsIndexLean.ProdEnergyMm145
-public import KsIndexLean.ProdEnergyMm146
-public import KsIndexLean.ProdEnergyMm147
-public import KsIndexLean.ProdEnergyMm148
-public import KsIndexLean.ProdEnergyMm149
-public import KsIndexLean.ProdEnergyMm150
-public import KsIndexLean.ProdEnergyMm151
-public import KsIndexLean.ProdEnergyMm152
-public import KsIndexLean.ProdEnergyMm153
-public import KsIndexLean.ProdEnergyMm154
-public import KsIndexLean.ProdEnergyMm155
-public import KsIndexLean.ProdEnergyMm156
-public import KsIndexLean.ProdEnergyMm157
-public import KsIndexLean.ProdEnergyMm158
-public import KsIndexLean.ProdEnergyMm159
-public import KsIndexLean.ProdEnergyMm160
-public import KsIndexLean.ProdEnergyMm161
-public import KsIndexLean.ProdEnergyMm162
-public import KsIndexLean.ProdEnergyMm163
-public import KsIndexLean.ProdEnergyMm164
-public import KsIndexLean.ProdEnergyMm165
-public import KsIndexLean.ProdEnergyMm166
-public import KsIndexLean.ProdEnergyMm167
-public import KsIndexLean.ProdEnergyMm168
-public import KsIndexLean.ProdEnergyMm169
-public import KsIndexLean.ProdEnergyMm170
-public import KsIndexLean.ProdEnergyMm171
-public import KsIndexLean.ProdEnergyMm172
-public import KsIndexLean.ProdEnergyMm173
-public import KsIndexLean.ProdEnergyMm174
-public import KsIndexLean.ProdEnergyMm175
-public import KsIndexLean.ProdEnergyMm176
-public import KsIndexLean.ProdEnergyMm177
-public import KsIndexLean.ProdEnergyMm178
-public import KsIndexLean.ProdEnergyMm179
-public import KsIndexLean.ProdEnergyMm180
-public import KsIndexLean.ProdEnergyMm181
-public import KsIndexLean.ProdEnergyMm182
-public import KsIndexLean.ProdEnergyMm183
-public import KsIndexLean.ProdEnergyMm184
-public import KsIndexLean.ProdEnergyMm185
-public import KsIndexLean.ProdEnergyMm186
-public import KsIndexLean.ProdEnergyMm187
-public import KsIndexLean.ProdEnergyMm188
-public import KsIndexLean.ProdEnergyMm189
-public import KsIndexLean.ProdEnergyMm190
-public import KsIndexLean.ProdEnergyMm191
-public import AlphaEnergy4096Boundary
+public import KsIndexLean.ProdEnergyP64
+public import KsIndexLean.ProdEnergyP65
+public import KsIndexLean.ProdEnergyP66
+public import KsIndexLean.ProdEnergyP67
+public import KsIndexLean.ProdEnergyP68
+public import KsIndexLean.ProdEnergyP69
+public import KsIndexLean.ProdEnergyP70
+public import KsIndexLean.ProdEnergyP71
+public import KsIndexLean.ProdEnergyP72
+public import KsIndexLean.ProdEnergyP73
+public import KsIndexLean.ProdEnergyP74
+public import KsIndexLean.ProdEnergyP75
+public import KsIndexLean.ProdEnergyP76
+public import KsIndexLean.ProdEnergyP77
+public import KsIndexLean.ProdEnergyP78
+public import KsIndexLean.ProdEnergyP79
+public import KsIndexLean.ProdEnergyP80
+public import KsIndexLean.ProdEnergyP81
+public import KsIndexLean.ProdEnergyP82
+public import KsIndexLean.ProdEnergyP83
+public import KsIndexLean.ProdEnergyP84
+public import KsIndexLean.ProdEnergyP85
+public import KsIndexLean.ProdEnergyP86
+public import KsIndexLean.ProdEnergyP87
+public import KsIndexLean.ProdEnergyP88
+public import KsIndexLean.ProdEnergyP89
+public import KsIndexLean.ProdEnergyP90
+public import KsIndexLean.ProdEnergyP91
+public import KsIndexLean.ProdEnergyP92
+public import KsIndexLean.ProdEnergyP93
+public import KsIndexLean.ProdEnergyP94
+public import KsIndexLean.ProdEnergyP95
+public import KsIndexLean.ProdEnergyP96
+public import KsIndexLean.ProdEnergyP97
+public import KsIndexLean.ProdEnergyP98
+public import KsIndexLean.ProdEnergyP99
+public import KsIndexLean.ProdEnergyP100
+public import KsIndexLean.ProdEnergyP101
+public import KsIndexLean.ProdEnergyP102
+public import KsIndexLean.ProdEnergyP103
+public import KsIndexLean.ProdEnergyP104
+public import KsIndexLean.ProdEnergyP105
+public import KsIndexLean.ProdEnergyP106
+public import KsIndexLean.ProdEnergyP107
+public import KsIndexLean.ProdEnergyP108
+public import KsIndexLean.ProdEnergyP109
+public import KsIndexLean.ProdEnergyP110
+public import KsIndexLean.ProdEnergyP111
+public import KsIndexLean.ProdEnergyP112
+public import KsIndexLean.ProdEnergyP113
+public import KsIndexLean.ProdEnergyP114
+public import KsIndexLean.ProdEnergyP115
+public import KsIndexLean.ProdEnergyP116
+public import KsIndexLean.ProdEnergyP117
+public import KsIndexLean.ProdEnergyP118
+public import KsIndexLean.ProdEnergyP119
+public import KsIndexLean.ProdEnergyP120
+public import KsIndexLean.ProdEnergyP121
+public import KsIndexLean.ProdEnergyP122
+public import KsIndexLean.ProdEnergyP123
+public import KsIndexLean.ProdEnergyP124
+public import KsIndexLean.ProdEnergyP125
+public import KsIndexLean.ProdEnergyP126
+public import KsIndexLean.ProdEnergyP127
+public import KsIndexLean.ProdEnergyP128
+public import KsIndexLean.ProdEnergyP129
+public import KsIndexLean.ProdEnergyP130
+public import KsIndexLean.ProdEnergyP131
+public import KsIndexLean.ProdEnergyP132
+public import KsIndexLean.ProdEnergyP133
+public import KsIndexLean.ProdEnergyP134
+public import KsIndexLean.ProdEnergyP135
+public import KsIndexLean.ProdEnergyP136
+public import KsIndexLean.ProdEnergyP137
+public import KsIndexLean.ProdEnergyP138
+public import KsIndexLean.ProdEnergyP139
+public import KsIndexLean.ProdEnergyP140
+public import KsIndexLean.ProdEnergyP141
+public import KsIndexLean.ProdEnergyP142
+public import KsIndexLean.ProdEnergyP143
+public import KsIndexLean.ProdEnergyP144
+public import KsIndexLean.ProdEnergyP145
+public import KsIndexLean.ProdEnergyP146
+public import KsIndexLean.ProdEnergyP147
+public import KsIndexLean.ProdEnergyP148
+public import KsIndexLean.ProdEnergyP149
+public import KsIndexLean.ProdEnergyP150
+public import KsIndexLean.ProdEnergyP151
+public import KsIndexLean.ProdEnergyP152
+public import KsIndexLean.ProdEnergyP153
+public import KsIndexLean.ProdEnergyP154
+public import KsIndexLean.ProdEnergyP155
+public import KsIndexLean.ProdEnergyP156
+public import KsIndexLean.ProdEnergyP157
+public import KsIndexLean.ProdEnergyP158
+public import KsIndexLean.ProdEnergyP159
+public import KsIndexLean.ProdEnergyP160
+public import KsIndexLean.ProdEnergyP161
+public import KsIndexLean.ProdEnergyP162
+public import KsIndexLean.ProdEnergyP163
+public import KsIndexLean.ProdEnergyP164
+public import KsIndexLean.ProdEnergyP165
+public import KsIndexLean.ProdEnergyP166
+public import KsIndexLean.ProdEnergyP167
+public import KsIndexLean.ProdEnergyP168
+public import KsIndexLean.ProdEnergyP169
+public import KsIndexLean.ProdEnergyP170
+public import KsIndexLean.ProdEnergyP171
+public import KsIndexLean.ProdEnergyP172
+public import KsIndexLean.ProdEnergyP173
+public import KsIndexLean.ProdEnergyP174
+public import KsIndexLean.ProdEnergyP175
+public import KsIndexLean.ProdEnergyP176
+public import KsIndexLean.ProdEnergyP177
+public import KsIndexLean.ProdEnergyP178
+public import KsIndexLean.ProdEnergyP179
+public import KsIndexLean.ProdEnergyP180
+public import KsIndexLean.ProdEnergyP181
+public import KsIndexLean.ProdEnergyP182
+public import KsIndexLean.ProdEnergyP183
+public import KsIndexLean.ProdEnergyP184
+public import KsIndexLean.ProdEnergyP185
+public import KsIndexLean.ProdEnergyP186
+public import KsIndexLean.ProdEnergyP187
+public import KsIndexLean.ProdEnergyP188
+public import KsIndexLean.ProdEnergyP189
+public import KsIndexLean.ProdEnergyP190
+public import KsIndexLean.ProdEnergyP191
+public import KsIndexLean.AlphaEnergy4096Boundary
 @[expose] public section
 namespace KsIndex.AlphaRemarkTrial.Energy4096Finite
 open KsIndex.NegSignProd
 set_option maxRecDepth 10000
 set_option maxHeartbeats 4000000
 set_option linter.style.longLine false
-theorem window_Mm_radius :
-    tableEnergyRadius t (Finset.Icc (-4096 : ℤ) 4096) 4 1 = (8408478407363723289053895100780696174642654168301390583391401221740109366247607045469716014249 : ℤ) := by
+theorem window_P_radius :
+    tableEnergyRadius t (Finset.Icc (-4096 : ℤ) 4096) 1 0 = (37198672267181531537015126558447518359680932461078379329440693334190851251411707408140076541311 : ℤ) := by
   have hw : Finset.Icc (-4096 : ℤ) 4096 = Finset.Ioc (-4097 : ℤ) 4096 := by
     ext n; simp only [Finset.mem_Icc, Finset.mem_Ioc]; omega
-  have hb := Energy4096Boundary.energy_Mm_radius
+  have hb := Energy4096Boundary.energy_P_radius
   simp only [tableEnergyRadius] at hb
-  have h64 := eMm64_r
-  simp only [tableEnergyRadius, wMm64] at h64
-  have h65 := eMm65_r
-  simp only [tableEnergyRadius, wMm65] at h65
-  have h66 := eMm66_r
-  simp only [tableEnergyRadius, wMm66] at h66
-  have h67 := eMm67_r
-  simp only [tableEnergyRadius, wMm67] at h67
-  have h68 := eMm68_r
-  simp only [tableEnergyRadius, wMm68] at h68
-  have h69 := eMm69_r
-  simp only [tableEnergyRadius, wMm69] at h69
-  have h70 := eMm70_r
-  simp only [tableEnergyRadius, wMm70] at h70
-  have h71 := eMm71_r
-  simp only [tableEnergyRadius, wMm71] at h71
-  have h72 := eMm72_r
-  simp only [tableEnergyRadius, wMm72] at h72
-  have h73 := eMm73_r
-  simp only [tableEnergyRadius, wMm73] at h73
-  have h74 := eMm74_r
-  simp only [tableEnergyRadius, wMm74] at h74
-  have h75 := eMm75_r
-  simp only [tableEnergyRadius, wMm75] at h75
-  have h76 := eMm76_r
-  simp only [tableEnergyRadius, wMm76] at h76
-  have h77 := eMm77_r
-  simp only [tableEnergyRadius, wMm77] at h77
-  have h78 := eMm78_r
-  simp only [tableEnergyRadius, wMm78] at h78
-  have h79 := eMm79_r
-  simp only [tableEnergyRadius, wMm79] at h79
-  have h80 := eMm80_r
-  simp only [tableEnergyRadius, wMm80] at h80
-  have h81 := eMm81_r
-  simp only [tableEnergyRadius, wMm81] at h81
-  have h82 := eMm82_r
-  simp only [tableEnergyRadius, wMm82] at h82
-  have h83 := eMm83_r
-  simp only [tableEnergyRadius, wMm83] at h83
-  have h84 := eMm84_r
-  simp only [tableEnergyRadius, wMm84] at h84
-  have h85 := eMm85_r
-  simp only [tableEnergyRadius, wMm85] at h85
-  have h86 := eMm86_r
-  simp only [tableEnergyRadius, wMm86] at h86
-  have h87 := eMm87_r
-  simp only [tableEnergyRadius, wMm87] at h87
-  have h88 := eMm88_r
-  simp only [tableEnergyRadius, wMm88] at h88
-  have h89 := eMm89_r
-  simp only [tableEnergyRadius, wMm89] at h89
-  have h90 := eMm90_r
-  simp only [tableEnergyRadius, wMm90] at h90
-  have h91 := eMm91_r
-  simp only [tableEnergyRadius, wMm91] at h91
-  have h92 := eMm92_r
-  simp only [tableEnergyRadius, wMm92] at h92
-  have h93 := eMm93_r
-  simp only [tableEnergyRadius, wMm93] at h93
-  have h94 := eMm94_r
-  simp only [tableEnergyRadius, wMm94] at h94
-  have h95 := eMm95_r
-  simp only [tableEnergyRadius, wMm95] at h95
-  have h96 := eMm96_r
-  simp only [tableEnergyRadius, wMm96] at h96
-  have h97 := eMm97_r
-  simp only [tableEnergyRadius, wMm97] at h97
-  have h98 := eMm98_r
-  simp only [tableEnergyRadius, wMm98] at h98
-  have h99 := eMm99_r
-  simp only [tableEnergyRadius, wMm99] at h99
-  have h100 := eMm100_r
-  simp only [tableEnergyRadius, wMm100] at h100
-  have h101 := eMm101_r
-  simp only [tableEnergyRadius, wMm101] at h101
-  have h102 := eMm102_r
-  simp only [tableEnergyRadius, wMm102] at h102
-  have h103 := eMm103_r
-  simp only [tableEnergyRadius, wMm103] at h103
-  have h104 := eMm104_r
-  simp only [tableEnergyRadius, wMm104] at h104
-  have h105 := eMm105_r
-  simp only [tableEnergyRadius, wMm105] at h105
-  have h106 := eMm106_r
-  simp only [tableEnergyRadius, wMm106] at h106
-  have h107 := eMm107_r
-  simp only [tableEnergyRadius, wMm107] at h107
-  have h108 := eMm108_r
-  simp only [tableEnergyRadius, wMm108] at h108
-  have h109 := eMm109_r
-  simp only [tableEnergyRadius, wMm109] at h109
-  have h110 := eMm110_r
-  simp only [tableEnergyRadius, wMm110] at h110
-  have h111 := eMm111_r
-  simp only [tableEnergyRadius, wMm111] at h111
-  have h112 := eMm112_r
-  simp only [tableEnergyRadius, wMm112] at h112
-  have h113 := eMm113_r
-  simp only [tableEnergyRadius, wMm113] at h113
-  have h114 := eMm114_r
-  simp only [tableEnergyRadius, wMm114] at h114
-  have h115 := eMm115_r
-  simp only [tableEnergyRadius, wMm115] at h115
-  have h116 := eMm116_r
-  simp only [tableEnergyRadius, wMm116] at h116
-  have h117 := eMm117_r
-  simp only [tableEnergyRadius, wMm117] at h117
-  have h118 := eMm118_r
-  simp only [tableEnergyRadius, wMm118] at h118
-  have h119 := eMm119_r
-  simp only [tableEnergyRadius, wMm119] at h119
-  have h120 := eMm120_r
-  simp only [tableEnergyRadius, wMm120] at h120
-  have h121 := eMm121_r
-  simp only [tableEnergyRadius, wMm121] at h121
-  have h122 := eMm122_r
-  simp only [tableEnergyRadius, wMm122] at h122
-  have h123 := eMm123_r
-  simp only [tableEnergyRadius, wMm123] at h123
-  have h124 := eMm124_r
-  simp only [tableEnergyRadius, wMm124] at h124
-  have h125 := eMm125_r
-  simp only [tableEnergyRadius, wMm125] at h125
-  have h126 := eMm126_r
-  simp only [tableEnergyRadius, wMm126] at h126
-  have h127 := eMm127_r
-  simp only [tableEnergyRadius, wMm127] at h127
-  have h128 := eMm128_r
-  simp only [tableEnergyRadius, wMm128] at h128
-  have h129 := eMm129_r
-  simp only [tableEnergyRadius, wMm129] at h129
-  have h130 := eMm130_r
-  simp only [tableEnergyRadius, wMm130] at h130
-  have h131 := eMm131_r
-  simp only [tableEnergyRadius, wMm131] at h131
-  have h132 := eMm132_r
-  simp only [tableEnergyRadius, wMm132] at h132
-  have h133 := eMm133_r
-  simp only [tableEnergyRadius, wMm133] at h133
-  have h134 := eMm134_r
-  simp only [tableEnergyRadius, wMm134] at h134
-  have h135 := eMm135_r
-  simp only [tableEnergyRadius, wMm135] at h135
-  have h136 := eMm136_r
-  simp only [tableEnergyRadius, wMm136] at h136
-  have h137 := eMm137_r
-  simp only [tableEnergyRadius, wMm137] at h137
-  have h138 := eMm138_r
-  simp only [tableEnergyRadius, wMm138] at h138
-  have h139 := eMm139_r
-  simp only [tableEnergyRadius, wMm139] at h139
-  have h140 := eMm140_r
-  simp only [tableEnergyRadius, wMm140] at h140
-  have h141 := eMm141_r
-  simp only [tableEnergyRadius, wMm141] at h141
-  have h142 := eMm142_r
-  simp only [tableEnergyRadius, wMm142] at h142
-  have h143 := eMm143_r
-  simp only [tableEnergyRadius, wMm143] at h143
-  have h144 := eMm144_r
-  simp only [tableEnergyRadius, wMm144] at h144
-  have h145 := eMm145_r
-  simp only [tableEnergyRadius, wMm145] at h145
-  have h146 := eMm146_r
-  simp only [tableEnergyRadius, wMm146] at h146
-  have h147 := eMm147_r
-  simp only [tableEnergyRadius, wMm147] at h147
-  have h148 := eMm148_r
-  simp only [tableEnergyRadius, wMm148] at h148
-  have h149 := eMm149_r
-  simp only [tableEnergyRadius, wMm149] at h149
-  have h150 := eMm150_r
-  simp only [tableEnergyRadius, wMm150] at h150
-  have h151 := eMm151_r
-  simp only [tableEnergyRadius, wMm151] at h151
-  have h152 := eMm152_r
-  simp only [tableEnergyRadius, wMm152] at h152
-  have h153 := eMm153_r
-  simp only [tableEnergyRadius, wMm153] at h153
-  have h154 := eMm154_r
-  simp only [tableEnergyRadius, wMm154] at h154
-  have h155 := eMm155_r
-  simp only [tableEnergyRadius, wMm155] at h155
-  have h156 := eMm156_r
-  simp only [tableEnergyRadius, wMm156] at h156
-  have h157 := eMm157_r
-  simp only [tableEnergyRadius, wMm157] at h157
-  have h158 := eMm158_r
-  simp only [tableEnergyRadius, wMm158] at h158
-  have h159 := eMm159_r
-  simp only [tableEnergyRadius, wMm159] at h159
-  have h160 := eMm160_r
-  simp only [tableEnergyRadius, wMm160] at h160
-  have h161 := eMm161_r
-  simp only [tableEnergyRadius, wMm161] at h161
-  have h162 := eMm162_r
-  simp only [tableEnergyRadius, wMm162] at h162
-  have h163 := eMm163_r
-  simp only [tableEnergyRadius, wMm163] at h163
-  have h164 := eMm164_r
-  simp only [tableEnergyRadius, wMm164] at h164
-  have h165 := eMm165_r
-  simp only [tableEnergyRadius, wMm165] at h165
-  have h166 := eMm166_r
-  simp only [tableEnergyRadius, wMm166] at h166
-  have h167 := eMm167_r
-  simp only [tableEnergyRadius, wMm167] at h167
-  have h168 := eMm168_r
-  simp only [tableEnergyRadius, wMm168] at h168
-  have h169 := eMm169_r
-  simp only [tableEnergyRadius, wMm169] at h169
-  have h170 := eMm170_r
-  simp only [tableEnergyRadius, wMm170] at h170
-  have h171 := eMm171_r
-  simp only [tableEnergyRadius, wMm171] at h171
-  have h172 := eMm172_r
-  simp only [tableEnergyRadius, wMm172] at h172
-  have h173 := eMm173_r
-  simp only [tableEnergyRadius, wMm173] at h173
-  have h174 := eMm174_r
-  simp only [tableEnergyRadius, wMm174] at h174
-  have h175 := eMm175_r
-  simp only [tableEnergyRadius, wMm175] at h175
-  have h176 := eMm176_r
-  simp only [tableEnergyRadius, wMm176] at h176
-  have h177 := eMm177_r
-  simp only [tableEnergyRadius, wMm177] at h177
-  have h178 := eMm178_r
-  simp only [tableEnergyRadius, wMm178] at h178
-  have h179 := eMm179_r
-  simp only [tableEnergyRadius, wMm179] at h179
-  have h180 := eMm180_r
-  simp only [tableEnergyRadius, wMm180] at h180
-  have h181 := eMm181_r
-  simp only [tableEnergyRadius, wMm181] at h181
-  have h182 := eMm182_r
-  simp only [tableEnergyRadius, wMm182] at h182
-  have h183 := eMm183_r
-  simp only [tableEnergyRadius, wMm183] at h183
-  have h184 := eMm184_r
-  simp only [tableEnergyRadius, wMm184] at h184
-  have h185 := eMm185_r
-  simp only [tableEnergyRadius, wMm185] at h185
-  have h186 := eMm186_r
-  simp only [tableEnergyRadius, wMm186] at h186
-  have h187 := eMm187_r
-  simp only [tableEnergyRadius, wMm187] at h187
-  have h188 := eMm188_r
-  simp only [tableEnergyRadius, wMm188] at h188
-  have h189 := eMm189_r
-  simp only [tableEnergyRadius, wMm189] at h189
-  have h190 := eMm190_r
-  simp only [tableEnergyRadius, wMm190] at h190
-  have h191 := eMm191_r
-  simp only [tableEnergyRadius, wMm191] at h191
+  have h64 := eP64_r
+  simp only [tableEnergyRadius, wP64] at h64
+  have h65 := eP65_r
+  simp only [tableEnergyRadius, wP65] at h65
+  have h66 := eP66_r
+  simp only [tableEnergyRadius, wP66] at h66
+  have h67 := eP67_r
+  simp only [tableEnergyRadius, wP67] at h67
+  have h68 := eP68_r
+  simp only [tableEnergyRadius, wP68] at h68
+  have h69 := eP69_r
+  simp only [tableEnergyRadius, wP69] at h69
+  have h70 := eP70_r
+  simp only [tableEnergyRadius, wP70] at h70
+  have h71 := eP71_r
+  simp only [tableEnergyRadius, wP71] at h71
+  have h72 := eP72_r
+  simp only [tableEnergyRadius, wP72] at h72
+  have h73 := eP73_r
+  simp only [tableEnergyRadius, wP73] at h73
+  have h74 := eP74_r
+  simp only [tableEnergyRadius, wP74] at h74
+  have h75 := eP75_r
+  simp only [tableEnergyRadius, wP75] at h75
+  have h76 := eP76_r
+  simp only [tableEnergyRadius, wP76] at h76
+  have h77 := eP77_r
+  simp only [tableEnergyRadius, wP77] at h77
+  have h78 := eP78_r
+  simp only [tableEnergyRadius, wP78] at h78
+  have h79 := eP79_r
+  simp only [tableEnergyRadius, wP79] at h79
+  have h80 := eP80_r
+  simp only [tableEnergyRadius, wP80] at h80
+  have h81 := eP81_r
+  simp only [tableEnergyRadius, wP81] at h81
+  have h82 := eP82_r
+  simp only [tableEnergyRadius, wP82] at h82
+  have h83 := eP83_r
+  simp only [tableEnergyRadius, wP83] at h83
+  have h84 := eP84_r
+  simp only [tableEnergyRadius, wP84] at h84
+  have h85 := eP85_r
+  simp only [tableEnergyRadius, wP85] at h85
+  have h86 := eP86_r
+  simp only [tableEnergyRadius, wP86] at h86
+  have h87 := eP87_r
+  simp only [tableEnergyRadius, wP87] at h87
+  have h88 := eP88_r
+  simp only [tableEnergyRadius, wP88] at h88
+  have h89 := eP89_r
+  simp only [tableEnergyRadius, wP89] at h89
+  have h90 := eP90_r
+  simp only [tableEnergyRadius, wP90] at h90
+  have h91 := eP91_r
+  simp only [tableEnergyRadius, wP91] at h91
+  have h92 := eP92_r
+  simp only [tableEnergyRadius, wP92] at h92
+  have h93 := eP93_r
+  simp only [tableEnergyRadius, wP93] at h93
+  have h94 := eP94_r
+  simp only [tableEnergyRadius, wP94] at h94
+  have h95 := eP95_r
+  simp only [tableEnergyRadius, wP95] at h95
+  have h96 := eP96_r
+  simp only [tableEnergyRadius, wP96] at h96
+  have h97 := eP97_r
+  simp only [tableEnergyRadius, wP97] at h97
+  have h98 := eP98_r
+  simp only [tableEnergyRadius, wP98] at h98
+  have h99 := eP99_r
+  simp only [tableEnergyRadius, wP99] at h99
+  have h100 := eP100_r
+  simp only [tableEnergyRadius, wP100] at h100
+  have h101 := eP101_r
+  simp only [tableEnergyRadius, wP101] at h101
+  have h102 := eP102_r
+  simp only [tableEnergyRadius, wP102] at h102
+  have h103 := eP103_r
+  simp only [tableEnergyRadius, wP103] at h103
+  have h104 := eP104_r
+  simp only [tableEnergyRadius, wP104] at h104
+  have h105 := eP105_r
+  simp only [tableEnergyRadius, wP105] at h105
+  have h106 := eP106_r
+  simp only [tableEnergyRadius, wP106] at h106
+  have h107 := eP107_r
+  simp only [tableEnergyRadius, wP107] at h107
+  have h108 := eP108_r
+  simp only [tableEnergyRadius, wP108] at h108
+  have h109 := eP109_r
+  simp only [tableEnergyRadius, wP109] at h109
+  have h110 := eP110_r
+  simp only [tableEnergyRadius, wP110] at h110
+  have h111 := eP111_r
+  simp only [tableEnergyRadius, wP111] at h111
+  have h112 := eP112_r
+  simp only [tableEnergyRadius, wP112] at h112
+  have h113 := eP113_r
+  simp only [tableEnergyRadius, wP113] at h113
+  have h114 := eP114_r
+  simp only [tableEnergyRadius, wP114] at h114
+  have h115 := eP115_r
+  simp only [tableEnergyRadius, wP115] at h115
+  have h116 := eP116_r
+  simp only [tableEnergyRadius, wP116] at h116
+  have h117 := eP117_r
+  simp only [tableEnergyRadius, wP117] at h117
+  have h118 := eP118_r
+  simp only [tableEnergyRadius, wP118] at h118
+  have h119 := eP119_r
+  simp only [tableEnergyRadius, wP119] at h119
+  have h120 := eP120_r
+  simp only [tableEnergyRadius, wP120] at h120
+  have h121 := eP121_r
+  simp only [tableEnergyRadius, wP121] at h121
+  have h122 := eP122_r
+  simp only [tableEnergyRadius, wP122] at h122
+  have h123 := eP123_r
+  simp only [tableEnergyRadius, wP123] at h123
+  have h124 := eP124_r
+  simp only [tableEnergyRadius, wP124] at h124
+  have h125 := eP125_r
+  simp only [tableEnergyRadius, wP125] at h125
+  have h126 := eP126_r
+  simp only [tableEnergyRadius, wP126] at h126
+  have h127 := eP127_r
+  simp only [tableEnergyRadius, wP127] at h127
+  have h128 := eP128_r
+  simp only [tableEnergyRadius, wP128] at h128
+  have h129 := eP129_r
+  simp only [tableEnergyRadius, wP129] at h129
+  have h130 := eP130_r
+  simp only [tableEnergyRadius, wP130] at h130
+  have h131 := eP131_r
+  simp only [tableEnergyRadius, wP131] at h131
+  have h132 := eP132_r
+  simp only [tableEnergyRadius, wP132] at h132
+  have h133 := eP133_r
+  simp only [tableEnergyRadius, wP133] at h133
+  have h134 := eP134_r
+  simp only [tableEnergyRadius, wP134] at h134
+  have h135 := eP135_r
+  simp only [tableEnergyRadius, wP135] at h135
+  have h136 := eP136_r
+  simp only [tableEnergyRadius, wP136] at h136
+  have h137 := eP137_r
+  simp only [tableEnergyRadius, wP137] at h137
+  have h138 := eP138_r
+  simp only [tableEnergyRadius, wP138] at h138
+  have h139 := eP139_r
+  simp only [tableEnergyRadius, wP139] at h139
+  have h140 := eP140_r
+  simp only [tableEnergyRadius, wP140] at h140
+  have h141 := eP141_r
+  simp only [tableEnergyRadius, wP141] at h141
+  have h142 := eP142_r
+  simp only [tableEnergyRadius, wP142] at h142
+  have h143 := eP143_r
+  simp only [tableEnergyRadius, wP143] at h143
+  have h144 := eP144_r
+  simp only [tableEnergyRadius, wP144] at h144
+  have h145 := eP145_r
+  simp only [tableEnergyRadius, wP145] at h145
+  have h146 := eP146_r
+  simp only [tableEnergyRadius, wP146] at h146
+  have h147 := eP147_r
+  simp only [tableEnergyRadius, wP147] at h147
+  have h148 := eP148_r
+  simp only [tableEnergyRadius, wP148] at h148
+  have h149 := eP149_r
+  simp only [tableEnergyRadius, wP149] at h149
+  have h150 := eP150_r
+  simp only [tableEnergyRadius, wP150] at h150
+  have h151 := eP151_r
+  simp only [tableEnergyRadius, wP151] at h151
+  have h152 := eP152_r
+  simp only [tableEnergyRadius, wP152] at h152
+  have h153 := eP153_r
+  simp only [tableEnergyRadius, wP153] at h153
+  have h154 := eP154_r
+  simp only [tableEnergyRadius, wP154] at h154
+  have h155 := eP155_r
+  simp only [tableEnergyRadius, wP155] at h155
+  have h156 := eP156_r
+  simp only [tableEnergyRadius, wP156] at h156
+  have h157 := eP157_r
+  simp only [tableEnergyRadius, wP157] at h157
+  have h158 := eP158_r
+  simp only [tableEnergyRadius, wP158] at h158
+  have h159 := eP159_r
+  simp only [tableEnergyRadius, wP159] at h159
+  have h160 := eP160_r
+  simp only [tableEnergyRadius, wP160] at h160
+  have h161 := eP161_r
+  simp only [tableEnergyRadius, wP161] at h161
+  have h162 := eP162_r
+  simp only [tableEnergyRadius, wP162] at h162
+  have h163 := eP163_r
+  simp only [tableEnergyRadius, wP163] at h163
+  have h164 := eP164_r
+  simp only [tableEnergyRadius, wP164] at h164
+  have h165 := eP165_r
+  simp only [tableEnergyRadius, wP165] at h165
+  have h166 := eP166_r
+  simp only [tableEnergyRadius, wP166] at h166
+  have h167 := eP167_r
+  simp only [tableEnergyRadius, wP167] at h167
+  have h168 := eP168_r
+  simp only [tableEnergyRadius, wP168] at h168
+  have h169 := eP169_r
+  simp only [tableEnergyRadius, wP169] at h169
+  have h170 := eP170_r
+  simp only [tableEnergyRadius, wP170] at h170
+  have h171 := eP171_r
+  simp only [tableEnergyRadius, wP171] at h171
+  have h172 := eP172_r
+  simp only [tableEnergyRadius, wP172] at h172
+  have h173 := eP173_r
+  simp only [tableEnergyRadius, wP173] at h173
+  have h174 := eP174_r
+  simp only [tableEnergyRadius, wP174] at h174
+  have h175 := eP175_r
+  simp only [tableEnergyRadius, wP175] at h175
+  have h176 := eP176_r
+  simp only [tableEnergyRadius, wP176] at h176
+  have h177 := eP177_r
+  simp only [tableEnergyRadius, wP177] at h177
+  have h178 := eP178_r
+  simp only [tableEnergyRadius, wP178] at h178
+  have h179 := eP179_r
+  simp only [tableEnergyRadius, wP179] at h179
+  have h180 := eP180_r
+  simp only [tableEnergyRadius, wP180] at h180
+  have h181 := eP181_r
+  simp only [tableEnergyRadius, wP181] at h181
+  have h182 := eP182_r
+  simp only [tableEnergyRadius, wP182] at h182
+  have h183 := eP183_r
+  simp only [tableEnergyRadius, wP183] at h183
+  have h184 := eP184_r
+  simp only [tableEnergyRadius, wP184] at h184
+  have h185 := eP185_r
+  simp only [tableEnergyRadius, wP185] at h185
+  have h186 := eP186_r
+  simp only [tableEnergyRadius, wP186] at h186
+  have h187 := eP187_r
+  simp only [tableEnergyRadius, wP187] at h187
+  have h188 := eP188_r
+  simp only [tableEnergyRadius, wP188] at h188
+  have h189 := eP189_r
+  simp only [tableEnergyRadius, wP189] at h189
+  have h190 := eP190_r
+  simp only [tableEnergyRadius, wP190] at h190
+  have h191 := eP191_r
+  simp only [tableEnergyRadius, wP191] at h191
   rw [hw]
   unfold tableEnergyRadius
   rw [show Finset.Ioc (-4097 : ℤ) 4096 = Finset.Ioc (-4097 : ℤ) (-4033 : ℤ) ∪ Finset.Ioc (-4033 : ℤ) 4096 from
@@ -786,5 +786,5 @@ theorem window_Mm_radius :
     ext n; simp only [Finset.mem_Ioc, Finset.mem_singleton]; omega
   rw [hlast, hb]
   norm_num
-#print axioms window_Mm_radius
+#print axioms window_P_radius
 end KsIndex.AlphaRemarkTrial.Energy4096Finite

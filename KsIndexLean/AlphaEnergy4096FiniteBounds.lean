@@ -1,10 +1,10 @@
 module
 public import KsIndexLean.AlphaTrialTableLower
-public import AlphaEnergyWindow4096
-public import AlphaEnergy4096FinitePCenter
-public import AlphaEnergy4096FinitePRadius
-public import AlphaEnergy4096FiniteMmCenter
-public import AlphaEnergy4096FiniteMmRadius
+public import KsIndexLean.AlphaEnergyWindow4096
+public import KsIndexLean.AlphaEnergy4096FinitePCenter
+public import KsIndexLean.AlphaEnergy4096FinitePRadius
+public import KsIndexLean.AlphaEnergy4096FiniteMmCenter
+public import KsIndexLean.AlphaEnergy4096FiniteMmRadius
 @[expose] public section
 namespace KsIndex.AlphaRemarkTrial.EnergyWindow4096
 open CircleQ Energy4096Finite
