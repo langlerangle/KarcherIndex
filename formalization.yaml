@@ -159,8 +159,8 @@ fidelity:
 review:
   status: "agent-reviewed"
   reviewers:
-    - "Claude Opus 4.8 (Kai)"
-    - "Claude Fable 5 (Xi)"
+    - "Claude Opus 4.8"
+    - "Claude Fable 5"
     - "GPT-6 Astra (OpenAI)"
     - "Claude Opus 5.5 (fresh-session source reviewer)"
   notes: >-
@@ -168,16 +168,17 @@ review:
     reviews at their recorded scopes. These activities are distinct from Lean kernel
     verification and do not constitute external human peer review or exhaustive
     independent review of every proof. The author directed the work and reviewed
-    mathematical design decisions, and reviewed the earlier definition guide and the
-    statements and definitions it references. The author has approved the repository's
-    public availability. A fresh-session Claude
-    Opus 5.5 review examined public commit 97b6d52aa27c9dfc0028e4cc3efdb3ed70da6187
-    through source reading and scripted checks, without building the project or
-    running Comparator. The reviewer belongs to the same model family as earlier
-    Claude collaborators. A follow-up review of public commit
-    98ac7ef76394a0617ef48e422904b0171d51fb4e independently confirmed that the Lean
-    changes were comment-only, checked the revised mathematical documentation,
-    and found no changes required before submission. Neither review included a build or Comparator run.
+    mathematical design decisions, an earlier version of DEFINITION_REVIEW_GUIDE.txt,
+    and the statements and definitions discussed there. The author has approved the
+    repository's public availability. A fresh-session Claude Opus 5.5 source review
+    examined public commit 97b6d52aa27c9dfc0028e4cc3efdb3ed70da6187. A follow-up at
+    98ac7ef76394a0617ef48e422904b0171d51fb4e checked the revised mathematical
+    documentation and confirmed that the intervening Lean changes were comment-only.
+    At that commit, the reviewer reported no changes required before submission.
+    These reviews used source reading and scripted checks; neither included a build
+    or Comparator run. Their findings apply to those commits and the changes examined,
+    rather than to later revisions. The reviewer belongs to the same model family as
+    earlier Claude collaborators.
 
 alignment:
   scope: >-

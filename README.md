@@ -169,14 +169,14 @@ decimal bounds and arithmetic consequences through period 2298. The selected
 proofs have passed statement comparison, the permitted-axiom check, and independent
 checking by Lean's default kernel and NanoDa.
 
-A fresh-session Claude Opus 5.5 review examined public commit `97b6d52` through
-source reading and scripted checks, without building the project or running
-Comparator. The reviewer belongs to the same model family as earlier Claude
-collaborators. A follow-up review of commit `98ac7ef` independently confirmed
-that the Lean changes were comment-only, checked the revised mathematical
-documentation, and found no changes required before submission. Neither review
-included a build or Comparator run. The reviews concern those historical commits; they do not cover the subsequent
-proof optimizations.
+A fresh-session Claude Opus 5.5 source review examined public commit `97b6d52`.
+A follow-up at `98ac7ef` checked the revised mathematical documentation and
+confirmed that the intervening Lean changes were comment-only. At that commit,
+the reviewer reported no changes required before submission. These reviews used
+source reading and scripted checks; neither included a build or Comparator run.
+Their findings apply to those commits and the changes examined, rather than to
+later revisions. The reviewer belongs to the same model family as earlier Claude
+collaborators.
 
 We thank Claude Opus 5.5 for a fresh-session source review and follow-up that
 improved the mathematical exposition and clarified the scope of the formalization.
